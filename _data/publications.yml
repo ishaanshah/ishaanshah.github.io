@@ -1,3 +1,12 @@
+- name: Analytical and Neural Approaches to Complex Light Transport
+  authors:
+    - name: Ishaan Shah*
+  links:
+    - text: Master's Thesis
+      link: https://data.ishaanshah.xyz/research/pdfs/risltc.pdf
+  conference: Master's Thesis, IIIT-Hyderabad
+  image: /assets/img/IIIT-H.jpg
+
 - name: Combining Resampled Importance and Projected Solid Angle Samplings for Many Area Light Rendering
   authors:
     - name: Ishaan Shah*
@@ -9,7 +18,7 @@
     - text: Code
       link: https://github.com/ishaanshah/risltc
     - text: Paper
-      link: /assets/pdfs/risltc.pdf
+      link: https://data.ishaanshah.xyz/research/pdfs/risltc.pdf
   conference: SIGGRAPH Asia 2023, Technical Communications
   image: /assets/img/risltc.jpg
 
