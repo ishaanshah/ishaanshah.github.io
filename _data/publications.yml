@@ -5,7 +5,7 @@
     - text: Thesis
       link: https://data.ishaanshah.xyz/research/pdfs/thesis_compressed.pdf
   conference: Master's Thesis, IIIT-Hyderabad
-  image: /assets/img/IIIT-H.jpg
+  image: /assets/img/IIIT-H.png
 
 - name: Combining Resampled Importance and Projected Solid Angle Samplings for Many Area Light Rendering
   authors:
