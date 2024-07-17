@@ -1,13 +1,13 @@
 title: Ishaan Shah
 url: "/"
-baseurl: "https://ishaanshah.github.io"
+baseurl: ""
 
 markdown: kramdown
 
 tracking_id: "G-GM3STVD4HN"
 
 footer: yes
-footer_text: "© Copyright 2023 Ishaan Shah."
+footer_text: "© Copyright 2024 Ishaan Shah."
 
 sass:
     style: compressed
