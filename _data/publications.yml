@@ -1,3 +1,19 @@
+- name: Neural Histogram-Based Glint Rendering of Surfaces With Spatially Varying Roughness
+  authors:
+    - name: Ishaan Shah
+    - name: Luis E. Gamboa
+    - name: Adrien Gruson
+    - name: P. J. Narayanan
+  links:
+    - text: Project Page
+      link: https://ishaanshah.github.io/neural_glint
+    - text: Code
+      link: https://github.com/ishaanshah/neural_glint
+    - text: Paper
+      link: https://data.ishaanshah.xyz/research/neural_glint/paper_comp.pdf
+  conference: EGSR 2024, Computer Graphics Forum (Best Paper Honorable Mention)
+  image: /assets/img/neural_glint.jpg
+
 - name: Analytical and Neural Approaches to Complex Light Transport
   authors:
     - name: Ishaan Shah
