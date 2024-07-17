@@ -91,9 +91,11 @@
         flex: 1;
         margin-right: 2%;
         img {
-          height: 100%;
-          width: 100%;
-          object-fit: scale-down;
+          height: 90%;
+          width: 95%;
+          margin-top: 2.5%;
+          margin-left: 2.5%;
+          object-fit: cover;
         }
       }
       .publication-container {
@@ -104,7 +106,14 @@
         p {
           padding: 5;
         }
+        line-height: 1.25em
       }
+    }
+
+    .publication.first_author {
+      background-color: #f9f5d7;
+      padding: 1%;
+      border-radius: 2px;
     }
 
     img {

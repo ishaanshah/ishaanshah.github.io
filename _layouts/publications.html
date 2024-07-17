@@ -3,7 +3,7 @@ layout: default
 ---
 <h2>Publications</h3>
 {% for publication in site.data.publications %}
-  <div class="publication">
+  <div class="publication {%if publication.authors[0].name contains 'Ishaan Shah'%} first_author {%endif%}">
     <div class="publication-image">
       <img src="{{ publication.image }}" />
     </div>

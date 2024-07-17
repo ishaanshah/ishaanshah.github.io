@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{{ content }}
+<h2>Select Publications</h3>
+{% for publication in site.data.publications %}
+  {% if publication.authors[0].name contains "Ishaan Shah" %}
+  <div class="publication">
+    <div class="publication-image">
+      <img src="{{ publication.image }}" />
+    </div>
+    <div class="publication-container">
+      <h4>{{ publication.name }}</h4>
+      {% for author in publication.authors %}
+        {% if author.name contains "Ishaan Shah" %}
+          <u>{{ author.name }}</u>{% if forloop.last == false %}, {% endif %}
+        {% else %}
+          {{ author.name }}{% if forloop.last == false %}, {% endif %}
+        {% endif %}
+      {% endfor %}
+      <br/>
+      <i>{{ publication.conference }}</i>
+      <br/>
+      {% for link in publication.links %}
+        <a href="{{ link.link }}">[{{ link.text }}]</a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}

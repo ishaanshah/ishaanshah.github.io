@@ -14,6 +14,45 @@
   conference: EGSR 2024, Computer Graphics Forum (Best Paper Honorable Mention)
   image: /assets/img/neural_glint.jpg
 
+- name: "MANUS: Markerless Grasp Capture using Articulated 3D Gaussians"
+  authors:
+    - name: Chandradeep Pokhariya
+    - name: Ishaan Shah*
+    - name: Angela Xing*
+    - name: Zekun Li
+    - name: Kefan Chen
+    - name: Avinash Sharma
+    - name: Srinath Sridhar
+  links:
+    - text: Project Page
+      link: https://ivl.cs.brown.edu/research/manus.html
+    - text: Code
+      link: https://github.com/brown-ivl/manus
+    - text: Paper
+      link: https://openaccess.thecvf.com/content/CVPR2024/papers/Pokhariya_MANUS_Markerless_Grasp_Capture_using_Articulated_3D_Gaussians_CVPR_2024_paper.pdf
+  conference: CVPR 2024
+  image: /assets/img/manus-small.gif
+
+- name: "DiVa-360: The Dynamic Visual Dataset for Immersive Neural Fields"
+  authors:
+    - name: Cheng-You Lu*
+    - name: Peisen Zhou*
+    - name: Angela Xing*
+    - name: Chandradeep Pokhariya
+    - name: Arnab Dey
+    - name: Ishaan Shah
+    - name: "..."
+    - name: Srinath Sridhar
+  links:
+    - text: Project Page
+      link: https://ivl.cs.brown.edu/research/diva.html
+    - text: Code
+      link: https://github.com/brown-ivl/DiVa360
+    - text: Paper
+      link: https://openaccess.thecvf.com/content/CVPR2024/papers/Lu_DiVa-360_The_Dynamic_Visual_Dataset_for_Immersive_Neural_Fields_CVPR_2024_paper.pdf
+  conference: CVPR 2024
+  image: /assets/img/diva_icon.gif
+
 - name: Analytical and Neural Approaches to Complex Light Transport
   authors:
     - name: Ishaan Shah
