@@ -1,3 +1,20 @@
+- name: "On-the-fly Reconstruction for Large-Scale Novel View Synthesis from Unposed Images"
+  authors:
+    - name: Andreas Meuleman
+    - name: Ishaan Shah
+    - name: Alexandre Lanvin
+    - name: Bernhard Kerbl
+    - name: George Drettakis
+  links:
+    - text: Project Page
+      link: https://repo-sam.inria.fr/nerphys/on-the-fly-nvs/
+    - text: Code
+      link: https://github.com/graphdeco-inria/on-the-fly-nvs
+    - text: Paper
+      link: https://repo-sam.inria.fr/nerphys/on-the-fly-nvs/onthefly_nvs.pdf
+  conference: SIGGRAPH 2025, ACM Transactions on Graphics
+  image: /assets/img/onthefly_nvs.jpg
+
 - name: Neural Histogram-Based Glint Rendering of Surfaces With Spatially Varying Roughness
   authors:
     - name: Ishaan Shah
