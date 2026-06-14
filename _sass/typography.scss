@@ -84,17 +84,15 @@
     .publication {
       display: flex;
       justify-content: space-between;
-      height: 10vh;
+      align-items: center;
       margin-bottom: 1em;
 
       .publication-image {
         flex: 1;
         margin-right: 2%;
         img {
-          height: 90%;
-          width: 95%;
-          margin-top: 2.5%;
-          margin-left: 2.5%;
+          height: 100px;
+          width: 100%;
           object-fit: cover;
         }
       }
@@ -107,6 +105,21 @@
           padding: 5;
         }
         line-height: 1.25em
+      }
+    }
+
+    @media (max-width: 500px) {
+      .publication {
+        flex-direction: column;
+        align-items: stretch;
+
+        .publication-image {
+          margin-right: 0;
+          margin-bottom: 0.75em;
+          img {
+            height: 140px;
+          }
+        }
       }
     }
 
