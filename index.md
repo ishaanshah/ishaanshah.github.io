@@ -21,4 +21,4 @@ Apart from my research interests, I love building well-designed, well-written, a
 - [E-Mail](mailto:ishaan.n.shah@gmail.com)
 - [GitHub](https://github.com/ishaanshah)
 - [LinkedIn](https://www.linkedin.com/in/ishaan-shah-57a1341a4/)
-- [Twitter](https://twitter.com/ishaan_n_shah)
+- [Google Scholar](https://scholar.google.com/citations?user=sTK3ob4AAAAJ&hl=en)

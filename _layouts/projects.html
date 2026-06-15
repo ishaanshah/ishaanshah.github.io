@@ -11,20 +11,14 @@ layout: default
   </div>
   {% else %}
   <div class="project-container">
-    <div style="height: 40%">
-      <img src="{{ project.image }}">
-    </div>
-    <div style="height: 5%">
+    <img src="{{ project.image }}">
     <h4>{{ project.name }}</h4>
-    </div>
-    <div style="height: 5%">
     <span>
       {% for link in project.links %}
       <a href="{{ link.link }}">{{ link.text }}</a>
       {% if forloop.last == false %} / {% endif %}
       {% endfor %}
     </span>
-    </div>
     <p>
      {{ project.description }}
     </p>
