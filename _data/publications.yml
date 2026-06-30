@@ -1,3 +1,18 @@
+- name: "Frequency-Aware Spatio-Angular Gaussians for Efficient Global Illumination Precomputation and Real-Time Rendering"
+  authors:
+    - name: Ishaan Shah
+    - name: Simon Lucas
+    - name: George Drettakis
+  links:
+    - text: Project Page
+      link: https://repo-sam.inria.fr/nerphys/pbr_gs/
+    - text: Paper
+      link: https://repo-sam.inria.fr/nerphys/pbr_gs/paper.pdf
+    - text: Supplemental
+      link: https://repo-sam.inria.fr/nerphys/pbr_gs/supplementary.pdf
+  conference: EGSR 2026, Computer Graphics Forum
+  image: /assets/img/pbr_gs.jpg
+
 - name: "On-the-fly Reconstruction for Large-Scale Novel View Synthesis from Unposed Images"
   authors:
     - name: Andreas Meuleman
