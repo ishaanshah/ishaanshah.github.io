@@ -26,6 +26,7 @@ NOTE: Immich's REST paths have shifted across versions. This targets the
 instance 404s, check its /api/api-docs and adjust ENDPOINTS below.
 """
 import argparse, io, json, math, os, sys, xml.etree.ElementTree as ET
+from datetime import date
 
 try:
     import requests, yaml
@@ -132,7 +133,39 @@ def gpx_stats(path, kmh):
             "%dh %02dm" % (h, m), dist / 1000.0)
 
 SPEED = {"hike": 3.6, "bike": 15.0, "run": 9.5}
-ROUTE_COLORS = ["#3d898d", "#c26b45", "#7d5ea3", "#4f8f5b", "#3f78a8", "#b78a2e"]
+# Okabe–Ito colourblind-safe palette — highly distinguishable over the topo basemap
+ROUTE_COLORS = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#E69F00", "#56B4E9"]
+
+# ---------------- dates derived from photo capture times ----------------
+MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+def asset_date(asset):
+    """Capture date of an Immich asset, or None."""
+    ex = asset.get("exifInfo") or {}
+    s = ex.get("dateTimeOriginal") or asset.get("localDateTime") or ""
+    try:
+        return date.fromisoformat(s[:10])          # YYYY-MM-DD prefix is version-safe
+    except ValueError:
+        return None
+
+def widen(span, d):
+    """Fold a date into a (lo, hi) span."""
+    if d is None:
+        return span
+    lo, hi = span
+    return (d if lo is None or d < lo else lo,
+            d if hi is None or d > hi else hi)
+
+def fmt_span(span):
+    lo, hi = span
+    if lo is None:
+        return ""
+    if (lo.year, lo.month) == (hi.year, hi.month):
+        return "%s %d" % (MONTHS[lo.month], lo.year)
+    if lo.year == hi.year:
+        return "%s–%s %d" % (MONTHS[lo.month], MONTHS[hi.month], hi.year)
+    return "%s %d – %s %d" % (MONTHS[lo.month], lo.year, MONTHS[hi.month], hi.year)
 
 # ---------------- main ----------------
 def main():
@@ -156,6 +189,7 @@ def main():
     regions_out = []
     for r in manifest["regions"]:
         outings_out, total_km = [], 0.0
+        reg_span = (None, None)
         for oi, o in enumerate(r["outings"]):
             color = ROUTE_COLORS[oi % len(ROUTE_COLORS)]
             album_id = resolve_album(o["immich_album"], albums)
@@ -165,8 +199,7 @@ def main():
             assets = album_assets(album_id)
             print("  %s/%s: %d photos" % (r["id"], o["id"], len(assets)))
 
-            entry = dict(id=o["id"], name=o["name"], activity=o["activity"],
-                         date=o.get("date", ""), color=color)
+            entry = dict(id=o["id"], name=o["name"], activity=o["activity"], color=color)
             if o.get("gpx"):
                 st = gpx_stats(os.path.join(ROOT, o["gpx"]), SPEED.get(o["activity"], 4.0))
                 if st:
@@ -176,7 +209,9 @@ def main():
 
             out_dir = os.path.join(ROOT, "assets", "trips", r["id"], o["id"])
             photos = []
+            o_span = (None, None)
             for i, a in enumerate(assets):
+                o_span = widen(o_span, asset_date(a))
                 ex = a.get("exifInfo") or {}
                 w, h = oriented_dims(ex)
                 p = dict(caption=ex.get("description") or "", width=w, height=h)
@@ -190,14 +225,18 @@ def main():
                     p["grid"], p["full"] = grid, full
                     if gw: p["width"], p["height"] = gw, gh
                 photos.append(p)
+            # date: manifest value wins, else derived from photo capture times
+            entry["date"] = o.get("date") or fmt_span(o_span)
             entry["photos"] = photos
+            reg_span = widen(widen(reg_span, o_span[0]), o_span[1])
             outings_out.append(entry)
 
         if not outings_out:
             continue
-        # cover = first photo of first outing
-        cover = outings_out[0]["photos"][0].get("full") if outings_out[0]["photos"] else ""
-        reg = dict(id=r["id"], name=r["name"], area=r["area"], dates=r["dates"],
+        # cover fallback = first photo's thumbnail (JS randomises it per load)
+        cover = outings_out[0]["photos"][0].get("grid") if outings_out[0]["photos"] else ""
+        reg = dict(id=r["id"], name=r["name"], area=r["area"],
+                   dates=r.get("dates") or fmt_span(reg_span),
                    kind=r["kind"], cover=cover, outings=outings_out)
         if r["kind"] == "outdoor":
             reg["total_distance"] = "%.1f km" % total_km

@@ -3,3 +3,8 @@ _site
 .sass-cache/
 .DS_Store
 .jekyll-cache
+
+# Trips pipeline — secrets & junk
+immich_key
+tools/__pycache__/
+*.pyc

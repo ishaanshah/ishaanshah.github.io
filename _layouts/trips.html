@@ -23,10 +23,11 @@ layout: default
       {% assign nout = region.outings | size %}
       {% assign nph = 0 %}
       {% for o in region.outings %}{% assign nph = nph | plus: o.photos | size %}{% endfor %}
+      {% capture coverlist %}{% for o in region.outings %}{% for p in o.photos %}{{ p.grid }}|{% endfor %}{% endfor %}{% endcapture %}
       <a class="region-card" href="{{ site.baseurl }}/trips/{{ region.id }}/"
          data-kind="{{ region.kind }}" data-acts="{{ acts | strip }}">
         <div class="cover">
-          <img src="{{ region.cover }}" alt="{{ region.name }}" loading="lazy">
+          <img src="{{ region.cover }}" alt="{{ region.name }}" loading="lazy" data-covers="{{ coverlist | strip }}">
           <span class="badge">{% if region.kind == "city" %}Trip{% else %}{{ nout }} route{% if nout != 1 %}s{% endif %}{% endif %}</span>
         </div>
         <div class="body">
@@ -50,6 +51,12 @@ layout: default
 
 <script>
 (function () {
+  // randomise each region cover on every load, from that region's photos
+  Array.prototype.forEach.call(document.querySelectorAll(".region-card .cover img[data-covers]"), function (img) {
+    var covers = img.getAttribute("data-covers").split("|").filter(Boolean);
+    if (covers.length) img.src = covers[Math.floor(Math.random() * covers.length)];
+  });
+
   var grid = document.getElementById("region-grid");
   var count = document.getElementById("region-count");
   var cards = Array.prototype.slice.call(grid.querySelectorAll(".region-card"));

@@ -25,10 +25,14 @@
 
   /* ---------- map ---------- */
   var map = L.map(mapEl, { scrollWheelZoom: false, attributionControl: false });
-  L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-    maxZoom: 17, subdomains: "abc",
-    attribution: "© OpenStreetMap, © OpenTopoMap"
+  map.setView([46, 2], 5);                 // provisional view; fitBounds sets the real one once tracks load
+  L.tileLayer("https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png", {
+    maxZoom: 18, subdomains: "abc",
+    attribution: "© OpenStreetMap contributors, CyclOSM"
   }).addTo(map);
+  // dedicated pane so every white casing sits below every colour line (no bringToBack timing issues)
+  map.createPane("casings");
+  map.getPane("casings").style.zIndex = 350;   // between tiles (200) and overlay (400)
 
   /* ---------- helpers ---------- */
   function haversine(a, b) {
@@ -75,12 +79,14 @@
       var latlngs = pts.map(function (p) { return [p.lat, p.lng]; });
       allLatLngs = allLatLngs.concat(latlngs);
 
-      var poly = L.polyline(latlngs, {
-        color: o.color, weight: 4, opacity: 1, lineJoin: "round", lineCap: "round"
+      // white casing in the lower pane; colour line on top in the default overlay pane
+      var casing = L.polyline(latlngs, {
+        pane: "casings", color: "#fff", weight: 8, opacity: .9,
+        interactive: false, lineJoin: "round", lineCap: "round"
       }).addTo(map);
-      // white casing underneath for legibility on topo tiles
-      var casing = L.polyline(latlngs, { color: "#fff", weight: 7, opacity: .9 });
-      casing.addTo(map); casing.bringToBack();
+      var poly = L.polyline(latlngs, {
+        color: o.color, weight: 5, opacity: 1, lineJoin: "round", lineCap: "round"
+      }).addTo(map);
 
       var endStyle = { radius: 4, color: o.color, weight: 2.5, fillColor: "#fff", fillOpacity: 1 };
       L.circleMarker(latlngs[0], endStyle).addTo(map);
@@ -124,6 +130,7 @@
 
   /* ---------- filters / legend ---------- */
   function buildFilters() {
+    if (!outingFilters) return;               // filter chips removed from the layout
     outingFilters.addEventListener("click", function (e) {
       var b = e.target.closest(".chip"); if (!b) return;
       state.active = b.dataset.oid || null;
@@ -148,6 +155,7 @@
     });
   }
   function syncFilterUI() {
+    if (!outingFilters) return;               // no filter chips to sync
     Array.prototype.forEach.call(outingFilters.children, function (c) {
       c.setAttribute("aria-pressed", (c.dataset.oid || "") === (state.active || "") ? "true" : "false");
     });

@@ -21,12 +21,6 @@ layout: default
   </div>
 
   <p class="section-label">Photos</p>
-  <div class="filters" id="outing-filters">
-    <button class="chip" data-oid="" aria-pressed="true">All outings</button>
-    {% for o in region.outings %}
-      <button class="chip" data-oid="{{ o.id }}" aria-pressed="false">{% if o.gpx %}<span class="line" style="background:{{ o.color }}"></span>{% else %}<span class="dot" style="background:#8a9994"></span>{% endif %}{{ o.name }}</button>
-    {% endfor %}
-  </div>
 
   {% assign gidx = 0 %}
   <div id="groups">
@@ -57,20 +51,13 @@ layout: default
   {% if traced.size > 0 %}
   <div class="route-block">
     <p class="section-label">Routes &amp; elevation</p>
-    <div class="legend" id="legend">
-      {% for o in traced %}
-      <div class="leg" data-oid="{{ o.id }}" style="color:{{ o.color }}">
-        <span class="line" style="background:{{ o.color }}"></span><b>{{ o.name }}</b><span class="km">{{ o.distance }}</span>
-      </div>
-      {% endfor %}
-    </div>
     <div class="map" id="map"></div>
-    <div class="attrib">© OpenStreetMap contributors · © OpenTopoMap (CC-BY-SA)</div>
+    <div class="attrib">© OpenStreetMap contributors · Tiles: CyclOSM</div>
     <div class="elev-block">
       <p class="elev-label" id="elev-label">Elevation profile</p>
       <svg class="elev" id="elev" viewBox="0 0 640 150" role="img" aria-label="Elevation profile"></svg>
     </div>
-    <p class="note">Hover a route, legend entry or photo to pick it out; use the filters above to isolate a single outing's photos, route and elevation.</p>
+    <p class="note">Hover a route or photo to highlight it; click a route to isolate that outing's photos.</p>
   </div>
   {% endif %}
 </div>

@@ -10,6 +10,79 @@
 # shape. Replace with your real regions/albums, then run the sync.
 
 regions:
+  - id: ecrin
+    name: "GR54 - Tour des massifs de l’Oisans et des Écrins"
+    area: "Écrins National Park"
+    kind: outdoor
+    outings:
+      - id: gr54_1
+        name: "Besse - Plateau d'Emparis"
+        activity: hike
+        immich_album: "GR54 - Day 1"
+        gpx: tracks/gr54/day_1.gpx
+        garmin_activity: 23747621090
+
+      - id: gr54_2
+        name: "Plateau d'Emparis - L'Alpe de Villar d'Arêne"
+        activity: hike
+        immich_album: "GR54 - Day 2"          # combined album (was Day 2a + Day 2b)
+        gpx: tracks/gr54/day_2.gpx            # manual merge of day_2a + day_2b (no garmin_activity so it isn't overwritten)
+
+      - id: gr54_3
+        name: "L'Alpe de Villar d'Arêne - Le Monêtier-les-Bains"
+        activity: hike
+        immich_album: "GR54 - Day 3"
+        gpx: tracks/gr54/day_3.gpx
+        garmin_activity: 23763844935
+
+      - id: gr54_4
+        name: "Le Monêtier-les-Bains - Vallouise"
+        activity: hike
+        immich_album: "GR54 - Day 3"
+        gpx: tracks/gr54/day_4.gpx
+        garmin_activity: 23777166818
+
+      - id: gr54_5
+        name: "Vallouise - Pré de la Chaumette"
+        activity: hike
+        immich_album: "GR54 - Day 3"
+        gpx: tracks/gr54/day_5.gpx
+        garmin_activity: 23802433850
+
+      - id: gr54_6
+        name: "Pré de la Chaumette - La Chapelle-en-Valgaudemar"
+        activity: hike
+        immich_album: "GR54 - Day 3"          # combined album (was Day 6a + Day 6b)
+        gpx: tracks/gr54/day_6.gpx            # manual merge of day_6a + day_6b (no garmin_activity so it isn't overwritten)
+
+      - id: gr54_7
+        name: "La Chapelle-en-Valgaudemar - Les Souffles"
+        activity: hike
+        immich_album: "GR54 - Day 3"
+        gpx: tracks/gr54/day_7.gpx
+        garmin_activity: 23837231997
+
+      - id: gr54_8
+        name: "Les Souffles - Valsenestre"
+        activity: hike
+        immich_album: "GR54 - Day 3"
+        gpx: tracks/gr54/day_8.gpx
+        garmin_activity: 23837241886
+
+      - id: gr54_9
+        name: "Valsenestre - Lac de la Muzelle"
+        activity: hike
+        immich_album: "GR54 - Day 3"
+        gpx: tracks/gr54/day_9.gpx
+        garmin_activity: 23837250651
+
+      - id: gr54_10
+        name: "Lac de la Muzelle - La Danchère"
+        activity: hike
+        immich_album: "GR54 - Day 3"
+        gpx: tracks/gr54/day_10.gpx
+        garmin_activity: 23847277948
+
   - id: mercantour
     name: Mercantour
     area: "Mercantour National Park, Alpes-Maritimes"

@@ -27,6 +27,25 @@ _data/trips.yml   (you edit)                tracks/*.gpx (you commit)
 - **`tools/gen_sample.py`** — generates placeholder sample data/assets so the
   gallery renders without Immich. Run once to preview; the real sync overwrites it.
 
+## GPX tracks
+Two ways to get an outing's track into `tracks/`:
+
+- **Manual:** Garmin Connect → activity → gear icon → *Export to GPX*, save as
+  `tracks/<outing>.gpx`. Reliable, no code.
+- **Automated (`tools/fetch_garmin.py`):** add `garmin_activity: <id>` to the outing
+  (the number in the Connect activity URL) and run the fetcher — it downloads each
+  activity's GPX to the outing's `gpx:` path. Uses the unofficial `garminconnect`
+  client; tokens are cached after the first login so MFA is a one-time prompt.
+
+```bash
+pip install garminconnect
+python3 tools/fetch_garmin.py             # prompts for login on first run, then
+                                          # reuses the cached session (--force to refresh)
+```
+The first run asks for your Garmin email/password (hidden) and caches the session
+in `~/.garminconnect`; later runs need no credentials. For cron/CI you can set
+`GARMIN_EMAIL` / `GARMIN_PASSWORD` to skip the prompt.
+
 ## First-time setup
 ```bash
 pip install requests pyyaml pillow
@@ -34,6 +53,7 @@ pip install requests pyyaml pillow
 export IMMICH_URL=https://photos.example.com     # no trailing /api
 export IMMICH_KEY=<your Immich API key>          # Account Settings → API Keys
 
+python3 tools/fetch_garmin.py             # optional: pull GPX from Garmin (see above)
 python3 tools/sync_immich.py --albums     # list album names/UUIDs to fill trips.yml
 # edit _data/trips.yml to match your regions + albums
 python3 tools/sync_immich.py --dry-run    # resolve + report, downloads nothing
