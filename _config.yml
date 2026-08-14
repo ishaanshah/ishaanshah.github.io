@@ -18,9 +18,16 @@ nav:
    link: "/publications"
  - name: "Projects"
    link: "/projects"
+ - name: "Trips"
+   link: "/trips"
 #  - name: "Notes"
 #    link: "/notes"
  - name: "Resume"
    link: "/resume.pdf"
+
+collections:
+  regions:
+    output: true
+    permalink: /trips/:name/
 
 twitter_username: "ishaan_n_shah"

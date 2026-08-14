@@ -1,0 +1,66 @@
+# Curated manifest for the Trips gallery — the ONLY file you edit by hand.
+# `tools/sync_immich.py` reads this, pulls photos + EXIF GPS from Immich and
+# stats from the GPX files, then writes the materialised `_data/regions.json`
+# (+ `_regions/*.md`) that the site actually renders. Do not edit regions.json.
+#
+# For each outing, `immich_album` is an album NAME (or UUID) in your Immich
+# instance; `gpx` is a track committed under tracks/ (omit it for city trips).
+#
+# This sample mirrors what tools/gen_sample.py generates, so you can see the
+# shape. Replace with your real regions/albums, then run the sync.
+
+regions:
+  - id: mercantour
+    name: Mercantour
+    area: "Mercantour National Park, Alpes-Maritimes"
+    dates: "Jul–Sep 2025"
+    kind: outdoor
+    outings:
+      - id: merveilles
+        name: "Vallée des Merveilles"
+        activity: hike            # hike | bike | run
+        date: "Sep 2025"
+        gpx: tracks/merveilles.gpx
+        immich_album: "Merveilles 2025"
+      - id: begoridge
+        name: "Mont Bégo Ridge"
+        activity: hike
+        date: "Aug 2025"
+        gpx: tracks/begoridge.gpx
+        immich_album: "Mont Bego 2025"
+
+  - id: esterel
+    name: Estérel
+    area: "Estérel Massif, Var"
+    dates: "Apr–May 2025"
+    kind: outdoor
+    outings:
+      - id: redrock
+        name: "Red Rock Loop"
+        activity: bike
+        date: "May 2025"
+        gpx: tracks/redrock.gpx
+        immich_album: "Esterel Red Rock"
+      - id: caproux
+        name: "Cap Roux Trail"
+        activity: run
+        date: "Apr 2025"
+        gpx: tracks/caproux.gpx
+        immich_album: "Cap Roux"
+
+  - id: venice
+    name: Venice
+    area: "Veneto, Italy"
+    dates: "Jul 2025"
+    kind: city                    # city trips have no GPX / map
+    outings:
+      - id: cannaregio
+        name: "Cannaregio & the Ghetto"
+        activity: city
+        date: "Day 1"
+        immich_album: "Venice - Cannaregio"
+      - id: sanmarco
+        name: "San Marco at dawn"
+        activity: city
+        date: "Day 2"
+        immich_album: "Venice - San Marco"

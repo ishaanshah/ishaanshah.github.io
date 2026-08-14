@@ -1,0 +1,272 @@
+[
+  {
+    "id": "mercantour",
+    "name": "Mercantour",
+    "area": "Mercantour National Park, Alpes-Maritimes",
+    "dates": "Jul–Sep 2025",
+    "kind": "outdoor",
+    "cover": "/assets/trips/sample/cover-mercantour.svg",
+    "outings": [
+      {
+        "id": "merveilles",
+        "name": "Vallée des Merveilles",
+        "activity": "hike",
+        "date": "Sep 2025",
+        "color": "#3d898d",
+        "gpx": "/tracks/merveilles.gpx",
+        "distance": "11.4 km",
+        "ascent": "5290 m",
+        "duration": "3h 10m",
+        "photos": [
+          {
+            "grid": "/assets/trips/sample/merveilles-0.svg",
+            "full": "/assets/trips/sample/merveilles-0.svg",
+            "caption": "First light",
+            "lat": 44.074552,
+            "lng": 7.450947,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/merveilles-1.svg",
+            "full": "/assets/trips/sample/merveilles-1.svg",
+            "caption": "Coffee stop",
+            "lat": 44.081442,
+            "lng": 7.439583,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/merveilles-2.svg",
+            "full": "/assets/trips/sample/merveilles-2.svg",
+            "caption": "Above the clouds",
+            "lat": 44.071472,
+            "lng": 7.412564,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/merveilles-3.svg",
+            "full": "/assets/trips/sample/merveilles-3.svg",
+            "caption": "The way up",
+            "lat": 44.059038,
+            "lng": 7.380753,
+            "width": 1600,
+            "height": 1067
+          }
+        ]
+      },
+      {
+        "id": "begoridge",
+        "name": "Mont Bégo Ridge",
+        "activity": "hike",
+        "date": "Aug 2025",
+        "color": "#c26b45",
+        "gpx": "/tracks/begoridge.gpx",
+        "distance": "11.6 km",
+        "ascent": "4640 m",
+        "duration": "3h 14m",
+        "photos": [
+          {
+            "grid": "/assets/trips/sample/begoridge-0.svg",
+            "full": "/assets/trips/sample/begoridge-0.svg",
+            "caption": "Golden hour",
+            "lat": 44.073954,
+            "lng": 7.456913,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/begoridge-1.svg",
+            "full": "/assets/trips/sample/begoridge-1.svg",
+            "caption": "Looking back",
+            "lat": 44.063425,
+            "lng": 7.494666,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/begoridge-2.svg",
+            "full": "/assets/trips/sample/begoridge-2.svg",
+            "caption": "Quiet corner",
+            "lat": 44.035045,
+            "lng": 7.507,
+            "width": 1600,
+            "height": 1067
+          }
+        ]
+      }
+    ],
+    "total_distance": "23.1 km"
+  },
+  {
+    "id": "esterel",
+    "name": "Estérel",
+    "area": "Estérel Massif, Var",
+    "dates": "Apr–May 2025",
+    "kind": "outdoor",
+    "cover": "/assets/trips/sample/cover-esterel.svg",
+    "outings": [
+      {
+        "id": "redrock",
+        "name": "Red Rock Loop",
+        "activity": "bike",
+        "date": "May 2025",
+        "color": "#3d898d",
+        "gpx": "/tracks/redrock.gpx",
+        "distance": "12.7 km",
+        "ascent": "5330 m",
+        "duration": "0h 51m",
+        "photos": [
+          {
+            "grid": "/assets/trips/sample/redrock-0.svg",
+            "full": "/assets/trips/sample/redrock-0.svg",
+            "caption": "Down in the valley",
+            "lat": 43.494783,
+            "lng": 6.85402,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/redrock-1.svg",
+            "full": "/assets/trips/sample/redrock-1.svg",
+            "caption": "Old stonework",
+            "lat": 43.486067,
+            "lng": 6.832665,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/redrock-2.svg",
+            "full": "/assets/trips/sample/redrock-2.svg",
+            "caption": "Water crossing",
+            "lat": 43.501047,
+            "lng": 6.805235,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/redrock-3.svg",
+            "full": "/assets/trips/sample/redrock-3.svg",
+            "caption": "Almost there",
+            "lat": 43.52692,
+            "lng": 6.79538,
+            "width": 1600,
+            "height": 1067
+          }
+        ]
+      },
+      {
+        "id": "caproux",
+        "name": "Cap Roux Trail",
+        "activity": "run",
+        "date": "Apr 2025",
+        "color": "#c26b45",
+        "gpx": "/tracks/caproux.gpx",
+        "distance": "13.2 km",
+        "ascent": "5170 m",
+        "duration": "1h 23m",
+        "photos": [
+          {
+            "grid": "/assets/trips/sample/caproux-0.svg",
+            "full": "/assets/trips/sample/caproux-0.svg",
+            "caption": "Last light",
+            "lat": 43.517978,
+            "lng": 6.909784,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/caproux-1.svg",
+            "full": "/assets/trips/sample/caproux-1.svg",
+            "caption": "First light",
+            "lat": 43.491423,
+            "lng": 6.923037,
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/caproux-2.svg",
+            "full": "/assets/trips/sample/caproux-2.svg",
+            "caption": "Coffee stop",
+            "lat": 43.527156,
+            "lng": 6.910231,
+            "width": 1600,
+            "height": 1067
+          }
+        ]
+      }
+    ],
+    "total_distance": "25.9 km"
+  },
+  {
+    "id": "venice",
+    "name": "Venice",
+    "area": "Veneto, Italy",
+    "dates": "Jul 2025",
+    "kind": "city",
+    "cover": "/assets/trips/sample/cover-venice.svg",
+    "outings": [
+      {
+        "id": "cannaregio",
+        "name": "Cannaregio & the Ghetto",
+        "activity": "city",
+        "date": "Day 1",
+        "color": "#3d898d",
+        "photos": [
+          {
+            "grid": "/assets/trips/sample/cannaregio-0.svg",
+            "full": "/assets/trips/sample/cannaregio-0.svg",
+            "caption": "Above the clouds",
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/cannaregio-1.svg",
+            "full": "/assets/trips/sample/cannaregio-1.svg",
+            "caption": "The way up",
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/cannaregio-2.svg",
+            "full": "/assets/trips/sample/cannaregio-2.svg",
+            "caption": "Golden hour",
+            "width": 1600,
+            "height": 1067
+          }
+        ]
+      },
+      {
+        "id": "sanmarco",
+        "name": "San Marco at dawn",
+        "activity": "city",
+        "date": "Day 2",
+        "color": "#c26b45",
+        "photos": [
+          {
+            "grid": "/assets/trips/sample/sanmarco-0.svg",
+            "full": "/assets/trips/sample/sanmarco-0.svg",
+            "caption": "Looking back",
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/sanmarco-1.svg",
+            "full": "/assets/trips/sample/sanmarco-1.svg",
+            "caption": "Quiet corner",
+            "width": 1600,
+            "height": 1067
+          },
+          {
+            "grid": "/assets/trips/sample/sanmarco-2.svg",
+            "full": "/assets/trips/sample/sanmarco-2.svg",
+            "caption": "Down in the valley",
+            "width": 1600,
+            "height": 1067
+          }
+        ]
+      }
+    ]
+  }
+]

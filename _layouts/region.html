@@ -1,0 +1,94 @@
+---
+layout: default
+---
+{% assign region = nil %}
+{% for r in site.data.regions %}{% if r.id == page.region_id %}{% assign region = r %}{% endif %}{% endfor %}
+{% assign traced = region.outings | where_exp: "o", "o.gpx" %}
+{% assign nph = 0 %}
+{% for o in region.outings %}{% assign nph = nph | plus: o.photos.size %}{% endfor %}
+
+<div class="trips">
+  <a class="back-link" href="{{ site.baseurl }}/trips/">← All regions</a>
+
+  <div class="region-head">
+    <h2>{{ region.name }}</h2>
+    <div class="meta">{{ region.area }} · {{ region.dates }}</div>
+  </div>
+  <div class="region-stats">
+    {% if traced.size > 0 %}<div class="stat"><b>{{ region.total_distance }}</b><span>total distance</span></div>{% endif %}
+    <div class="stat"><b>{{ region.outings | size }}</b><span>outing{% if region.outings.size != 1 %}s{% endif %}</span></div>
+    <div class="stat"><b>{{ nph }}</b><span>photos</span></div>
+  </div>
+
+  <p class="section-label">Photos</p>
+  <div class="filters" id="outing-filters">
+    <button class="chip" data-oid="" aria-pressed="true">All outings</button>
+    {% for o in region.outings %}
+      <button class="chip" data-oid="{{ o.id }}" aria-pressed="false">{% if o.gpx %}<span class="line" style="background:{{ o.color }}"></span>{% else %}<span class="dot" style="background:#8a9994"></span>{% endif %}{{ o.name }}</button>
+    {% endfor %}
+  </div>
+
+  {% assign gidx = 0 %}
+  <div id="groups">
+    {% for o in region.outings %}
+    <div class="pgroup" data-oid="{{ o.id }}">
+      <div class="pgroup-head">
+        <span class="swatch" style="background:{% if o.gpx %}{{ o.color }}{% else %}#8a9994{% endif %}"></span>
+        <h4>{{ o.name }}</h4>
+        <span class="sub">{% if o.gpx %}{{ o.distance }} · {{ o.ascent }} · {% endif %}{{ o.photos | size }} photos</span>
+      </div>
+      <div class="photos">
+        {% for p in o.photos %}
+        <a class="photo" href="{{ p.full }}"
+           data-oid="{{ o.id }}" data-i="{{ forloop.index0 }}" data-gidx="{{ gidx }}"
+           data-pswp-width="{{ p.width | default: 1600 }}" data-pswp-height="{{ p.height | default: 1200 }}"
+           target="_blank" rel="noopener">
+          <img src="{{ p.grid }}" alt="{{ p.caption }}" loading="lazy">
+          {% if o.gpx and p.lat %}<span class="pin-no" style="background:{{ o.color }}">{{ forloop.index }}</span>{% endif %}
+          {% if p.caption %}<span class="cap">{{ p.caption }}</span>{% endif %}
+        </a>
+        {% assign gidx = gidx | plus: 1 %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if traced.size > 0 %}
+  <div class="route-block">
+    <p class="section-label">Routes &amp; elevation</p>
+    <div class="legend" id="legend">
+      {% for o in traced %}
+      <div class="leg" data-oid="{{ o.id }}" style="color:{{ o.color }}">
+        <span class="line" style="background:{{ o.color }}"></span><b>{{ o.name }}</b><span class="km">{{ o.distance }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="map" id="map"></div>
+    <div class="attrib">© OpenStreetMap contributors · © OpenTopoMap (CC-BY-SA)</div>
+    <div class="elev-block">
+      <p class="elev-label" id="elev-label">Elevation profile</p>
+      <svg class="elev" id="elev" viewBox="0 0 640 150" role="img" aria-label="Elevation profile"></svg>
+    </div>
+    <p class="note">Hover a route, legend entry or photo to pick it out; use the filters above to isolate a single outing's photos, route and elevation.</p>
+  </div>
+  {% endif %}
+</div>
+
+<script id="region-data" type="application/json">{{ region | jsonify }}</script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+  const lb = new PhotoSwipeLightbox({
+    gallery: '.photos',
+    children: 'a.photo',
+    pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js')
+  });
+  lb.init();
+</script>
+<script src="{{ site.baseurl }}/assets/js/trips.js"></script>

@@ -1,0 +1,183 @@
+@import "vars";
+
+/* ============================================================
+   Trips gallery — regions index + per-region page
+   Palette derives from the site accent ($accent: #3d898d)
+   ============================================================ */
+
+$trip-hair: #dde4e1;
+$trip-card: #ffffff;
+$trip-muted: #5f6f6b;
+$trip-faint: #8a9994;
+$trip-soft: #e4f0ef;
+
+.trips {
+  /* ---------- shared bits ---------- */
+  .trips-intro {
+    font-family: "Inconsolata";
+    color: $trip-muted;
+    max-width: 60ch;
+    margin: 0 0 1.4em 0;
+  }
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 1.4em 0;
+  }
+  .chip {
+    font-family: "Inconsolata";
+    font-size: 13px;
+    letter-spacing: .02em;
+    border: 1px solid $trip-hair;
+    background: $trip-card;
+    color: $trip-muted;
+    padding: 6px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: .15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    &:hover { border-color: $accent; color: $accent; text-decoration: none; }
+    &[aria-pressed="true"] { background: $accent; border-color: $accent; color: #fff; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+    .line { width: 15px; height: 3px; border-radius: 2px; flex: none; }
+  }
+  .count { font-size: 13px; color: $trip-faint; }
+  .toolbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 1.2em;
+  }
+  .section-label {
+    font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+    color: $trip-faint; margin: 1.8em 0 .8em 0;
+  }
+
+  /* ---------- region index grid ---------- */
+  .region-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    @media (max-width: $small-width) { grid-template-columns: 1fr; }
+  }
+  .region-card {
+    display: flex; flex-direction: column;
+    background: $trip-card;
+    border: 1px solid $trip-hair;
+    border-radius: 12px;
+    overflow: hidden;
+    color: inherit;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    &:hover {
+      text-decoration: none;
+      transform: translateY(-3px);
+      border-color: #cdd6d2;
+      box-shadow: 0 1px 2px rgba(27,36,34,.05), 0 8px 24px -12px rgba(27,36,34,.2);
+    }
+    .cover { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #eef4f2; }
+    .cover img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; }
+    .badge {
+      position: absolute; left: 10px; top: 10px;
+      font-size: 11px; letter-spacing: .05em; text-transform: uppercase; font-weight: 700;
+      background: rgba(255,255,255,.92); color: #1b2422;
+      padding: 4px 9px; border-radius: 999px;
+    }
+    .body { padding: 13px 15px 15px; }
+    h3 { margin: 0; font-size: 17px; }
+    .meta { color: $trip-faint; font-size: 13px; margin: 3px 0 11px; }
+    .summary {
+      display: flex; align-items: center; gap: 10px;
+      border-top: 1px solid $trip-hair; padding-top: 10px;
+      font-size: 13px; color: $trip-muted;
+    }
+    .routedots { display: inline-flex; gap: 4px; }
+    .routedots i { width: 16px; height: 3px; border-radius: 2px; display: block; }
+  }
+
+  /* ---------- region page header ---------- */
+  .region-head { margin-bottom: .4em; }
+  .region-head .meta { color: $trip-muted; font-size: 14px; margin-top: 4px; }
+  .region-stats {
+    display: flex; gap: 22px; flex-wrap: wrap;
+    margin-top: 14px; padding: 14px 0;
+    border-top: 1px solid $trip-hair; border-bottom: 1px solid $trip-hair;
+  }
+  .stat { display: flex; flex-direction: column; gap: 1px; }
+  .stat b { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: $trip-faint; }
+  .back-link { display: inline-block; margin: .2em 0 1em; color: $trip-muted; &:hover { color: $accent; } }
+
+  /* ---------- photo groups ---------- */
+  .pgroup { margin: 0 0 1.6em 0; }
+  .pgroup-head { display: flex; align-items: center; gap: 9px; margin: 0 0 .7em; flex-wrap: wrap; }
+  .pgroup-head .swatch { width: 16px; height: 3px; border-radius: 2px; flex: none; }
+  .pgroup-head h4 { margin: 0; font-size: 15px; }
+  .pgroup-head .sub { color: $trip-faint; font-size: 12px; }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    @media (max-width: $small-width) { grid-template-columns: repeat(2, 1fr); } }
+  .photo {
+    position: relative; border-radius: 10px; overflow: hidden;
+    border: 1px solid $trip-hair; aspect-ratio: 4 / 3; display: block;
+    transition: .15s; background: #eef4f2;
+    img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; }
+    .pin-no {
+      position: absolute; left: 8px; top: 8px; min-width: 22px; height: 22px; padding: 0 5px;
+      border-radius: 11px; color: #fff; font-size: 12px; font-weight: 700;
+      display: grid; place-items: center; box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    }
+    .cap {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 9px 7px;
+      color: #fff; font-size: 11.5px; line-height: 1.3;
+      background: linear-gradient(transparent, rgba(0,0,0,.6));
+      opacity: 0; transition: .15s;
+    }
+    &:hover { text-decoration: none; }
+    &:hover .cap, &.active .cap { opacity: 1; }
+    &.active { outline: 2px solid $accent; outline-offset: 2px; transform: translateY(-2px); }
+  }
+
+  /* ---------- route block ---------- */
+  .legend { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; }
+  .leg {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid $trip-hair; background: $trip-card; border-radius: 8px;
+    padding: 6px 11px; cursor: pointer; font-size: 13px; color: $trip-muted; transition: .15s;
+    .line { width: 16px; height: 3px; border-radius: 2px; flex: none; }
+    b { color: #1b2422; font-weight: 700; }
+    .km { color: $trip-faint; }
+    &:hover, &.active { border-color: currentColor; }
+    &.active { background: $trip-soft; }
+  }
+  .map {
+    width: 100%; aspect-ratio: 16 / 9; border: 1px solid $trip-hair;
+    border-radius: 12px; overflow: hidden; background: #eef4f2; z-index: 0;
+  }
+  .attrib { font-size: 11px; color: $trip-faint; text-align: right; padding: 5px 4px 0; }
+  .elev-block { margin-top: 16px; }
+  .elev-label {
+    font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: $trip-faint;
+    margin: 0 0 6px; display: flex; align-items: center; gap: 8px;
+    .line { width: 16px; height: 3px; border-radius: 2px; }
+  }
+  .elev { width: 100%; height: auto; display: block; border: 1px solid $trip-hair; border-radius: 10px; background: $trip-card; }
+  .note {
+    font-size: 13px; color: $trip-faint; background: $trip-soft; border: 1px solid #cfe3e1;
+    border-radius: 8px; padding: 9px 12px; margin: 16px 0 0; line-height: 1.45;
+  }
+
+  /* map marker + elevation states (svg overlay pins are Leaflet divIcons) */
+  .trip-pin {
+    width: 22px; height: 22px; border-radius: 11px; color: #fff; font-weight: 700; font-size: 12px;
+    display: grid; place-items: center; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.35);
+    font-family: "Inconsolata"; transition: transform .12s;
+  }
+  .trip-pin.active { transform: scale(1.2); }
+  .leaflet-interactive.trace-dim { opacity: .18; transition: opacity .15s; }
+  .trip-pin.dim { opacity: .2; }
+  .elev-dot { opacity: 0; transition: opacity .12s; }
+  .elev-dot.active { opacity: 1; }
+}
+
+/* hide the route block cleanly when a region has no traces */
+.trips .route-block[hidden] { display: none; }
