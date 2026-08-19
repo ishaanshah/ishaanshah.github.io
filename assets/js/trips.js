@@ -20,12 +20,27 @@
   var elevSvg = document.getElementById("elev");
   var elevLabel = document.getElementById("elev-label");
   var elevOverlay = document.getElementById("elev-overlay");
+  var elevTip = document.getElementById("elev-tip");
   var SVGNS = "http://www.w3.org/2000/svg";
 
   var state = { active: null, focus: null, outings: {} };
+  // touch devices never get the hover preview (Leaflet would show it on tap instead)
+  var canHover = !!(window.matchMedia && window.matchMedia("(hover: hover)").matches);
+  // mix a #rrggbb toward white — de-emphasised traces go pale rather than transparent,
+  // which stays readable over busy topo tiles where low opacity just disappears
+  function pale(hex, amt) {
+    var m = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(hex || "");
+    if (!m) return hex;
+    var c = [1, 2, 3].map(function (k) {
+      return Math.round(parseInt(m[k], 16) + (255 - parseInt(m[k], 16)) * amt);
+    });
+    return "rgb(" + c.join(",") + ")";
+  }
 
   /* ---------- map ---------- */
-  var map = L.map(mapEl, { scrollWheelZoom: false, attributionControl: false });
+  // zoomSnap < 1 lets fitBounds land on a fractional zoom, so the tracks fill
+  // the box instead of snapping down to the next whole zoom level
+  var map = L.map(mapEl, { scrollWheelZoom: false, attributionControl: false, zoomSnap: 0.25 });
   map.setView([46, 2], 5);                 // provisional view; fitBounds sets the real one once tracks load
   L.tileLayer("https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png", {
     maxZoom: 18, subdomains: "abc",
@@ -109,12 +124,14 @@
         var marker = L.marker([p.lat, p.lng], {
           icon: L.divIcon({
             className: "", iconSize: [22, 22], iconAnchor: [11, 11],
-            html: '<div class="trip-pin" style="background:' + o.color + '">' + (i + 1) + "</div>"
+            // small dot centred in a larger transparent hit box, so it stays tappable
+            // without covering the trace it sits on
+            html: '<div class="pin-hit"><i class="trip-pin" style="background:' + o.color + '"></i></div>'
           })
         }).addTo(map);
-        marker.on("mouseover", function () { hoverPhoto(o.id, i, true); });
-        marker.on("mouseout", function () { hoverPhoto(o.id, i, false); });
-        marker.on("click", function () { scrollToPhoto(o.id, i); });
+        marker.on("mouseover", function () { hoverPhoto(o.id, i, true, true); });
+        marker.on("mouseout", function () { hoverPhoto(o.id, i, false, true); });
+        marker.on("click", function () { toggleActive(o.id); });   // same as clicking the route
         pins.push(marker);
       });
 
@@ -129,7 +146,9 @@
     }).catch(function (e) { console.warn("GPX load failed for", o.id, e); });
   })).then(function () {
     map.invalidateSize();
-    if (allLatLngs.length) map.fitBounds(L.latLngBounds(allLatLngs), { padding: [24, 24] });
+    // fitBounds alone (never zoom past it) so every trace stays inside the frame;
+    // zoomSnap 0.25 keeps that fit tight instead of dropping a whole zoom level
+    if (allLatLngs.length) map.fitBounds(L.latLngBounds(allLatLngs), { padding: [10, 10] });
     buildLegend();
     buildFilters();
     wirePhotos();
@@ -184,11 +203,14 @@
     var eff = state.focus || state.active;
     Object.keys(state.outings).forEach(function (oid) {
       var s = state.outings[oid], emph = !eff || eff === oid;
-      s.poly.setStyle({ opacity: emph ? 1 : 0.18 });
-      s.casing.setStyle({ opacity: emph ? 0.9 : 0.12 });
+      s.poly.setStyle(emph
+        ? { color: s.o.color, weight: 5, opacity: 1 }
+        : { color: pale(s.o.color, 0.62), weight: 3.5, opacity: 0.95 });
+      s.casing.setStyle({ opacity: emph ? 0.9 : 0.55, weight: emph ? 8 : 6 });
       s.pins.forEach(function (m) {
         var el = m.getElement && m.getElement();
-        if (el) el.firstChild.classList.toggle("dim", !emph);
+        var dotEl = el && el.querySelector(".trip-pin");
+        if (dotEl) dotEl.classList.toggle("dim", !emph);
       });
       if (legendEl) {
         var leg = legendEl.querySelector('.leg[data-oid="' + oid + '"]');
@@ -197,7 +219,7 @@
     });
     // elevation profile lives inside the map and appears while a route is hovered or selected
     if (eff) { if (elevOverlay) elevOverlay.hidden = false; drawElev(eff); }
-    else if (elevOverlay) { elevOverlay.hidden = true; }
+    else if (elevOverlay) { elevOverlay.hidden = true; hideElevTip(); }
   }
 
   /* ---------- elevation profile (custom SVG) ---------- */
@@ -295,21 +317,43 @@
       el.addEventListener("mouseleave", function () { hoverPhoto(oid, i, false); });
     });
   }
-  function hoverPhoto(oid, i, on) {
+  function hoverPhoto(oid, i, on, fromMap) {
     var el = photoEl(oid, i); if (el) el.classList.toggle("active", on);
     var s = state.outings[oid]; if (!s) return;
     setFocus(oid, on);
     if (s.pins[i]) {
       var pel = s.pins[i].getElement && s.pins[i].getElement();
-      if (pel) pel.firstChild.classList.toggle("active", on);
+      var dotEl = pel && pel.querySelector(".trip-pin");
+      if (dotEl) dotEl.classList.toggle("active", on);
     }
     if (on) {
       var dot = elevSvg.querySelector('.elev-dot[data-i="' + i + '"]');
       if (dot) dot.classList.add("active");
+      // preview hangs off the profile dot: always inside the map, never behind the overlay
+      if (fromMap) showElevTip(oid, i, dot);
+    } else if (fromMap) {
+      hideElevTip();
     }
   }
-  function scrollToPhoto(oid, i) {
-    var el = photoEl(oid, i);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  /* thumbnail pinned above the elevation profile, horizontally over its photo dot */
+  function showElevTip(oid, i, dot) {
+    if (!canHover || !elevTip || !dot || !elevOverlay || elevOverlay.hidden) return;
+    var s = state.outings[oid];
+    var p = s && (s.o.photos || [])[i];
+    if (!p || !p.grid) return;
+    elevTip.querySelector("img").src = p.grid;
+    var cap = elevTip.querySelector(".cap");
+    cap.textContent = p.caption || "";
+    cap.hidden = !p.caption;
+    elevTip.hidden = false;
+    // left is relative to the overlay's padding box, so offset by its border + padding
+    var dr = dot.getBoundingClientRect(), or = elevOverlay.getBoundingClientRect();
+    var cs = getComputedStyle(elevOverlay);
+    var padL = parseFloat(cs.borderLeftWidth) + parseFloat(cs.paddingLeft);
+    var innerW = or.width - padL - parseFloat(cs.borderRightWidth) - parseFloat(cs.paddingRight);
+    var half = elevTip.offsetWidth / 2;
+    var x = dr.left + dr.width / 2 - or.left - padL;
+    elevTip.style.left = Math.max(half - padL, Math.min(innerW - half + padL, x)) + "px";
   }
+  function hideElevTip() { if (elevTip) elevTip.hidden = true; }
 })();

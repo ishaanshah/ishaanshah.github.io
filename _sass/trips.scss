@@ -118,11 +118,6 @@ $trip-soft: #e4f0ef;
     border: 1px solid $trip-hair; aspect-ratio: 4 / 3; display: block;
     transition: .15s; background: #eef4f2;
     img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; }
-    .pin-no {
-      position: absolute; left: 8px; top: 8px; min-width: 22px; height: 22px; padding: 0 5px;
-      border-radius: 11px; color: #fff; font-size: 12px; font-weight: 700;
-      display: grid; place-items: center; box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    }
     .cap {
       position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 9px 7px;
       color: #fff; font-size: 11.5px; line-height: 1.3;
@@ -170,7 +165,32 @@ $trip-soft: #e4f0ef;
     pointer-events: none;          // never steal hover from the traces it overlaps at the map's bottom
     &[hidden] { display: none; }
   }
+  /* desktop hover preview: thumbnail sitting above the profile, over its photo dot */
+  .elev-tip {
+    position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+    background: #fff; border: 1px solid $trip-hair; border-radius: 9px; padding: 3px;
+    box-shadow: 0 4px 16px rgba(27, 36, 34, .25);
+    img { display: block; width: 136px; height: 102px; object-fit: cover; border-radius: 6px; margin: 0; }
+    .cap {
+      display: block; max-width: 136px; font-size: 11px; line-height: 1.25;
+      color: $trip-muted; padding: 4px 3px 1px;
+      &[hidden] { display: none; }
+    }
+    &[hidden] { display: none; }
+  }
   .attrib { font-size: 11px; color: $trip-faint; text-align: right; padding: 5px 4px 0; }
+
+  /* on phones a 16/9 box is too short to pan: go portrait, keeping the
+     container width so the map lines up with the photo grid below */
+  @media (max-width: 650px) {
+    .map {
+      aspect-ratio: 3 / 4;
+      max-height: 78vh;
+      min-height: 340px;
+    }
+    .map-hint { font-size: 11px; left: 10px; }
+    .elev-overlay { padding: 6px 8px 2px; }
+  }
   .elev-label {
     font-size: 11px; letter-spacing: .04em; color: $trip-muted;
     margin: 0 0 4px; display: flex; align-items: center; gap: 8px;
@@ -183,14 +203,14 @@ $trip-soft: #e4f0ef;
   }
 
   /* map marker + elevation states (svg overlay pins are Leaflet divIcons) */
+  .pin-hit { width: 22px; height: 22px; display: grid; place-items: center; }  // tap target around the dot
   .trip-pin {
-    width: 22px; height: 22px; border-radius: 11px; color: #fff; font-weight: 700; font-size: 12px;
-    display: grid; place-items: center; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.35);
-    font-family: "Inconsolata"; transition: transform .12s;
+    width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%;
+    border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.35);
+    transition: transform .12s;
   }
-  .trip-pin.active { transform: scale(1.2); }
-  .leaflet-interactive.trace-dim { opacity: .18; transition: opacity .15s; }
-  .trip-pin.dim { opacity: .2; }
+  .trip-pin.active { transform: scale(1.5); }
+  .trip-pin.dim { opacity: .45; }
   .elev-dot { transition: opacity .12s; }
   .elev-dot .stem { opacity: 0; transition: opacity .12s; }         // dashed drop-line only for the highlighted photo
   .elev-dot circle { transition: r .12s; }

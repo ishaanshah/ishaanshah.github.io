@@ -24,8 +24,9 @@ layout: default
   <div class="route-block">
     <p class="section-label">Routes</p>
     <div class="map" id="map">
-      <div class="map-hint">Hover a route or photo to highlight it · click a route to isolate its photos</div>
+      <div class="map-hint">Hover a route or photo dot to highlight it · click to isolate that outing's photos</div>
       <div class="elev-overlay" id="elev-overlay" hidden>
+        <div class="elev-tip" id="elev-tip" hidden><img src="" alt=""><span class="cap"></span></div>
         <p class="elev-label" id="elev-label"></p>
         <svg class="elev" id="elev" viewBox="0 0 640 120" role="img" aria-label="Elevation profile"></svg>
       </div>
@@ -52,7 +53,6 @@ layout: default
            data-pswp-width="{{ p.width | default: 1600 }}" data-pswp-height="{{ p.height | default: 1200 }}"
            target="_blank" rel="noopener">
           <img src="{{ p.grid }}" alt="{{ p.caption }}" loading="lazy">
-          {% if o.gpx and p.lat %}<span class="pin-no" style="background:{{ o.color }}">{{ forloop.index }}</span>{% endif %}
           {% if p.caption %}<span class="cap">{{ p.caption }}</span>{% endif %}
         </a>
         {% assign gidx = gidx | plus: 1 %}
