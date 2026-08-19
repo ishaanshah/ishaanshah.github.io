@@ -1,7 +1,7 @@
 @import "vars";
 
 /* ============================================================
-   Trips gallery — regions index + per-region page
+   Trips gallery — collections index + per-collection page
    Palette derives from the site accent ($accent: #3d898d)
    ============================================================ */
 
@@ -16,7 +16,6 @@ $trip-soft: #e4f0ef;
   .trips-intro {
     font-family: "Inconsolata";
     color: $trip-muted;
-    max-width: 60ch;
     margin: 0 0 1.4em 0;
   }
   .filters {
@@ -54,14 +53,14 @@ $trip-soft: #e4f0ef;
     color: $trip-faint; margin: 1.8em 0 .8em 0;
   }
 
-  /* ---------- region index grid ---------- */
-  .region-grid {
+  /* ---------- collection index grid ---------- */
+  .collection-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
     @media (max-width: $small-width) { grid-template-columns: 1fr; }
   }
-  .region-card {
+  .collection-card {
     display: flex; flex-direction: column;
     background: $trip-card;
     border: 1px solid $trip-hair;
@@ -91,14 +90,12 @@ $trip-soft: #e4f0ef;
       border-top: 1px solid $trip-hair; padding-top: 10px;
       font-size: 13px; color: $trip-muted;
     }
-    .routedots { display: inline-flex; gap: 4px; }
-    .routedots i { width: 16px; height: 3px; border-radius: 2px; display: block; }
   }
 
-  /* ---------- region page header ---------- */
-  .region-head { margin-bottom: .4em; }
-  .region-head .meta { color: $trip-muted; font-size: 14px; margin-top: 4px; }
-  .region-stats {
+  /* ---------- collection page header ---------- */
+  .collection-head { margin-bottom: .4em; }
+  .collection-head .meta { color: $trip-muted; font-size: 14px; margin-top: 4px; }
+  .collection-stats {
     display: flex; gap: 22px; flex-wrap: wrap;
     margin-top: 14px; padding: 14px 0;
     border-top: 1px solid $trip-hair; border-bottom: 1px solid $trip-hair;
@@ -150,17 +147,36 @@ $trip-soft: #e4f0ef;
     &.active { background: $trip-soft; }
   }
   .map {
+    position: relative;
     width: 100%; aspect-ratio: 16 / 9; border: 1px solid $trip-hair;
     border-radius: 12px; overflow: hidden; background: #eef4f2; z-index: 0;
   }
-  .attrib { font-size: 11px; color: $trip-faint; text-align: right; padding: 5px 4px 0; }
-  .elev-block { margin-top: 16px; }
-  .elev-label {
-    font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: $trip-faint;
-    margin: 0 0 6px; display: flex; align-items: center; gap: 8px;
-    .line { width: 16px; height: 3px; border-radius: 2px; }
+  /* usage hint overlaid on the map */
+  .map-hint {
+    position: absolute; right: 10px; top: 10px; left: auto; z-index: 1000;
+    max-width: calc(100% - 20px);
+    font-family: "Inconsolata"; font-size: 11.5px; line-height: 1.3; color: $trip-muted;
+    background: rgba(255, 255, 255, .9); border: 1px solid $trip-hair; border-radius: 8px;
+    padding: 5px 9px; box-shadow: 0 1px 4px rgba(27, 36, 34, .12);
+    pointer-events: none;
   }
-  .elev { width: 100%; height: auto; display: block; border: 1px solid $trip-hair; border-radius: 10px; background: $trip-card; }
+  /* elevation profile overlaid on the map, revealed only when a route is selected */
+  .elev-overlay {
+    position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 1000;
+    background: rgba(255, 255, 255, .93);
+    border: 1px solid $trip-hair; border-radius: 10px;
+    padding: 7px 10px 3px;
+    box-shadow: 0 2px 12px rgba(27, 36, 34, .18);
+    pointer-events: none;          // never steal hover from the traces it overlaps at the map's bottom
+    &[hidden] { display: none; }
+  }
+  .attrib { font-size: 11px; color: $trip-faint; text-align: right; padding: 5px 4px 0; }
+  .elev-label {
+    font-size: 11px; letter-spacing: .04em; color: $trip-muted;
+    margin: 0 0 4px; display: flex; align-items: center; gap: 8px;
+    .line { width: 16px; height: 3px; border-radius: 2px; flex: none; }
+  }
+  .elev { width: 100%; height: auto; display: block; }
   .note {
     font-size: 13px; color: $trip-faint; background: $trip-soft; border: 1px solid #cfe3e1;
     border-radius: 8px; padding: 9px 12px; margin: 16px 0 0; line-height: 1.45;
@@ -175,9 +191,12 @@ $trip-soft: #e4f0ef;
   .trip-pin.active { transform: scale(1.2); }
   .leaflet-interactive.trace-dim { opacity: .18; transition: opacity .15s; }
   .trip-pin.dim { opacity: .2; }
-  .elev-dot { opacity: 0; transition: opacity .12s; }
-  .elev-dot.active { opacity: 1; }
+  .elev-dot { transition: opacity .12s; }
+  .elev-dot .stem { opacity: 0; transition: opacity .12s; }         // dashed drop-line only for the highlighted photo
+  .elev-dot circle { transition: r .12s; }
+  .elev-dot.active .stem { opacity: 1; }
+  .elev-dot.active circle { r: 6; }
 }
 
-/* hide the route block cleanly when a region has no traces */
+/* hide the route block cleanly when a collection has no traces */
 .trips .route-block[hidden] { display: none; }

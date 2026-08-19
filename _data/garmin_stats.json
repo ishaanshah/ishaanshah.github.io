@@ -1,0 +1,58 @@
+{
+  "23747621090": {
+    "ascent_m": 910.0,
+    "descent_m": 162.0,
+    "distance_m": 9945.3,
+    "moving_s": 7966.0,
+    "name": "Besse Randonn\u00e9e"
+  },
+  "23763844935": {
+    "ascent_m": 376.0,
+    "descent_m": 977.0,
+    "distance_m": 14915.0,
+    "moving_s": 11142.0,
+    "name": "Villar-d'Ar\u00eane Randonn\u00e9e"
+  },
+  "23777166818": {
+    "ascent_m": 906.0,
+    "descent_m": 1343.0,
+    "distance_m": 24848.52,
+    "moving_s": 17022.0,
+    "name": "Le Mon\u00eatier-les-Bains Randonn\u00e9e"
+  },
+  "23802433850": {
+    "ascent_m": 1337.0,
+    "descent_m": 1004.0,
+    "distance_m": 19374.45,
+    "moving_s": 14527.0,
+    "name": "Vallouise-Pelvoux Randonn\u00e9e"
+  },
+  "23837231997": {
+    "ascent_m": 969.0,
+    "descent_m": 71.0,
+    "distance_m": 10112.68,
+    "moving_s": 6649.0,
+    "name": "La Chapelle-en-Valgaud\u00e9mar Randonn\u00e9e"
+  },
+  "23837241886": {
+    "ascent_m": 1631.0,
+    "descent_m": 2213.0,
+    "distance_m": 22634.31,
+    "moving_s": 15746.0,
+    "name": "Villar-Loubi\u00e8re Randonn\u00e9e"
+  },
+  "23837250651": {
+    "ascent_m": 1256.0,
+    "descent_m": 511.0,
+    "distance_m": 8888.07,
+    "moving_s": 5737.0,
+    "name": "Valjouffrey Randonn\u00e9e"
+  },
+  "23847277948": {
+    "ascent_m": 524.0,
+    "descent_m": 1764.0,
+    "distance_m": 13016.38,
+    "moving_s": 8478.0,
+    "name": "Les Deux Alpes Randonn\u00e9e"
+  }
+}

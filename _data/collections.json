@@ -2,8 +2,7 @@
   {
     "id": "ecrin",
     "name": "GR54 - Tour des massifs de l’Oisans et des Écrins",
-    "area": "Écrins National Park",
-    "dates": "Jul 2026",
+    "dates": "Jul–Aug 2026",
     "kind": "outdoor",
     "cover": "/assets/trips/ecrin/gr54_1/00-thumb.webp",
     "outings": [
@@ -14,8 +13,10 @@
         "color": "#0072B2",
         "gpx": "/tracks/gr54/day_1.gpx",
         "distance": "10.0 km",
-        "ascent": "1060 m",
+        "ascent": "910 m",
+        "descent": "160 m",
         "duration": "2h 47m",
+        "elevation_source": "garmin",
         "date": "Jul 2026",
         "photos": [
           {
@@ -62,7 +63,9 @@
         "gpx": "/tracks/gr54/day_2.gpx",
         "distance": "22.3 km",
         "ascent": "1160 m",
+        "descent": "1410 m",
         "duration": "6h 12m",
+        "elevation_source": "gpx",
         "date": "Jul 2026",
         "photos": [
           {
@@ -126,8 +129,10 @@
         "color": "#009E73",
         "gpx": "/tracks/gr54/day_3.gpx",
         "distance": "15.2 km",
-        "ascent": "570 m",
+        "ascent": "380 m",
+        "descent": "980 m",
         "duration": "4h 13m",
+        "elevation_source": "garmin",
         "date": "Jul 2026",
         "photos": [
           {
@@ -164,34 +169,29 @@
         "color": "#CC79A7",
         "gpx": "/tracks/gr54/day_4.gpx",
         "distance": "25.0 km",
-        "ascent": "1150 m",
+        "ascent": "910 m",
+        "descent": "1340 m",
         "duration": "6h 57m",
+        "elevation_source": "garmin",
         "date": "Jul 2026",
         "photos": [
           {
             "caption": "",
             "width": 1800,
             "height": 1012,
-            "lat": 44.978908,
-            "lng": 6.405961,
+            "lat": 44.932033,
+            "lng": 6.507036,
             "grid": "/assets/trips/ecrin/gr54_4/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_4/00.webp"
           },
           {
             "caption": "",
             "width": 1800,
-            "height": 1350,
+            "height": 1012,
+            "lat": 44.909906,
+            "lng": 6.49865,
             "grid": "/assets/trips/ecrin/gr54_4/01-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_4/01.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.982258,
-            "lng": 6.424431,
-            "grid": "/assets/trips/ecrin/gr54_4/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_4/02.webp"
           }
         ]
       },
@@ -202,23 +202,27 @@
         "color": "#E69F00",
         "gpx": "/tracks/gr54/day_5.gpx",
         "distance": "19.4 km",
-        "ascent": "1520 m",
+        "ascent": "1340 m",
+        "descent": "1000 m",
         "duration": "5h 24m",
+        "elevation_source": "garmin",
         "date": "Jul 2026",
         "photos": [
           {
             "caption": "",
             "width": 1800,
             "height": 1012,
-            "lat": 44.978908,
-            "lng": 6.405961,
+            "lat": 44.787336,
+            "lng": 6.362672,
             "grid": "/assets/trips/ecrin/gr54_5/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_5/00.webp"
           },
           {
             "caption": "",
             "width": 1800,
-            "height": 1350,
+            "height": 1012,
+            "lat": 44.774906,
+            "lng": 6.361142,
             "grid": "/assets/trips/ecrin/gr54_5/01-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_5/01.webp"
           },
@@ -226,8 +230,8 @@
             "caption": "",
             "width": 1800,
             "height": 1012,
-            "lat": 44.982258,
-            "lng": 6.424431,
+            "lat": 44.768478,
+            "lng": 6.353975,
             "grid": "/assets/trips/ecrin/gr54_5/02-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_5/02.webp"
           }
@@ -241,15 +245,17 @@
         "gpx": "/tracks/gr54/day_6.gpx",
         "distance": "25.7 km",
         "ascent": "1410 m",
+        "descent": "2130 m",
         "duration": "7h 08m",
+        "elevation_source": "gpx",
         "date": "Jul 2026",
         "photos": [
           {
             "caption": "",
             "width": 1800,
             "height": 1012,
-            "lat": 44.978908,
-            "lng": 6.405961,
+            "lat": 44.780467,
+            "lng": 6.288889,
             "grid": "/assets/trips/ecrin/gr54_6/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_6/00.webp"
           },
@@ -264,10 +270,37 @@
             "caption": "",
             "width": 1800,
             "height": 1012,
-            "lat": 44.982258,
-            "lng": 6.424431,
+            "lat": 44.788689,
+            "lng": 6.281806,
             "grid": "/assets/trips/ecrin/gr54_6/02-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_6/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.794778,
+            "lng": 6.287386,
+            "grid": "/assets/trips/ecrin/gr54_6/03-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_6/03.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.797717,
+            "lng": 6.290678,
+            "grid": "/assets/trips/ecrin/gr54_6/04-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_6/04.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.798475,
+            "lng": 6.290594,
+            "grid": "/assets/trips/ecrin/gr54_6/05-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_6/05.webp"
           }
         ]
       },
@@ -278,34 +311,29 @@
         "color": "#0072B2",
         "gpx": "/tracks/gr54/day_7.gpx",
         "distance": "10.2 km",
-        "ascent": "1030 m",
+        "ascent": "970 m",
+        "descent": "70 m",
         "duration": "2h 49m",
-        "date": "Jul 2026",
+        "elevation_source": "garmin",
+        "date": "Aug 2026",
         "photos": [
           {
             "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.978908,
-            "lng": 6.405961,
+            "width": 1440,
+            "height": 2560,
+            "lat": 44.831936,
+            "lng": 6.142575,
             "grid": "/assets/trips/ecrin/gr54_7/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_7/00.webp"
           },
           {
             "caption": "",
-            "width": 1800,
-            "height": 1350,
+            "width": 1440,
+            "height": 2560,
+            "lat": 44.845786,
+            "lng": 6.146844,
             "grid": "/assets/trips/ecrin/gr54_7/01-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_7/01.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.982258,
-            "lng": 6.424431,
-            "grid": "/assets/trips/ecrin/gr54_7/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_7/02.webp"
           }
         ]
       },
@@ -316,34 +344,20 @@
         "color": "#D55E00",
         "gpx": "/tracks/gr54/day_8.gpx",
         "distance": "22.9 km",
-        "ascent": "1780 m",
+        "ascent": "1630 m",
+        "descent": "2210 m",
         "duration": "6h 21m",
-        "date": "Jul 2026",
+        "elevation_source": "garmin",
+        "date": "Aug 2026",
         "photos": [
           {
             "caption": "",
             "width": 1800,
             "height": 1012,
-            "lat": 44.978908,
-            "lng": 6.405961,
+            "lat": 44.846917,
+            "lng": 6.115131,
             "grid": "/assets/trips/ecrin/gr54_8/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_8/00.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1350,
-            "grid": "/assets/trips/ecrin/gr54_8/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_8/01.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.982258,
-            "lng": 6.424431,
-            "grid": "/assets/trips/ecrin/gr54_8/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_8/02.webp"
           }
         ]
       },
@@ -354,23 +368,25 @@
         "color": "#009E73",
         "gpx": "/tracks/gr54/day_9.gpx",
         "distance": "9.0 km",
-        "ascent": "1330 m",
+        "ascent": "1260 m",
+        "descent": "510 m",
         "duration": "2h 30m",
-        "date": "Jul 2026",
+        "elevation_source": "garmin",
+        "date": "Aug 2026",
         "photos": [
           {
             "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.978908,
-            "lng": 6.405961,
+            "width": 1440,
+            "height": 2560,
+            "lat": 44.927881,
+            "lng": 6.086131,
             "grid": "/assets/trips/ecrin/gr54_9/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_9/00.webp"
           },
           {
             "caption": "",
-            "width": 1800,
-            "height": 1350,
+            "width": 1440,
+            "height": 1920,
             "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_9/01.webp"
           },
@@ -378,10 +394,33 @@
             "caption": "",
             "width": 1800,
             "height": 1012,
-            "lat": 44.982258,
-            "lng": 6.424431,
             "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_9/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.932681,
+            "lng": 6.088275,
+            "grid": "/assets/trips/ecrin/gr54_9/03-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/03.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1350,
+            "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/04.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.951503,
+            "lng": 6.102778,
+            "grid": "/assets/trips/ecrin/gr54_9/05-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/05.webp"
           }
         ]
       },
@@ -392,38 +431,32 @@
         "color": "#CC79A7",
         "gpx": "/tracks/gr54/day_10.gpx",
         "distance": "13.1 km",
-        "ascent": "630 m",
+        "ascent": "520 m",
+        "descent": "1760 m",
         "duration": "3h 38m",
-        "date": "Jul 2026",
+        "elevation_source": "garmin",
+        "date": "Aug 2026",
         "photos": [
           {
             "caption": "",
             "width": 1800,
-            "height": 1012,
-            "lat": 44.978908,
-            "lng": 6.405961,
+            "height": 1230,
             "grid": "/assets/trips/ecrin/gr54_10/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_10/00.webp"
           },
           {
             "caption": "",
             "width": 1800,
-            "height": 1350,
+            "height": 1012,
+            "lat": 44.973194,
+            "lng": 6.067542,
             "grid": "/assets/trips/ecrin/gr54_10/01-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_10/01.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.982258,
-            "lng": 6.424431,
-            "grid": "/assets/trips/ecrin/gr54_10/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_10/02.webp"
           }
         ]
       }
     ],
+    "region": "Écrins National Park",
     "total_distance": "172.8 km"
   }
 ]

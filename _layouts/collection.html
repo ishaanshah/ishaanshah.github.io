@@ -1,35 +1,49 @@
 ---
 layout: default
 ---
-{% assign region = nil %}
-{% for r in site.data.regions %}{% if r.id == page.region_id %}{% assign region = r %}{% endif %}{% endfor %}
-{% assign traced = region.outings | where_exp: "o", "o.gpx" %}
+{% assign collection = nil %}
+{% for c in site.data.collections %}{% if c.id == page.collection_id %}{% assign collection = c %}{% endif %}{% endfor %}
+{% assign traced = collection.outings | where_exp: "o", "o.gpx" %}
 {% assign nph = 0 %}
-{% for o in region.outings %}{% assign nph = nph | plus: o.photos.size %}{% endfor %}
+{% for o in collection.outings %}{% assign nph = nph | plus: o.photos.size %}{% endfor %}
 
 <div class="trips">
-  <a class="back-link" href="{{ site.baseurl }}/trips/">← All regions</a>
+  <a class="back-link" href="{{ site.baseurl }}/pics/">← All collections</a>
 
-  <div class="region-head">
-    <h2>{{ region.name }}</h2>
-    <div class="meta">{{ region.area }} · {{ region.dates }}</div>
+  <div class="collection-head">
+    <h2>{{ collection.name }}</h2>
+    <div class="meta">{% if collection.region %}{{ collection.region }} · {% endif %}{{ collection.dates }}</div>
   </div>
-  <div class="region-stats">
-    {% if traced.size > 0 %}<div class="stat"><b>{{ region.total_distance }}</b><span>total distance</span></div>{% endif %}
-    <div class="stat"><b>{{ region.outings | size }}</b><span>outing{% if region.outings.size != 1 %}s{% endif %}</span></div>
+  <div class="collection-stats">
+    {% if traced.size > 0 %}<div class="stat"><b>{{ collection.total_distance }}</b><span>total distance</span></div>{% endif %}
+    <div class="stat"><b>{{ collection.outings | size }}</b><span>outing{% if collection.outings.size != 1 %}s{% endif %}</span></div>
     <div class="stat"><b>{{ nph }}</b><span>photos</span></div>
   </div>
+
+  {% if traced.size > 0 %}
+  <div class="route-block">
+    <p class="section-label">Routes</p>
+    <div class="map" id="map">
+      <div class="map-hint">Hover a route or photo to highlight it · click a route to isolate its photos</div>
+      <div class="elev-overlay" id="elev-overlay" hidden>
+        <p class="elev-label" id="elev-label"></p>
+        <svg class="elev" id="elev" viewBox="0 0 640 120" role="img" aria-label="Elevation profile"></svg>
+      </div>
+    </div>
+    <div class="attrib">© OpenStreetMap contributors · Tiles: CyclOSM</div>
+  </div>
+  {% endif %}
 
   <p class="section-label">Photos</p>
 
   {% assign gidx = 0 %}
   <div id="groups">
-    {% for o in region.outings %}
+    {% for o in collection.outings %}
     <div class="pgroup" data-oid="{{ o.id }}">
       <div class="pgroup-head">
         <span class="swatch" style="background:{% if o.gpx %}{{ o.color }}{% else %}#8a9994{% endif %}"></span>
         <h4>{{ o.name }}</h4>
-        <span class="sub">{% if o.gpx %}{{ o.distance }} · {{ o.ascent }} · {% endif %}{{ o.photos | size }} photos</span>
+        <span class="sub">{% if o.gpx %}{{ o.distance }} · ↑{{ o.ascent }} · ↓{{ o.descent }} · {% endif %}{{ o.photos | size }} photos</span>
       </div>
       <div class="photos">
         {% for p in o.photos %}
@@ -48,21 +62,9 @@ layout: default
     {% endfor %}
   </div>
 
-  {% if traced.size > 0 %}
-  <div class="route-block">
-    <p class="section-label">Routes &amp; elevation</p>
-    <div class="map" id="map"></div>
-    <div class="attrib">© OpenStreetMap contributors · Tiles: CyclOSM</div>
-    <div class="elev-block">
-      <p class="elev-label" id="elev-label">Elevation profile</p>
-      <svg class="elev" id="elev" viewBox="0 0 640 150" role="img" aria-label="Elevation profile"></svg>
-    </div>
-    <p class="note">Hover a route or photo to highlight it; click a route to isolate that outing's photos.</p>
-  </div>
-  {% endif %}
 </div>
 
-<script id="region-data" type="application/json">{{ region | jsonify }}</script>
+<script id="collection-data" type="application/json">{{ collection | jsonify }}</script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>

@@ -1,17 +1,17 @@
-/* Trips — region page interactivity
+/* Trips — collection page interactivity
    Leaflet map (OpenTopoMap) + client-side GPX parsing + custom elevation
    profile, with filter / hover cross-linking between photos, routes and the
-   elevation trace. Data comes from the #region-data JSON emitted by the layout.
+   elevation trace. Data comes from the #collection-data JSON emitted by the layout.
    Requires Leaflet (global L) to be loaded first. */
 (function () {
   "use strict";
 
-  var dataEl = document.getElementById("region-data");
+  var dataEl = document.getElementById("collection-data");
   var mapEl = document.getElementById("map");
-  if (!dataEl || !mapEl || typeof L === "undefined") return; // not a traced region page
+  if (!dataEl || !mapEl || typeof L === "undefined") return; // not a traced collection page
 
-  var region = JSON.parse(dataEl.textContent);
-  var traced = (region.outings || []).filter(function (o) { return o.gpx; });
+  var collection = JSON.parse(dataEl.textContent);
+  var traced = (collection.outings || []).filter(function (o) { return o.gpx; });
   if (!traced.length) return;
 
   var groupsEl = document.getElementById("groups");
@@ -19,6 +19,7 @@
   var outingFilters = document.getElementById("outing-filters");
   var elevSvg = document.getElementById("elev");
   var elevLabel = document.getElementById("elev-label");
+  var elevOverlay = document.getElementById("elev-overlay");
   var SVGNS = "http://www.w3.org/2000/svg";
 
   var state = { active: null, focus: null, outings: {} };
@@ -33,6 +34,12 @@
   // dedicated pane so every white casing sits below every colour line (no bringToBack timing issues)
   map.createPane("casings");
   map.getPane("casings").style.zIndex = 350;   // between tiles (200) and overlay (400)
+  // clicking the map background (not a route) clears the current selection
+  map.on("click", function () {
+    if (!state.active) return;
+    state.active = null;
+    syncFilterUI(); filterGroups(); applyFocus();
+  });
 
   /* ---------- helpers ---------- */
   function haversine(a, b) {
@@ -85,7 +92,8 @@
         interactive: false, lineJoin: "round", lineCap: "round"
       }).addTo(map);
       var poly = L.polyline(latlngs, {
-        color: o.color, weight: 5, opacity: 1, lineJoin: "round", lineCap: "round"
+        color: o.color, weight: 5, opacity: 1, lineJoin: "round", lineCap: "round",
+        bubblingMouseEvents: false          // so a route click doesn't also trigger the map's clear-selection click
       }).addTo(map);
 
       var endStyle = { radius: 4, color: o.color, weight: 2.5, fillColor: "#fff", fillOpacity: 1 };
@@ -187,7 +195,9 @@
         if (leg) leg.classList.toggle("active", eff === oid);
       }
     });
-    drawElev(eff || state.active || traced[0].id);
+    // elevation profile lives inside the map and appears while a route is hovered or selected
+    if (eff) { if (elevOverlay) elevOverlay.hidden = false; drawElev(eff); }
+    else if (elevOverlay) { elevOverlay.hidden = true; }
   }
 
   /* ---------- elevation profile (custom SVG) ---------- */
@@ -195,9 +205,9 @@
     var s = state.outings[oid]; if (!s) return;
     var o = s.o, pts = s.pts, cum = s.cum, total = s.total;
     elevLabel.innerHTML = '<span class="line" style="background:' + o.color + '"></span>' +
-      o.name + " — " + o.ascent + " ascent";
+      o.name + " — ↑" + o.ascent + " · ↓" + o.descent;
 
-    var W = 640, H = 150, padB = 22, padT = 12, padX = 6;
+    var W = 640, H = 120, padB = 22, padT = 12, padX = 6;
     var lo = Infinity, hi = -Infinity;
     pts.forEach(function (p) { if (p.ele < lo) lo = p.ele; if (p.ele > hi) hi = p.ele; });
     var X = function (c) { return padX + (c / total) * (W - 2 * padX); };
@@ -226,7 +236,7 @@
     path(elevSvg, area, "url(#eg)", null, 0);
     path(elevSvg, d, "none", o.color, 2);
 
-    text(elevSvg, padX, H - 6, "start", "#8a9994", "start");
+    text(elevSvg, padX, H - 6, "0 km", "#8a9994", "start");
     text(elevSvg, W - padX, H - 6, o.distance, "#8a9994", "end");
 
     // photo dots along the profile
@@ -239,7 +249,7 @@
       grp.setAttribute("class", "elev-dot"); grp.setAttribute("data-i", i);
       grp.setAttribute("transform", "translate(" + gx.toFixed(1) + " " + gy.toFixed(1) + ")");
       grp.innerHTML =
-        '<line x1="0" y1="0" x2="0" y2="' + (H - padB - gy).toFixed(1) + '" stroke="' + o.color + '" stroke-width="1" stroke-dasharray="2 2"/>' +
+        '<line class="stem" x1="0" y1="0" x2="0" y2="' + (H - padB - gy).toFixed(1) + '" stroke="' + o.color + '" stroke-width="1" stroke-dasharray="2 2"/>' +
         '<circle r="5" fill="#fff" stroke="' + o.color + '" stroke-width="2"/>' +
         '<text y="-9" text-anchor="middle" font-size="10" font-weight="700" fill="' + o.color + '">' + (i + 1) + "</text>";
       elevSvg.appendChild(grp);

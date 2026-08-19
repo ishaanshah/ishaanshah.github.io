@@ -1,18 +1,24 @@
 # Curated manifest for the Trips gallery — the ONLY file you edit by hand.
 # `tools/sync_immich.py` reads this, pulls photos + EXIF GPS from Immich and
-# stats from the GPX files, then writes the materialised `_data/regions.json`
-# (+ `_regions/*.md`) that the site actually renders. Do not edit regions.json.
+# stats from the GPX files, then writes the materialised `_data/collections.json`
+# (+ `_pics/*.md`) that the site actually renders. Do not edit collections.json.
 #
 # For each outing, `immich_album` is an album NAME (or UUID) in your Immich
 # instance; `gpx` is a track committed under tracks/ (omit it for city trips).
 #
+# `garmin_activity:` is the Connect activity whose GPX tools/fetch_garmin.py
+# downloads, and whose ascent/descent the sync uses instead of the GPX's noisy
+# `<ele>` sums. Where the GPX is a hand-merged track spanning several activities,
+# leave that off and list the ids under `garmin_activities:` — the merge is then
+# never overwritten, but the elevation still comes from Garmin (summed).
+#
 # This sample mirrors what tools/gen_sample.py generates, so you can see the
-# shape. Replace with your real regions/albums, then run the sync.
+# shape. Replace with your real collections/albums, then run the sync.
 
-regions:
+collections:
   - id: ecrin
     name: "GR54 - Tour des massifs de l’Oisans et des Écrins"
-    area: "Écrins National Park"
+    region: "Écrins National Park"
     kind: outdoor
     outings:
       - id: gr54_1
@@ -27,6 +33,7 @@ regions:
         activity: hike
         immich_album: "GR54 - Day 2"          # combined album (was Day 2a + Day 2b)
         gpx: tracks/gr54/day_2.gpx            # manual merge of day_2a + day_2b (no garmin_activity so it isn't overwritten)
+        # garmin_activities: [<day 2a id>, <day 2b id>]   # fill in for Garmin elevation
 
       - id: gr54_3
         name: "L'Alpe de Villar d'Arêne - Le Monêtier-les-Bains"
@@ -38,54 +45,55 @@ regions:
       - id: gr54_4
         name: "Le Monêtier-les-Bains - Vallouise"
         activity: hike
-        immich_album: "GR54 - Day 3"
+        immich_album: "GR54 - Day 4"
         gpx: tracks/gr54/day_4.gpx
         garmin_activity: 23777166818
 
       - id: gr54_5
         name: "Vallouise - Pré de la Chaumette"
         activity: hike
-        immich_album: "GR54 - Day 3"
+        immich_album: "GR54 - Day 5"
         gpx: tracks/gr54/day_5.gpx
         garmin_activity: 23802433850
 
       - id: gr54_6
         name: "Pré de la Chaumette - La Chapelle-en-Valgaudemar"
         activity: hike
-        immich_album: "GR54 - Day 3"          # combined album (was Day 6a + Day 6b)
+        immich_album: "GR54 - Day 6"          # combined album (was Day 6a + Day 6b)
         gpx: tracks/gr54/day_6.gpx            # manual merge of day_6a + day_6b (no garmin_activity so it isn't overwritten)
+        # garmin_activities: [<day 6a id>, <day 6b id>]   # fill in for Garmin elevation
 
       - id: gr54_7
         name: "La Chapelle-en-Valgaudemar - Les Souffles"
         activity: hike
-        immich_album: "GR54 - Day 3"
+        immich_album: "GR54 - Day 7"
         gpx: tracks/gr54/day_7.gpx
         garmin_activity: 23837231997
 
       - id: gr54_8
         name: "Les Souffles - Valsenestre"
         activity: hike
-        immich_album: "GR54 - Day 3"
+        immich_album: "GR54 - Day 8"
         gpx: tracks/gr54/day_8.gpx
         garmin_activity: 23837241886
 
       - id: gr54_9
         name: "Valsenestre - Lac de la Muzelle"
         activity: hike
-        immich_album: "GR54 - Day 3"
+        immich_album: "GR54 - Day 9"
         gpx: tracks/gr54/day_9.gpx
         garmin_activity: 23837250651
 
       - id: gr54_10
         name: "Lac de la Muzelle - La Danchère"
         activity: hike
-        immich_album: "GR54 - Day 3"
+        immich_album: "GR54 - Day 10"
         gpx: tracks/gr54/day_10.gpx
         garmin_activity: 23847277948
 
   - id: mercantour
     name: Mercantour
-    area: "Mercantour National Park, Alpes-Maritimes"
+    region: "Mercantour National Park, Alpes-Maritimes"
     dates: "Jul–Sep 2025"
     kind: outdoor
     outings:
@@ -104,7 +112,7 @@ regions:
 
   - id: esterel
     name: Estérel
-    area: "Estérel Massif, Var"
+    region: "Estérel Massif, Var"
     dates: "Apr–May 2025"
     kind: outdoor
     outings:
@@ -123,7 +131,7 @@ regions:
 
   - id: venice
     name: Venice
-    area: "Veneto, Italy"
+    region: "Veneto, Italy"
     dates: "Jul 2025"
     kind: city                    # city trips have no GPX / map
     outings:

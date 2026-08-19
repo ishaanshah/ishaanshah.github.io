@@ -5,10 +5,10 @@ end-to-end without a live Immich instance.
 Outputs (all overwritten each run):
   tracks/<outing>.gpx                     synthetic GPX tracks
   assets/trips/sample/<...>.svg           placeholder photos + covers
-  _data/regions.json                      materialised data consumed by Jekyll
-  _regions/<region>.md                    collection stubs -> /trips/<region>/
+  _data/collections.json                  materialised data consumed by Jekyll
+  _pics/<collection>.md                   collection stubs -> /pics/<collection>/
 
-The real pipeline (tools/sync_immich.py) writes the SAME regions.json schema,
+The real pipeline (tools/sync_immich.py) writes the SAME collections.json schema,
 sourcing photos + EXIF GPS from Immich and stats from the GPX files.
 """
 import json, math, os, random
@@ -17,8 +17,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRACKS = os.path.join(ROOT, "tracks")
 IMG = os.path.join(ROOT, "assets", "trips", "sample")
 DATA = os.path.join(ROOT, "_data")
-REGIONS_DIR = os.path.join(ROOT, "_regions")
-for d in (TRACKS, IMG, DATA, REGIONS_DIR):
+PICS_DIR = os.path.join(ROOT, "_pics")
+for d in (TRACKS, IMG, DATA, PICS_DIR):
     os.makedirs(d, exist_ok=True)
 
 ROUTE_COLORS = ["#3d898d", "#c26b45", "#7d5ea3", "#4f8f5b", "#3f78a8", "#b78a2e"]
@@ -110,25 +110,25 @@ def track_stats(pts, kmh):
             "%dh %02dm" % (h, m),
             dist / 1000.0)
 
-# ---- region definitions (curated bits only) ----
+# ---- collection definitions (curated bits only) ----
 SPEED = {"hike": 3.6, "bike": 15.0, "run": 9.5}
-REGIONS_SRC = [
+COLLECTIONS_SRC = [
     dict(id="mercantour", name="Mercantour",
-         area="Mercantour National Park, Alpes-Maritimes", dates="Jul–Sep 2025",
+         region="Mercantour National Park, Alpes-Maritimes", dates="Jul–Sep 2025",
          kind="outdoor", base=(44.075, 7.435, 1900),
          outings=[
              dict(id="merveilles", name="Vallée des Merveilles", activity="hike", date="Sep 2025", nph=4),
              dict(id="begoridge", name="Mont Bégo Ridge", activity="hike", date="Aug 2025", nph=3),
          ]),
     dict(id="esterel", name="Estérel",
-         area="Estérel Massif, Var", dates="Apr–May 2025",
+         region="Estérel Massif, Var", dates="Apr–May 2025",
          kind="outdoor", base=(43.485, 6.87, 60),
          outings=[
              dict(id="redrock", name="Red Rock Loop", activity="bike", date="May 2025", nph=4),
              dict(id="caproux", name="Cap Roux Trail", activity="run", date="Apr 2025", nph=3),
          ]),
     dict(id="venice", name="Venice",
-         area="Veneto, Italy", dates="Jul 2025", kind="city", base=(45.44, 12.33, 0),
+         region="Veneto, Italy", dates="Jul 2025", kind="city", base=(45.44, 12.33, 0),
          outings=[
              dict(id="cannaregio", name="Cannaregio & the Ghetto", activity="city", date="Day 1", nph=3),
              dict(id="sanmarco", name="San Marco at dawn", activity="city", date="Day 2", nph=3),
@@ -136,9 +136,9 @@ REGIONS_SRC = [
 ]
 
 def build():
-    regions_out = []
+    collections_out = []
     cap = 0
-    for r in REGIONS_SRC:
+    for r in COLLECTIONS_SRC:
         blat, blng, bele = r["base"]
         outings_out = []
         total_km = 0.0
@@ -173,18 +173,18 @@ def build():
             outings_out.append(entry)
 
         cover = write_photo("cover-%s" % r["id"], abs(hash(r["id"])) & 0x7fffffff)
-        reg = dict(id=r["id"], name=r["name"], area=r["area"], dates=r["dates"],
+        col = dict(id=r["id"], name=r["name"], region=r["region"], dates=r["dates"],
                    kind=r["kind"], cover=cover, outings=outings_out)
         if r["kind"] == "outdoor":
-            reg["total_distance"] = "%.1f km" % total_km
-        regions_out.append(reg)
+            col["total_distance"] = "%.1f km" % total_km
+        collections_out.append(col)
 
-        with open(os.path.join(REGIONS_DIR, r["id"] + ".md"), "w") as f:
-            f.write("---\nlayout: region\nregion_id: %s\ntitle: %s\n---\n" % (r["id"], r["name"]))
+        with open(os.path.join(PICS_DIR, r["id"] + ".md"), "w") as f:
+            f.write("---\nlayout: collection\ncollection_id: %s\ntitle: %s\n---\n" % (r["id"], r["name"]))
 
-    with open(os.path.join(DATA, "regions.json"), "w") as f:
-        json.dump(regions_out, f, indent=2, ensure_ascii=False)
-    print("Wrote %d regions, sample tracks + placeholder photos." % len(regions_out))
+    with open(os.path.join(DATA, "collections.json"), "w") as f:
+        json.dump(collections_out, f, indent=2, ensure_ascii=False)
+    print("Wrote %d collections, sample tracks + placeholder photos." % len(collections_out))
 
 if __name__ == "__main__":
     build()

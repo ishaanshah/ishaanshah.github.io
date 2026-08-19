@@ -2,42 +2,27 @@
 layout: default
 ---
 <div class="trips">
-  <h2>Trips</h2>
+  <h2>Pics</h2>
   {{ content }}
 
-  <div class="toolbar">
-    <div class="filters" id="region-filters">
-      <button class="chip" data-f="all" aria-pressed="true">All</button>
-      <button class="chip" data-f="hike" aria-pressed="false"><span class="dot" style="background:#3d898d"></span>Hiking</button>
-      <button class="chip" data-f="bike" aria-pressed="false"><span class="dot" style="background:#c26b45"></span>Cycling</button>
-      <button class="chip" data-f="run" aria-pressed="false"><span class="dot" style="background:#7d5ea3"></span>Running</button>
-      <button class="chip" data-f="city" aria-pressed="false"><span class="dot" style="background:#8a9994"></span>City</button>
-    </div>
-    <div class="count" id="region-count"></div>
-  </div>
-
-  <div class="region-grid" id="region-grid">
-    {% for region in site.data.regions %}
+  <div class="collection-grid" id="collection-grid">
+    {% for collection in site.data.collections %}
       {% assign acts = "" %}
-      {% for o in region.outings %}{% assign acts = acts | append: o.activity | append: " " %}{% endfor %}
-      {% assign nout = region.outings | size %}
+      {% for o in collection.outings %}{% assign acts = acts | append: o.activity | append: " " %}{% endfor %}
+      {% assign nout = collection.outings | size %}
       {% assign nph = 0 %}
-      {% for o in region.outings %}{% assign nph = nph | plus: o.photos | size %}{% endfor %}
-      {% capture coverlist %}{% for o in region.outings %}{% for p in o.photos %}{{ p.grid }}|{% endfor %}{% endfor %}{% endcapture %}
-      <a class="region-card" href="{{ site.baseurl }}/trips/{{ region.id }}/"
-         data-kind="{{ region.kind }}" data-acts="{{ acts | strip }}">
+      {% for o in collection.outings %}{% assign nph = nph | plus: o.photos.size %}{% endfor %}
+      {% capture coverlist %}{% for o in collection.outings %}{% for p in o.photos %}{{ p.grid }}|{% endfor %}{% endfor %}{% endcapture %}
+      <a class="collection-card" href="{{ site.baseurl }}/pics/{{ collection.id }}/"
+         data-kind="{{ collection.kind }}" data-acts="{{ acts | strip }}">
         <div class="cover">
-          <img src="{{ region.cover }}" alt="{{ region.name }}" loading="lazy" data-covers="{{ coverlist | strip }}">
-          <span class="badge">{% if region.kind == "city" %}Trip{% else %}{{ nout }} route{% if nout != 1 %}s{% endif %}{% endif %}</span>
+          <img src="{{ collection.cover }}" alt="{{ collection.name }}" loading="lazy" data-covers="{{ coverlist | strip }}">
         </div>
         <div class="body">
-          <h3>{{ region.name }}</h3>
-          <div class="meta">{{ region.area }} · {{ region.dates }}</div>
+          <h3>{{ collection.name }}</h3>
+          <div class="meta">{% if collection.region %}{{ collection.region }} · {% endif %}{{ collection.dates }}</div>
           <div class="summary">
-            {% if region.kind != "city" %}
-              <span class="routedots">
-                {% for o in region.outings %}<i style="background:{{ o.color }}"></i>{% endfor %}
-              </span>
+            {% if collection.kind != "city" %}
               <span>{{ nout }} outings · {{ nph }} photos</span>
             {% else %}
               <span>{{ nph }} photos</span>
@@ -51,33 +36,10 @@ layout: default
 
 <script>
 (function () {
-  // randomise each region cover on every load, from that region's photos
-  Array.prototype.forEach.call(document.querySelectorAll(".region-card .cover img[data-covers]"), function (img) {
+  // randomise each collection cover on every load, from that collection's photos
+  Array.prototype.forEach.call(document.querySelectorAll(".collection-card .cover img[data-covers]"), function (img) {
     var covers = img.getAttribute("data-covers").split("|").filter(Boolean);
     if (covers.length) img.src = covers[Math.floor(Math.random() * covers.length)];
   });
-
-  var grid = document.getElementById("region-grid");
-  var count = document.getElementById("region-count");
-  var cards = Array.prototype.slice.call(grid.querySelectorAll(".region-card"));
-  function apply(f) {
-    var shown = 0;
-    cards.forEach(function (c) {
-      var ok = f === "all"
-        || (f === "city" && c.dataset.kind === "city")
-        || (c.dataset.acts || "").split(" ").indexOf(f) !== -1;
-      c.style.display = ok ? "" : "none";
-      if (ok) shown++;
-    });
-    count.textContent = shown + (shown === 1 ? " region" : " regions");
-  }
-  document.getElementById("region-filters").addEventListener("click", function (e) {
-    var b = e.target.closest(".chip"); if (!b) return;
-    Array.prototype.forEach.call(this.children, function (c) {
-      c.setAttribute("aria-pressed", c === b ? "true" : "false");
-    });
-    apply(b.dataset.f);
-  });
-  apply("all");
 })();
 </script>

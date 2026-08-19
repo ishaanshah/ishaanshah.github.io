@@ -4,9 +4,11 @@
 Reads the curated manifest `_data/trips.yml`, then for each outing:
   * resolves its Immich album (by name or UUID),
   * pulls the assets + EXIF (GPS, capture time, dimensions, description),
-  * downloads two WebP derivatives (grid + lightbox) into assets/trips/<region>/<outing>/,
-  * computes distance / ascent / moving-time from the outing's GPX file,
-and writes the materialised `_data/regions.json` + `_regions/<region>.md` stubs
+  * downloads two WebP derivatives (grid + lightbox) into assets/trips/<collection>/<outing>/,
+  * computes distance / moving-time from the outing's GPX file, taking ascent
+    and descent from Garmin's own figures when tools/fetch_garmin.py has cached
+    them (GPX `<ele>` deltas are noisy and overstate climbing),
+and writes the materialised `_data/collections.json` + `_pics/<collection>.md` stubs
 that Jekyll renders. The live site then serves only the static WebP — it never
 talks to Immich.
 
@@ -40,6 +42,7 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GRID_W, FULL_W = 800, 1800          # derivative widths (px)
+GARMIN_STATS = os.path.join(ROOT, "_data", "garmin_stats.json")
 
 IMMICH_URL = os.environ.get("IMMICH_URL", "").rstrip("/")
 IMMICH_KEY = os.environ.get("IMMICH_KEY", "")
@@ -115,6 +118,13 @@ def haversine(a, b):
     return 2 * R * math.asin(math.sqrt(h))
 
 def gpx_stats(path, kmh):
+    """Distance / ascent / descent / walking time from a GPX track.
+
+    Ascent and descent here are the sum of raw `<ele>` deltas, which is only a
+    fallback: consumer-GPS elevation jitters by a few metres per point, and
+    summing that jitter over thousands of points inflates the climb well beyond
+    what was actually walked. Garmin's own figure is preferred when available.
+    """
     ns = {"g": "http://www.topografix.com/GPX/1/1"}
     root = ET.parse(path).getroot()
     pts = []
@@ -126,11 +136,47 @@ def gpx_stats(path, kmh):
         return None
     dist = sum(haversine(pts[i - 1], pts[i]) for i in range(1, len(pts)))
     ascent = sum(max(0.0, pts[i][2] - pts[i - 1][2]) for i in range(1, len(pts)))
+    descent = sum(max(0.0, pts[i - 1][2] - pts[i][2]) for i in range(1, len(pts)))
     hours = (dist / 1000.0) / kmh
     h, m = int(hours), int(round((hours - int(hours)) * 60))
     if m == 60: h, m = h + 1, 0
-    return ("%.1f km" % (dist / 1000.0), "%d m" % (int(round(ascent / 10.0)) * 10),
-            "%dh %02dm" % (h, m), dist / 1000.0)
+    return dict(distance="%.1f km" % (dist / 1000.0), ascent_m=ascent, descent_m=descent,
+                duration="%dh %02dm" % (h, m), km=dist / 1000.0)
+
+
+def fmt_m(v):
+    """Metres, rounded to the nearest 10 — the precision these numbers deserve."""
+    return "%d m" % (int(round(v / 10.0)) * 10)
+
+
+# ---------------- Garmin elevation ----------------
+def load_garmin_stats():
+    """Activity summaries cached by tools/fetch_garmin.py, keyed by activity id."""
+    try:
+        with open(GARMIN_STATS) as f:
+            return json.load(f)
+    except (IOError, ValueError):
+        return {}
+
+
+def garmin_elevation(outing, stats):
+    """(ascent_m, descent_m) from Garmin for this outing, or None.
+
+    An outing links either one activity (`garmin_activity:`) or, when its GPX is
+    a hand-merged track, several (`garmin_activities:`) whose climbs are summed.
+    Returns None unless every linked activity has a cached figure, so we never
+    report a partial total as if it were the whole outing.
+    """
+    ids = [outing["garmin_activity"]] if outing.get("garmin_activity") else []
+    ids += list(outing.get("garmin_activities") or [])
+    if not ids:
+        return None
+    entries = [stats.get(str(i)) for i in ids]
+    if any(e is None or e.get("ascent_m") is None or e.get("descent_m") is None
+           for e in entries):
+        return None
+    return (sum(e["ascent_m"] for e in entries),
+            sum(e["descent_m"] for e in entries))
 
 SPEED = {"hike": 3.6, "bike": 15.0, "run": 9.5}
 # Okabe–Ito colourblind-safe palette — highly distinguishable over the topo basemap
@@ -186,28 +232,40 @@ def main():
         print("WARNING: Pillow not installed — saving full-size JPEG previews (no WebP resize).")
 
     manifest = yaml.safe_load(open(os.path.join(ROOT, "_data", "trips.yml")))
-    regions_out = []
-    for r in manifest["regions"]:
+    garmin_stats = load_garmin_stats()
+    if not garmin_stats:
+        print("No %s — elevation will come from GPX. Run tools/fetch_garmin.py for "
+              "Garmin's figures." % os.path.relpath(GARMIN_STATS, ROOT))
+    collections_out = []
+    for c in manifest["collections"]:
         outings_out, total_km = [], 0.0
-        reg_span = (None, None)
-        for oi, o in enumerate(r["outings"]):
+        col_span = (None, None)
+        for oi, o in enumerate(c["outings"]):
             color = ROUTE_COLORS[oi % len(ROUTE_COLORS)]
             album_id = resolve_album(o["immich_album"], albums)
             if not album_id:
                 print("  ! album not found: %r (outing %s) — skipping" % (o["immich_album"], o["id"]))
                 continue
             assets = album_assets(album_id)
-            print("  %s/%s: %d photos" % (r["id"], o["id"], len(assets)))
+            print("  %s/%s: %d photos" % (c["id"], o["id"], len(assets)))
 
             entry = dict(id=o["id"], name=o["name"], activity=o["activity"], color=color)
             if o.get("gpx"):
                 st = gpx_stats(os.path.join(ROOT, o["gpx"]), SPEED.get(o["activity"], 4.0))
                 if st:
+                    # Garmin's barometric ascent/descent beats summing GPX <ele>
+                    gm = garmin_elevation(o, garmin_stats)
+                    if gm is None and o.get("garmin_activity"):
+                        print("    (no cached Garmin stats for %s — using GPX elevation; "
+                              "run tools/fetch_garmin.py)" % o["id"])
+                    ascent_m, descent_m = gm or (st["ascent_m"], st["descent_m"])
                     entry.update(gpx="/" + o["gpx"].lstrip("/"),
-                                 distance=st[0], ascent=st[1], duration=st[2])
-                    total_km += st[3]
+                                 distance=st["distance"], ascent=fmt_m(ascent_m),
+                                 descent=fmt_m(descent_m), duration=st["duration"],
+                                 elevation_source="garmin" if gm else "gpx")
+                    total_km += st["km"]
 
-            out_dir = os.path.join(ROOT, "assets", "trips", r["id"], o["id"])
+            out_dir = os.path.join(ROOT, "assets", "trips", c["id"], o["id"])
             photos = []
             o_span = (None, None)
             for i, a in enumerate(assets):
@@ -228,29 +286,31 @@ def main():
             # date: manifest value wins, else derived from photo capture times
             entry["date"] = o.get("date") or fmt_span(o_span)
             entry["photos"] = photos
-            reg_span = widen(widen(reg_span, o_span[0]), o_span[1])
+            col_span = widen(widen(col_span, o_span[0]), o_span[1])
             outings_out.append(entry)
 
         if not outings_out:
             continue
         # cover fallback = first photo's thumbnail (JS randomises it per load)
         cover = outings_out[0]["photos"][0].get("grid") if outings_out[0]["photos"] else ""
-        reg = dict(id=r["id"], name=r["name"], area=r["area"],
-                   dates=r.get("dates") or fmt_span(reg_span),
-                   kind=r["kind"], cover=cover, outings=outings_out)
-        if r["kind"] == "outdoor":
-            reg["total_distance"] = "%.1f km" % total_km
-        regions_out.append(reg)
+        col = dict(id=c["id"], name=c["name"],
+                   dates=c.get("dates") or fmt_span(col_span),
+                   kind=c["kind"], cover=cover, outings=outings_out)
+        if c.get("region"):                       # optional geographic region for this collection
+            col["region"] = c["region"]
+        if c["kind"] == "outdoor":
+            col["total_distance"] = "%.1f km" % total_km
+        collections_out.append(col)
 
-        stub = os.path.join(ROOT, "_regions", r["id"] + ".md")
+        stub = os.path.join(ROOT, "_pics", c["id"] + ".md")
         os.makedirs(os.path.dirname(stub), exist_ok=True)
         with open(stub, "w") as f:
-            f.write("---\nlayout: region\nregion_id: %s\ntitle: %s\n---\n" % (r["id"], r["name"]))
+            f.write("---\nlayout: collection\ncollection_id: %s\ntitle: %s\n---\n" % (c["id"], c["name"]))
 
     if not args.dry_run:
-        with open(os.path.join(ROOT, "_data", "regions.json"), "w") as f:
-            json.dump(regions_out, f, indent=2, ensure_ascii=False)
-    print("Done: %d regions." % len(regions_out))
+        with open(os.path.join(ROOT, "_data", "collections.json"), "w") as f:
+            json.dump(collections_out, f, indent=2, ensure_ascii=False)
+    print("Done: %d collections." % len(collections_out))
 
 if __name__ == "__main__":
     main()
