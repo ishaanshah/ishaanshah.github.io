@@ -129,38 +129,29 @@ collections:
         name: "Sinhagad Bird Valley"
         immich_album: "Sinhagad Bird Valley"
 
-  - id: esterel
-    name: Estérel
-    region: "Estérel Massif, Var"
-    dates: "Apr–May 2025"
+  - id: chandrashila_chopta
+    name: "Deoria Tal, Chopta and Chandrashila Trek"
+    region: "Kedarnath Wildlife Sanctuary, India"
     kind: outdoor
     outings:
-      - id: redrock
-        name: "Red Rock Loop"
-        activity: bike
-        date: "May 2025"
-        gpx: tracks/redrock.gpx
-        immich_album: "Esterel Red Rock"
-      - id: caproux
-        name: "Cap Roux Trail"
-        activity: run
-        date: "Apr 2025"
-        gpx: tracks/caproux.gpx
-        immich_album: "Cap Roux"
+      - id: sari_deoriatal
+        name: "Sari - Deoria Tal"
+        immich_album: "Sari - Deoria Tal"
+        activity: hike
+        gpx: tracks/chandrashila_chopta/sari-deoriatal.gpx
 
-  - id: venice
-    name: Venice
-    region: "Veneto, Italy"
-    dates: "Jul 2025"
-    kind: city                    # city trips have no GPX / map
-    outings:
-      - id: cannaregio
-        name: "Cannaregio & the Ghetto"
-        activity: city
-        date: "Day 1"
-        immich_album: "Venice - Cannaregio"
-      - id: sanmarco
-        name: "San Marco at dawn"
-        activity: city
-        date: "Day 2"
-        immich_album: "Venice - San Marco"
+      - id: deoriatal_chopta
+        name: "Deoria Tal - Chopta"
+        immich_album: "Deoria Tal - Chopta"
+        activity: hike
+        gpx: tracks/chandrashila_chopta/deoriatal-chopta.gpx
+
+      - id: chopta-chandrashila
+        name: "Chopta - Chandrashila"
+        immich_album: "Chopta - Chandrashila"
+        activity: hike
+        gpx: tracks/chandrashila_chopta/chopta-chandrashila.gpx
+
+      - id: rishikesh
+        name: "Rishikesh"
+        immich_album: "Rishikesh"

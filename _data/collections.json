@@ -658,27 +658,23 @@
         "date": "Jan 2018",
         "photos": [
           {
-            "caption": "",
-            "width": 1800,
-            "height": 1290,
-            "lat": 18.375658,
-            "lng": 73.767552,
+            "caption": "Red-Vented Bulbul",
+            "width": 1440,
+            "height": 2356,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp"
           },
           {
             "caption": "",
-            "width": 1597,
+            "width": 1611,
             "height": 1440,
-            "lat": 18.375658,
-            "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp"
           },
           {
             "caption": "",
-            "width": 1731,
-            "height": 1440,
+            "width": 1800,
+            "height": 1290,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
@@ -686,8 +682,8 @@
           },
           {
             "caption": "",
-            "width": 1440,
-            "height": 1708,
+            "width": 1597,
+            "height": 1440,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
@@ -695,35 +691,35 @@
           },
           {
             "caption": "",
-            "width": 1800,
-            "height": 1191,
+            "width": 1731,
+            "height": 1440,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp"
           },
           {
-            "caption": "",
+            "caption": "Asian Paradise Flycatcher",
             "width": 1440,
-            "height": 2160,
+            "height": 1708,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp"
           },
           {
-            "caption": "",
+            "caption": "Tickell's Blue Flycatcher",
             "width": 1800,
-            "height": 1129,
+            "height": 1191,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp"
           },
           {
-            "caption": "",
-            "width": 1800,
-            "height": 1118,
+            "caption": "Asian Paradise Flycatcher",
+            "width": 1440,
+            "height": 2160,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
@@ -732,16 +728,16 @@
           {
             "caption": "",
             "width": 1800,
-            "height": 1232,
+            "height": 1129,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp"
           },
           {
-            "caption": "",
-            "width": 1448,
-            "height": 1440,
+            "caption": "Red-Vented Bulbul",
+            "width": 1800,
+            "height": 1118,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
@@ -749,15 +745,15 @@
           },
           {
             "caption": "",
-            "width": 1440,
-            "height": 2025,
+            "width": 1800,
+            "height": 1232,
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp"
           },
           {
-            "caption": "",
+            "caption": "Asian Paradise Flycatcher",
             "width": 1287,
             "height": 1430,
             "lat": 18.375658,
@@ -770,5 +766,174 @@
     ],
     "region": "Pune, India",
     "total_distance": "0.0 km"
+  },
+  {
+    "id": "chandrashila_chopta",
+    "name": "Deoria Tal, Chopta and Chandrashila Trek",
+    "dates": "Apr 2017",
+    "kind": "outdoor",
+    "cover": "/assets/trips/chandrashila_chopta/sari_deoriatal/00-thumb.webp",
+    "outings": [
+      {
+        "id": "sari_deoriatal",
+        "name": "Sari - Deoria Tal",
+        "color": "#0072B2",
+        "activity": "hike",
+        "gpx": "/tracks/chandrashila_chopta/sari-deoriatal.gpx",
+        "distance": "2.5 km",
+        "ascent": "520 m",
+        "descent": "140 m",
+        "duration": "0h 42m",
+        "elevation_source": "gpx",
+        "date": "Apr 2017",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/00-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1200,
+            "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/01-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1110,
+            "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/02-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/02.webp"
+          },
+          {
+            "caption": "Himalayan Griffon",
+            "width": 1800,
+            "height": 1012,
+            "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/03-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/03.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1200,
+            "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/04-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/04.webp"
+          }
+        ]
+      },
+      {
+        "id": "deoriatal_chopta",
+        "name": "Deoria Tal - Chopta",
+        "color": "#D55E00",
+        "activity": "hike",
+        "gpx": "/tracks/chandrashila_chopta/deoriatal-chopta.gpx",
+        "distance": "20.4 km",
+        "ascent": "2340 m",
+        "descent": "1910 m",
+        "duration": "5h 41m",
+        "elevation_source": "gpx",
+        "date": "Apr 2017",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/00-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/00.webp"
+          },
+          {
+            "caption": "Verditer Flycatcher",
+            "width": 1440,
+            "height": 2078,
+            "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/01-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/02-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1200,
+            "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/03-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/03.webp"
+          }
+        ]
+      },
+      {
+        "id": "chopta-chandrashila",
+        "name": "Chopta - Chandrashila",
+        "color": "#009E73",
+        "activity": "hike",
+        "gpx": "/tracks/chandrashila_chopta/chopta-chandrashila.gpx",
+        "distance": "9.5 km",
+        "ascent": "1040 m",
+        "descent": "990 m",
+        "duration": "2h 38m",
+        "elevation_source": "gpx",
+        "date": "Apr 2017",
+        "photos": [
+          {
+            "caption": "Himalayan Monal - State bird of Uttarakhand",
+            "width": 1800,
+            "height": 1012,
+            "grid": "/assets/trips/chandrashila_chopta/chopta-chandrashila/00-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1200,
+            "grid": "/assets/trips/chandrashila_chopta/chopta-chandrashila/01-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1600,
+            "height": 1066,
+            "grid": "/assets/trips/chandrashila_chopta/chopta-chandrashila/02-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/02.webp"
+          }
+        ]
+      },
+      {
+        "id": "rishikesh",
+        "name": "Rishikesh",
+        "color": "#CC79A7",
+        "date": "Apr 2017",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2560,
+            "grid": "/assets/trips/chandrashila_chopta/rishikesh/00-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/rishikesh/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1126,
+            "height": 1600,
+            "grid": "/assets/trips/chandrashila_chopta/rishikesh/01-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/rishikesh/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1200,
+            "grid": "/assets/trips/chandrashila_chopta/rishikesh/02-thumb.webp",
+            "full": "/assets/trips/chandrashila_chopta/rishikesh/02.webp"
+          }
+        ]
+      }
+    ],
+    "region": "Kedarnath Wildlife Sanctuary, India",
+    "total_distance": "32.4 km"
   }
 ]
