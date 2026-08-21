@@ -1,5 +1,5 @@
 ---
 layout: collection
 collection_id: mercantour
-title: Mercantour
+title: Parc national du Mercantour
 ---

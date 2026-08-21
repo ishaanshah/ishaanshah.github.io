@@ -8,12 +8,12 @@ layout: default
   <div class="collection-grid" id="collection-grid">
     {% for collection in site.data.collections %}
       {% assign acts = "" %}
-      {% for o in collection.outings %}{% assign acts = acts | append: o.activity | append: " " %}{% endfor %}
+      {% for o in collection.outings %}{% if o.activity %}{% assign acts = acts | append: o.activity | append: " " %}{% endif %}{% endfor %}
       {% assign nout = collection.outings | size %}
       {% assign nph = 0 %}
       {% for o in collection.outings %}{% assign nph = nph | plus: o.photos.size %}{% endfor %}
       {% capture coverlist %}{% for o in collection.outings %}{% for p in o.photos %}{{ p.grid }}|{% endfor %}{% endfor %}{% endcapture %}
-      <a class="collection-card" href="{{ site.baseurl }}/pics/{{ collection.id }}/"
+      <a class="collection-card" href="{{ site.baseurl }}/pics/{{ collection.id | slugify }}/"
          data-kind="{{ collection.kind }}" data-acts="{{ acts | strip }}">
         <div class="cover">
           <img src="{{ collection.cover }}" alt="{{ collection.name }}" loading="lazy" data-covers="{{ coverlist | strip }}">

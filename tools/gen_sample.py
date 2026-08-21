@@ -152,7 +152,7 @@ def build():
                 pts = make_track(seed, blat + oi * 0.02, blng + oi * 0.02, bele)
                 with open(os.path.join(TRACKS, o["id"] + ".gpx"), "w") as f:
                     f.write(gpx_text(o["name"], pts))
-                dist, ascent, dur, km = track_stats(pts, SPEED[o["activity"]])
+                dist, ascent, dur, km = track_stats(pts, SPEED.get(o.get("activity"), 4.0))
                 total_km += km
                 entry.update(gpx="/tracks/%s.gpx" % o["id"],
                              distance=dist, ascent=ascent, duration=dur)

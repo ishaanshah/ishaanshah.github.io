@@ -9,8 +9,8 @@
       {
         "id": "gr54_1",
         "name": "Besse - Plateau d'Emparis",
-        "activity": "hike",
         "color": "#0072B2",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_1.gpx",
         "distance": "10.0 km",
         "ascent": "910 m",
@@ -58,8 +58,8 @@
       {
         "id": "gr54_2",
         "name": "Plateau d'Emparis - L'Alpe de Villar d'Arêne",
-        "activity": "hike",
         "color": "#D55E00",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_2.gpx",
         "distance": "22.3 km",
         "ascent": "1160 m",
@@ -125,8 +125,8 @@
       {
         "id": "gr54_3",
         "name": "L'Alpe de Villar d'Arêne - Le Monêtier-les-Bains",
-        "activity": "hike",
         "color": "#009E73",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_3.gpx",
         "distance": "15.2 km",
         "ascent": "380 m",
@@ -165,8 +165,8 @@
       {
         "id": "gr54_4",
         "name": "Le Monêtier-les-Bains - Vallouise",
-        "activity": "hike",
         "color": "#CC79A7",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_4.gpx",
         "distance": "25.0 km",
         "ascent": "910 m",
@@ -198,8 +198,8 @@
       {
         "id": "gr54_5",
         "name": "Vallouise - Pré de la Chaumette",
-        "activity": "hike",
         "color": "#E69F00",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_5.gpx",
         "distance": "19.4 km",
         "ascent": "1340 m",
@@ -240,8 +240,8 @@
       {
         "id": "gr54_6",
         "name": "Pré de la Chaumette - La Chapelle-en-Valgaudemar",
-        "activity": "hike",
         "color": "#56B4E9",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_6.gpx",
         "distance": "25.7 km",
         "ascent": "1410 m",
@@ -307,8 +307,8 @@
       {
         "id": "gr54_7",
         "name": "La Chapelle-en-Valgaudemar - Les Souffles",
-        "activity": "hike",
         "color": "#0072B2",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_7.gpx",
         "distance": "10.2 km",
         "ascent": "970 m",
@@ -340,8 +340,8 @@
       {
         "id": "gr54_8",
         "name": "Les Souffles - Valsenestre",
-        "activity": "hike",
         "color": "#D55E00",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_8.gpx",
         "distance": "22.9 km",
         "ascent": "1630 m",
@@ -364,8 +364,8 @@
       {
         "id": "gr54_9",
         "name": "Valsenestre - Lac de la Muzelle",
-        "activity": "hike",
         "color": "#009E73",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_9.gpx",
         "distance": "9.0 km",
         "ascent": "1260 m",
@@ -375,7 +375,7 @@
         "date": "Aug 2026",
         "photos": [
           {
-            "caption": "",
+            "caption": "Quick snack stop - wild blueberries",
             "width": 1440,
             "height": 2560,
             "lat": 44.927881,
@@ -427,8 +427,8 @@
       {
         "id": "gr54_10",
         "name": "Lac de la Muzelle - La Danchère",
-        "activity": "hike",
         "color": "#CC79A7",
+        "activity": "hike",
         "gpx": "/tracks/gr54/day_10.gpx",
         "distance": "13.1 km",
         "ascent": "520 m",
@@ -438,14 +438,14 @@
         "date": "Aug 2026",
         "photos": [
           {
-            "caption": "",
+            "caption": "Biovouac zone besides Lac de la Muzelle early in the morning. Photo credits: Chandradeep Pokhariya.",
             "width": 1800,
             "height": 1230,
             "grid": "/assets/trips/ecrin/gr54_10/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_10/00.webp"
           },
           {
-            "caption": "",
+            "caption": "Lac Lauvital",
             "width": 1800,
             "height": 1012,
             "lat": 44.973194,
@@ -456,7 +456,319 @@
         ]
       }
     ],
-    "region": "Écrins National Park",
+    "region": "Écrins National Park, France",
     "total_distance": "172.8 km"
+  },
+  {
+    "id": "mercantour",
+    "name": "Parc national du Mercantour",
+    "dates": "Jun 2025 – Jul 2026",
+    "kind": "outdoor",
+    "cover": "/assets/trips/mercantour/lac_allos_pelat/00-thumb.webp",
+    "outings": [
+      {
+        "id": "lac_allos_pelat",
+        "name": "Lac d'Allos and Mont Pelat",
+        "color": "#0072B2",
+        "activity": "hike",
+        "gpx": "/tracks/mercantour/mont_pelat.gpx",
+        "distance": "13.2 km",
+        "ascent": "760 m",
+        "descent": "750 m",
+        "duration": "3h 40m",
+        "elevation_source": "garmin",
+        "date": "Aug 2025",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2560,
+            "lat": 44.237794,
+            "lng": 6.706539,
+            "grid": "/assets/trips/mercantour/lac_allos_pelat/00-thumb.webp",
+            "full": "/assets/trips/mercantour/lac_allos_pelat/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1026,
+            "lat": 44.237081,
+            "lng": 6.706675,
+            "grid": "/assets/trips/mercantour/lac_allos_pelat/01-thumb.webp",
+            "full": "/assets/trips/mercantour/lac_allos_pelat/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.264969,
+            "lng": 6.705739,
+            "grid": "/assets/trips/mercantour/lac_allos_pelat/02-thumb.webp",
+            "full": "/assets/trips/mercantour/lac_allos_pelat/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1200,
+            "height": 1600,
+            "grid": "/assets/trips/mercantour/lac_allos_pelat/03-thumb.webp",
+            "full": "/assets/trips/mercantour/lac_allos_pelat/03.webp"
+          },
+          {
+            "caption": "",
+            "width": 1600,
+            "height": 1200,
+            "grid": "/assets/trips/mercantour/lac_allos_pelat/04-thumb.webp",
+            "full": "/assets/trips/mercantour/lac_allos_pelat/04.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 43.949144,
+            "lng": 6.811675,
+            "grid": "/assets/trips/mercantour/lac_allos_pelat/05-thumb.webp",
+            "full": "/assets/trips/mercantour/lac_allos_pelat/05.webp"
+          }
+        ]
+      },
+      {
+        "id": "mont_mounier",
+        "name": "Mont Mounier",
+        "color": "#D55E00",
+        "activity": "hike",
+        "gpx": "/tracks/mercantour/mounier.gpx",
+        "distance": "16.6 km",
+        "ascent": "1060 m",
+        "descent": "1050 m",
+        "duration": "4h 37m",
+        "elevation_source": "garmin",
+        "date": "Jul 2026",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.144203,
+            "lng": 6.953483,
+            "grid": "/assets/trips/mercantour/mont_mounier/00-thumb.webp",
+            "full": "/assets/trips/mercantour/mont_mounier/00.webp"
+          },
+          {
+            "caption": "The ridge to Mount Mounier from Petit Mounier.",
+            "width": 1440,
+            "height": 2560,
+            "lat": 44.151117,
+            "lng": 6.963347,
+            "grid": "/assets/trips/mercantour/mont_mounier/01-thumb.webp",
+            "full": "/assets/trips/mercantour/mont_mounier/01.webp"
+          }
+        ]
+      },
+      {
+        "id": "gordalesque",
+        "name": "Vallée de la Gordolasque",
+        "color": "#009E73",
+        "activity": "hike",
+        "gpx": "/tracks/mercantour/Refuge_de_Nice.gpx",
+        "distance": "17.5 km",
+        "ascent": "1060 m",
+        "descent": "1060 m",
+        "duration": "4h 51m",
+        "elevation_source": "gpx",
+        "date": "Jun 2025",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.100456,
+            "lng": 7.396222,
+            "grid": "/assets/trips/mercantour/gordalesque/00-thumb.webp",
+            "full": "/assets/trips/mercantour/gordalesque/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.104456,
+            "lng": 7.396717,
+            "grid": "/assets/trips/mercantour/gordalesque/01-thumb.webp",
+            "full": "/assets/trips/mercantour/gordalesque/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.103986,
+            "lng": 7.403636,
+            "grid": "/assets/trips/mercantour/gordalesque/02-thumb.webp",
+            "full": "/assets/trips/mercantour/gordalesque/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.101217,
+            "lng": 7.414928,
+            "grid": "/assets/trips/mercantour/gordalesque/03-thumb.webp",
+            "full": "/assets/trips/mercantour/gordalesque/03.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.100197,
+            "lng": 7.419758,
+            "grid": "/assets/trips/mercantour/gordalesque/04-thumb.webp",
+            "full": "/assets/trips/mercantour/gordalesque/04.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 44.096931,
+            "lng": 7.423981,
+            "grid": "/assets/trips/mercantour/gordalesque/05-thumb.webp",
+            "full": "/assets/trips/mercantour/gordalesque/05.webp"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 1920,
+            "grid": "/assets/trips/mercantour/gordalesque/06-thumb.webp",
+            "full": "/assets/trips/mercantour/gordalesque/06.webp"
+          }
+        ]
+      }
+    ],
+    "region": "Mercantour National Park, France",
+    "total_distance": "47.3 km"
+  },
+  {
+    "id": "sinhagad_bird_valley",
+    "name": "Sinhagad Bird Valley",
+    "dates": "Jan 2018",
+    "kind": "outdoor",
+    "cover": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
+    "outings": [
+      {
+        "id": "sinhagad_bird_valley",
+        "name": "Sinhagad Bird Valley",
+        "color": "#0072B2",
+        "date": "Jan 2018",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1290,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1597,
+            "height": 1440,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1731,
+            "height": 1440,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 1708,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1191,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2160,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1129,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1118,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1232,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp"
+          },
+          {
+            "caption": "",
+            "width": 1448,
+            "height": 1440,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2025,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp"
+          },
+          {
+            "caption": "",
+            "width": 1287,
+            "height": 1430,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp"
+          }
+        ]
+      }
+    ],
+    "region": "Pune, India",
+    "total_distance": "0.0 km"
   }
 ]

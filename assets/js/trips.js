@@ -272,8 +272,7 @@
       grp.setAttribute("transform", "translate(" + gx.toFixed(1) + " " + gy.toFixed(1) + ")");
       grp.innerHTML =
         '<line class="stem" x1="0" y1="0" x2="0" y2="' + (H - padB - gy).toFixed(1) + '" stroke="' + o.color + '" stroke-width="1" stroke-dasharray="2 2"/>' +
-        '<circle r="5" fill="#fff" stroke="' + o.color + '" stroke-width="2"/>' +
-        '<text y="-9" text-anchor="middle" font-size="10" font-weight="700" fill="' + o.color + '">' + (i + 1) + "</text>";
+        '<circle r="5" fill="#fff" stroke="' + o.color + '" stroke-width="2"/>';
       elevSvg.appendChild(grp);
     });
   }

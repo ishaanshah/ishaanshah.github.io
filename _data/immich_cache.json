@@ -1,0 +1,445 @@
+{
+  "assets": {
+    "06bf1986-7cae-4abe-8d62-f64fb30d5dda": {
+      "full": "/assets/trips/mercantour/mont_mounier/00.webp",
+      "grid": "/assets/trips/mercantour/mont_mounier/00-thumb.webp",
+      "height": 1012,
+      "sig": "k0+ebx10ycVmyfIK/hc4tkBZaHg=|2026-08-05T11:13:32.558162+00:00|2026-07-13T09:47:21+00:00|1",
+      "width": 1800
+    },
+    "07e0e762-4148-4227-8099-c6a9c46c933c": {
+      "full": "/assets/trips/ecrin/gr54_7/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_7/00-thumb.webp",
+      "height": 2560,
+      "sig": "ZbCNaz3+PNxDOoAhQLW5WBZIHN0=|2026-08-05T11:10:57.667373+00:00|2026-08-01T08:59:08+00:00|1",
+      "width": 1440
+    },
+    "0853dad7-aae2-427b-9b49-e82008897f57": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
+      "height": 1118,
+      "sig": "uBzmQ8+Tcf/OSXe807nHy+2XW3k=|2026-08-21T18:06:55.081043+00:00|2018-07-14T08:16:14+00:00|1",
+      "width": 1800
+    },
+    "08ac0bb5-1c04-456c-a800-3c21007eac0a": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
+      "height": 1129,
+      "sig": "1tCVzwMt97CSxoNFDNw04kJl2ng=|2026-08-21T18:06:55.203687+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1800
+    },
+    "10d54234-9b3d-4145-aac8-a51254e484eb": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11-thumb.webp",
+      "height": 1430,
+      "sig": "tdoI0DaVgoFVIZVI8qJ5H8xCX6o=|2026-08-21T18:06:54.65476+00:00|2019-06-15T17:41:24+00:00|1",
+      "width": 1287
+    },
+    "185c6d33-a892-4fb5-99aa-2c18e490a7d4": {
+      "full": "/assets/trips/mercantour/gordalesque/01.webp",
+      "grid": "/assets/trips/mercantour/gordalesque/01-thumb.webp",
+      "height": 1012,
+      "sig": "6RQ1HtwUSgdy6g48nZNNNXnm1nI=|2026-08-21T15:49:08.819056+00:00|2025-06-14T09:39:11+00:00|1",
+      "width": 1800
+    },
+    "1e56939c-f253-4e33-afb9-566865b105d8": {
+      "full": "/assets/trips/ecrin/gr54_2/04.webp",
+      "grid": "/assets/trips/ecrin/gr54_2/04-thumb.webp",
+      "height": 1012,
+      "sig": "tKDM7pCsXoCEIq1nM/Y0R7EnnmM=|2026-08-14T19:18:03.124143+00:00|2026-07-27T15:30:38+00:00|1",
+      "width": 1800
+    },
+    "21e8bf69-1080-44ed-8fd8-2cdb56869dbd": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01-thumb.webp",
+      "height": 1440,
+      "sig": "s6EmyNeyxPV7d52qT7QTHlIuQ9Q=|2026-08-21T18:06:55.688551+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1597
+    },
+    "2226450a-7c80-4d5b-9fa7-5fc3f3e26c54": {
+      "full": "/assets/trips/mercantour/mont_mounier/01.webp",
+      "grid": "/assets/trips/mercantour/mont_mounier/01-thumb.webp",
+      "height": 2560,
+      "sig": "FqlEZoysYq1f4Ik6lE+Etps84kg=|2026-08-21T17:45:33.751412+00:00|2026-07-13T11:13:24+00:00|1",
+      "width": 1440
+    },
+    "22bd01ad-0b88-4a00-8481-7fd1417f3cd0": {
+      "full": "/assets/trips/ecrin/gr54_6/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/02-thumb.webp",
+      "height": 1012,
+      "sig": "wA+qhKs6yljH1driplSxB2tk1xk=|2026-08-05T11:11:32.51101+00:00|2026-07-31T09:30:15+00:00|1",
+      "width": 1800
+    },
+    "27dc7d66-4834-45fd-a33d-ba8546e17a0c": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
+      "height": 1440,
+      "sig": "gIOfbS17z1jrz5eBv8+ByDp1JK0=|2026-08-21T18:06:54.981566+00:00|2018-07-14T08:16:14+00:00|1",
+      "width": 1448
+    },
+    "2cc9c20e-8bd2-47fd-872e-9ac672d71be5": {
+      "full": "/assets/trips/mercantour/gordalesque/06.webp",
+      "grid": "/assets/trips/mercantour/gordalesque/06-thumb.webp",
+      "height": 1920,
+      "sig": "m+4v+vPVh7XGTpNlfb35UrvORx8=|2026-04-23T14:13:02.134122+00:00|2025-06-15T10:24:40.258+00:00|",
+      "width": 1440
+    },
+    "349f5496-0b32-4ec9-bb3b-9dc9836c8ed0": {
+      "full": "/assets/trips/ecrin/gr54_2/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_2/02-thumb.webp",
+      "height": 1012,
+      "sig": "e/4+CURQMRPAGauLvNO66wc1M4Y=|2026-08-05T11:12:54.545511+00:00|2026-07-27T08:32:42+00:00|1",
+      "width": 1800
+    },
+    "37e77658-98aa-4251-9878-f36591692c5c": {
+      "full": "/assets/trips/mercantour/gordalesque/04.webp",
+      "grid": "/assets/trips/mercantour/gordalesque/04-thumb.webp",
+      "height": 1012,
+      "sig": "350gUGL/wHKvvHZaDvovcqg+c2M=|2026-04-23T14:13:02.615386+00:00|2025-06-14T12:43:54+00:00|1",
+      "width": 1800
+    },
+    "399c839c-d170-4045-830c-0fc6c1de5a2d": {
+      "full": "/assets/trips/ecrin/gr54_3/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_3/00-thumb.webp",
+      "height": 1012,
+      "sig": "eYHjXVNK0hs/NQi7yNCnzI3/zVs=|2026-08-05T11:12:38.116989+00:00|2026-07-28T07:54:22+00:00|1",
+      "width": 1800
+    },
+    "3aa12a10-98fc-4f33-8b2f-a28ac5e1fa29": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
+      "height": 1440,
+      "sig": "Z+zMzxETNrAz5UgwNM89lT1GhOg=|2026-08-21T18:06:55.600784+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1731
+    },
+    "3ed75fcd-02d1-41f3-b9b3-ac750ea0cf39": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
+      "height": 1290,
+      "sig": "Rwr55x7cTw1q4m2oWHcphqnfG9k=|2026-08-21T18:06:55.843841+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1800
+    },
+    "439b12f4-29cc-4ac6-b055-269e74f2ebaf": {
+      "full": "/assets/trips/ecrin/gr54_9/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/00-thumb.webp",
+      "height": 2560,
+      "sig": "Yq16T3KdZsazr99ZnN4R3cALny4=|2026-08-21T17:49:35.767031+00:00|2026-08-03T07:51:05+00:00|1",
+      "width": 1440
+    },
+    "474bd882-c7c6-4428-9a81-5eb53798683a": {
+      "full": "/assets/trips/mercantour/lac_allos_pelat/02.webp",
+      "grid": "/assets/trips/mercantour/lac_allos_pelat/02-thumb.webp",
+      "height": 1012,
+      "sig": "2TN7l38lf8Ge39duRseyTBTKAz4=|2026-04-23T14:13:02.622276+00:00|2025-08-16T09:03:37+00:00|1",
+      "width": 1800
+    },
+    "4f7892f7-9da1-440e-a575-d674764f6260": {
+      "full": "/assets/trips/ecrin/gr54_5/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_5/00-thumb.webp",
+      "height": 1012,
+      "sig": "WCMcRikdtsF17Ooafcg0S+fGyyk=|2026-08-05T11:12:14.572372+00:00|2026-07-30T09:54:09+00:00|1",
+      "width": 1800
+    },
+    "5284cabd-c5b3-409d-b31e-334012ae5fba": {
+      "full": "/assets/trips/ecrin/gr54_9/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
+      "height": 1920,
+      "sig": "YnCULPAZcHUalMyW+VsIAnwoEss=|2026-08-05T11:09:08.662856+00:00|2026-08-05T11:07:52.251+00:00|1",
+      "width": 1440
+    },
+    "585a2aae-dd04-4d8f-8290-04e1d242fd7c": {
+      "full": "/assets/trips/mercantour/lac_allos_pelat/05.webp",
+      "grid": "/assets/trips/mercantour/lac_allos_pelat/05-thumb.webp",
+      "height": 1012,
+      "sig": "RLcxcV0rQEA4IyEwS+wHgl4tQhA=|2026-04-23T14:13:02.141957+00:00|2025-08-17T09:47:53+00:00|1",
+      "width": 1800
+    },
+    "5b62212c-2d8c-480c-8fba-5e0527a894a6": {
+      "full": "/assets/trips/ecrin/gr54_3/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_3/02-thumb.webp",
+      "height": 1012,
+      "sig": "DQ9bkQsEgDdopTg3O1hAl+CDiVk=|2026-08-05T11:12:32.911161+00:00|2026-07-28T09:36:48+00:00|1",
+      "width": 1800
+    },
+    "66759f99-1125-402f-9f3f-e261893a3090": {
+      "full": "/assets/trips/ecrin/gr54_1/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_1/02-thumb.webp",
+      "height": 1012,
+      "sig": "DxwOthc86qF98zJ76CPZxKGOsXo=|2026-08-05T11:13:07.214109+00:00|2026-07-26T15:07:14+00:00|1",
+      "width": 1800
+    },
+    "68637497-88db-4d55-83a3-59d82827b226": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
+      "height": 2160,
+      "sig": "NCgIwievCuCSfmBco0XaCt1XWrg=|2026-08-21T18:06:55.3099+00:00|2018-07-14T08:16:14+00:00|1",
+      "width": 1440
+    },
+    "688270d6-7b69-4005-9258-a51b6e073577": {
+      "full": "/assets/trips/ecrin/gr54_2/03.webp",
+      "grid": "/assets/trips/ecrin/gr54_2/03-thumb.webp",
+      "height": 1012,
+      "sig": "hsdRr2ZEx+RElepYR+607DeHUdU=|2026-08-05T11:12:51.469214+00:00|2026-07-27T15:06:18+00:00|1",
+      "width": 1800
+    },
+    "6c80f492-2b96-43a3-b346-f187ead7f48d": {
+      "full": "/assets/trips/ecrin/gr54_9/04.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
+      "height": 1350,
+      "sig": "pfE5d5iuyrwMwQDQXJNzV07feAk=|2026-08-05T11:08:44.392336+00:00|2026-08-05T11:07:52.047+00:00|1",
+      "width": 1800
+    },
+    "6d7ab2a1-84d8-48c0-b030-bbfbc1b23cc1": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
+      "height": 1191,
+      "sig": "5ckNSDbCCOKyk8yEK8nqE/UUOy0=|2026-08-21T18:06:55.407113+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1800
+    },
+    "6f4e11e7-a4cd-452c-922a-ccbd209f3305": {
+      "full": "/assets/trips/ecrin/gr54_2/05.webp",
+      "grid": "/assets/trips/ecrin/gr54_2/05-thumb.webp",
+      "height": 1350,
+      "sig": "oOxfae651IJvVrY0WnxTahL8s18=|2026-08-05T11:10:47.039161+00:00|2026-08-05T11:07:53.671+00:00|1",
+      "width": 1800
+    },
+    "773cf09a-5e8c-4cb6-ba85-a80c054241e4": {
+      "full": "/assets/trips/ecrin/gr54_9/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
+      "height": 1012,
+      "sig": "NXIq0Af9C1hQqRubINSQwQkDd2o=|2026-08-05T11:09:56.542912+00:00|2026-08-03T08:31:26+00:00|1",
+      "width": 1800
+    },
+    "7c0f12e0-c7f5-49b8-bfa1-035f5d7a449e": {
+      "full": "/assets/trips/mercantour/lac_allos_pelat/00.webp",
+      "grid": "/assets/trips/mercantour/lac_allos_pelat/00-thumb.webp",
+      "height": 2560,
+      "sig": "NUsLECxnRgYgncS1Bsr2j6C/GCM=|2026-04-23T14:13:02.16562+00:00|2025-08-15T09:58:45+00:00|1",
+      "width": 1440
+    },
+    "7c0fc5fa-c289-4352-8c81-8579ca5e69c3": {
+      "full": "/assets/trips/mercantour/lac_allos_pelat/03.webp",
+      "grid": "/assets/trips/mercantour/lac_allos_pelat/03-thumb.webp",
+      "height": 1600,
+      "sig": "PPaxmj1CPDjNUxs+gBSZYbBmghE=|2026-04-23T14:13:02.432202+00:00|2025-08-17T19:25:46.626+00:00|",
+      "width": 1200
+    },
+    "82caddd6-9367-4a4d-85a7-5f3afbc7b64d": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
+      "height": 1232,
+      "sig": "B/stEOON2IN0jLJLSsjmT0fUuCg=|2026-08-21T18:06:54.874754+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1800
+    },
+    "88a877dd-7afb-4d14-984e-998e76e512bd": {
+      "full": "/assets/trips/ecrin/gr54_2/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_2/00-thumb.webp",
+      "height": 1012,
+      "sig": "XRp0PCNM7kg3ehsuGY6mnyP5KeU=|2026-08-05T11:13:02.35158+00:00|2026-07-27T06:32:34+00:00|1",
+      "width": 1800
+    },
+    "89cd4c86-8fde-4879-8c7f-3f9ea46a22a0": {
+      "full": "/assets/trips/ecrin/gr54_4/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_4/00-thumb.webp",
+      "height": 1012,
+      "sig": "+Jq0OAYybaN7mZx91ft91B0mJPk=|2026-08-05T11:12:23.420631+00:00|2026-07-29T09:21:38+00:00|1",
+      "width": 1800
+    },
+    "9310b373-baab-489f-a184-794078644d89": {
+      "full": "/assets/trips/ecrin/gr54_7/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_7/01-thumb.webp",
+      "height": 2560,
+      "sig": "SGn7sjq+blOaofTEf7/VLjEA7hQ=|2026-08-05T11:10:30.705571+00:00|2026-08-01T12:47:42+00:00|1",
+      "width": 1440
+    },
+    "976e44bb-ce6d-4872-ad57-535eab2aefe5": {
+      "full": "/assets/trips/mercantour/gordalesque/03.webp",
+      "grid": "/assets/trips/mercantour/gordalesque/03-thumb.webp",
+      "height": 1012,
+      "sig": "FbTksc2U1Y08Opf7KaVqfE8Ih8k=|2026-04-23T14:13:02.162255+00:00|2025-06-14T12:29:32+00:00|1",
+      "width": 1800
+    },
+    "9ec7963d-b20e-48da-a65a-15280c8a4d51": {
+      "full": "/assets/trips/mercantour/lac_allos_pelat/01.webp",
+      "grid": "/assets/trips/mercantour/lac_allos_pelat/01-thumb.webp",
+      "height": 1026,
+      "sig": "LTaEZL1hLiWH4+K926myspmVLCM=|2026-04-23T14:13:02.1498+00:00|2025-08-17T18:53:29+00:00|1",
+      "width": 1800
+    },
+    "a3eaae89-6458-4989-be76-2622fdddf6d4": {
+      "full": "/assets/trips/ecrin/gr54_6/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/01-thumb.webp",
+      "height": 1350,
+      "sig": "kPuWNW0DQRXyG0wHOFOUkZAybUE=|2026-08-05T11:09:53.437305+00:00|2026-08-05T11:07:52.771+00:00|1",
+      "width": 1800
+    },
+    "a576afc3-e793-4567-a0d7-6709f856ed39": {
+      "full": "/assets/trips/mercantour/gordalesque/02.webp",
+      "grid": "/assets/trips/mercantour/gordalesque/02-thumb.webp",
+      "height": 1012,
+      "sig": "I8ErnE1WSUI5Nrm/Cje83xSExkc=|2026-04-23T14:13:02.166764+00:00|2025-06-14T11:33:40+00:00|1",
+      "width": 1800
+    },
+    "a5f5666a-5d87-46c8-a642-9b2262ea6315": {
+      "full": "/assets/trips/ecrin/gr54_9/03.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/03-thumb.webp",
+      "height": 1012,
+      "sig": "SNQmL+1JT8TbBTo0R8BpSI6QHtg=|2026-08-05T11:09:25.246654+00:00|2026-08-03T08:43:43+00:00|1",
+      "width": 1800
+    },
+    "af7cb64f-e42d-4a5a-921d-127cc99192d9": {
+      "full": "/assets/trips/ecrin/gr54_2/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_2/01-thumb.webp",
+      "height": 1012,
+      "sig": "r18ui1yUOpqrnghO3jxyJyIQPag=|2026-08-05T11:12:59.286029+00:00|2026-07-27T06:51:52+00:00|1",
+      "width": 1800
+    },
+    "b33aef09-b418-4db7-8e34-88bee71ba8e6": {
+      "full": "/assets/trips/ecrin/gr54_10/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_10/00-thumb.webp",
+      "height": 1230,
+      "sig": "3+iuIJ7GD7P+4G1CbvKy/P8JBiU=|2026-08-21T17:47:00.939031+00:00|2026-08-05T11:07:51.615+00:00|1",
+      "width": 1800
+    },
+    "b429c7f5-3434-48b2-a100-f263134ea62b": {
+      "full": "/assets/trips/ecrin/gr54_1/03.webp",
+      "grid": "/assets/trips/ecrin/gr54_1/03-thumb.webp",
+      "height": 1350,
+      "sig": "yqNp9WiH23Wavo5LUpqDgVmper4=|2026-08-05T11:11:20.41567+00:00|2026-08-05T11:07:54.067+00:00|1",
+      "width": 1800
+    },
+    "b6770efc-63b9-4810-aed6-d9383b968be2": {
+      "full": "/assets/trips/ecrin/gr54_6/04.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/04-thumb.webp",
+      "height": 1012,
+      "sig": "VDjZWHa9uicFnTWb2FOebwO4Gs0=|2026-08-05T11:11:10.632692+00:00|2026-07-31T11:09:30+00:00|1",
+      "width": 1800
+    },
+    "bdd399ed-a960-4da7-906a-35352b1622a3": {
+      "full": "/assets/trips/ecrin/gr54_9/05.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/05-thumb.webp",
+      "height": 1012,
+      "sig": "z/qR1vmX+VdrBZ6ywZrCpJyFcx0=|2026-08-05T11:08:19.457589+00:00|2026-08-03T15:26:10+00:00|1",
+      "width": 1800
+    },
+    "c2d60291-f546-4483-b0ea-25b2be79f8ac": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
+      "height": 1708,
+      "sig": "4SenWJu6hzsMX5Q7zNRwkRvUvd4=|2026-08-21T18:06:55.498168+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1440
+    },
+    "c3451487-ee15-4fd6-a3b2-a032c2ad5272": {
+      "full": "/assets/trips/ecrin/gr54_4/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_4/01-thumb.webp",
+      "height": 1012,
+      "sig": "ki5hYNprhnj0pRyEgx2Btltgkb4=|2026-08-05T11:12:25.032247+00:00|2026-07-29T10:44:07+00:00|1",
+      "width": 1800
+    },
+    "c3e67538-7421-4293-82c9-4ec940316456": {
+      "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp",
+      "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
+      "height": 2025,
+      "sig": "HkjbijYvMNiHdz0sImOWJjM+3Ek=|2026-08-21T18:06:54.772774+00:00|2018-07-14T08:16:13+00:00|1",
+      "width": 1440
+    },
+    "cb07fd38-1ac0-42f4-aa53-515ddaff56b4": {
+      "full": "/assets/trips/mercantour/lac_allos_pelat/04.webp",
+      "grid": "/assets/trips/mercantour/lac_allos_pelat/04-thumb.webp",
+      "height": 1200,
+      "sig": "CWmcNb9KXhu5p0/1NDMAKZ6LQds=|2026-04-23T14:13:02.428676+00:00|2025-08-17T19:25:46.545+00:00|",
+      "width": 1600
+    },
+    "cc0f2f67-3ddd-41b8-ab7a-5d850ca4081b": {
+      "full": "/assets/trips/ecrin/gr54_1/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_1/00-thumb.webp",
+      "height": 1012,
+      "sig": "qVeGr2AfwWhDMfKcx6VjTFikYb8=|2026-08-05T11:13:19.240862+00:00|2026-07-26T11:43:41+00:00|1",
+      "width": 1800
+    },
+    "cd96a932-6fc6-41c0-b32f-4bb38546ab14": {
+      "full": "/assets/trips/ecrin/gr54_6/05.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/05-thumb.webp",
+      "height": 1012,
+      "sig": "4PSdptTaW7YXVMe5KoQnVcOrPqA=|2026-08-05T11:11:11.958585+00:00|2026-07-31T11:15:52+00:00|1",
+      "width": 1800
+    },
+    "cdbaaa02-99a6-41d7-9b36-df08611b9b56": {
+      "full": "/assets/trips/ecrin/gr54_10/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_10/01-thumb.webp",
+      "height": 1012,
+      "sig": "6+Z3FHzl4T1djt/hZXuT/ZvbrqE=|2026-08-21T17:45:58.465821+00:00|2026-08-04T09:20:22+00:00|1",
+      "width": 1800
+    },
+    "cefad6a5-a8d1-4189-91d7-04cd608607e3": {
+      "full": "/assets/trips/ecrin/gr54_6/03.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/03-thumb.webp",
+      "height": 1012,
+      "sig": "uQQnQUAsbgrUNQZiPBZngjFY1Wk=|2026-08-05T11:11:26.039141+00:00|2026-07-31T09:55:21+00:00|1",
+      "width": 1800
+    },
+    "cfb73429-e69c-4481-a3ae-3a0737781d98": {
+      "full": "/assets/trips/ecrin/gr54_5/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_5/02-thumb.webp",
+      "height": 1012,
+      "sig": "NTARB6y7sQE/S7odxRLyUAGATaQ=|2026-08-05T11:12:03.185585+00:00|2026-07-30T12:15:23+00:00|1",
+      "width": 1800
+    },
+    "d90b438a-0e1e-4ccb-a815-1af4f9016dcb": {
+      "full": "/assets/trips/ecrin/gr54_5/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_5/01-thumb.webp",
+      "height": 1012,
+      "sig": "YAmi+hDnwqxOO307WIaRH/vKr7M=|2026-08-05T11:12:10.17396+00:00|2026-07-30T11:43:07+00:00|1",
+      "width": 1800
+    },
+    "db303424-5471-4761-b856-aaa246fe5aef": {
+      "full": "/assets/trips/mercantour/gordalesque/05.webp",
+      "grid": "/assets/trips/mercantour/gordalesque/05-thumb.webp",
+      "height": 1012,
+      "sig": "PSD3v3E4pkvi029EdC4+7IRSqfY=|2026-04-23T14:13:02.160325+00:00|2025-06-14T13:38:41+00:00|1",
+      "width": 1800
+    },
+    "ddd698d3-5fa1-4cac-873f-cf2256d3c6fa": {
+      "full": "/assets/trips/ecrin/gr54_1/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_1/01-thumb.webp",
+      "height": 1012,
+      "sig": "rzrJ3kQMl2exOvYxCZh4TFkqhqY=|2026-08-14T16:47:24.811225+00:00|2026-07-26T13:37:52+00:00|1",
+      "width": 1800
+    },
+    "e2be7ed7-7336-49a9-8b18-0b97da2aaf30": {
+      "full": "/assets/trips/mercantour/gordalesque/00.webp",
+      "grid": "/assets/trips/mercantour/gordalesque/00-thumb.webp",
+      "height": 1012,
+      "sig": "4Mzpb88J0QBh1FvhBxFQKCZ/Rw0=|2026-04-23T14:13:02.163147+00:00|2025-06-14T09:31:14+00:00|1",
+      "width": 1800
+    },
+    "e95b7027-4e37-44f2-8f3f-f703649dc8ef": {
+      "full": "/assets/trips/ecrin/gr54_8/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_8/00-thumb.webp",
+      "height": 1012,
+      "sig": "OziSAsNlQ44NbhB1FvhO/MM7o8A=|2026-08-05T11:10:23.303942+00:00|2026-08-02T07:11:28+00:00|1",
+      "width": 1800
+    },
+    "f2628ee5-87e2-4db9-bd28-84d1265424dd": {
+      "full": "/assets/trips/ecrin/gr54_6/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/00-thumb.webp",
+      "height": 1012,
+      "sig": "Ktfx1F9TCW4qPbas56bX2CeiG9g=|2026-08-05T11:11:58.495367+00:00|2026-07-31T08:41:13+00:00|1",
+      "width": 1800
+    },
+    "f4ddf604-9078-4e46-92ca-65896a4579a8": {
+      "full": "/assets/trips/ecrin/gr54_3/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_3/01-thumb.webp",
+      "height": 1350,
+      "sig": "7Wa74QhK8Mbvr+r8hP2ZlO3kNE8=|2026-08-05T11:10:37.37261+00:00|2026-08-05T11:07:53.403+00:00|1",
+      "width": 1800
+    }
+  },
+  "params": {
+    "full_w": 1800,
+    "grid_w": 800,
+    "pil": true,
+    "quality": 82,
+    "version": 1
+  }
+}

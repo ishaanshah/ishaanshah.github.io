@@ -6,6 +6,10 @@
 # For each outing, `immich_album` is an album NAME (or UUID) in your Immich
 # instance; `gpx` is a track committed under tracks/ (omit it for city trips).
 #
+# `activity:` (hike / bike / run) is optional — it only picks the pace used to
+# estimate an outing's duration from its GPX distance; omit it and the estimate
+# falls back to 4 km/h.
+#
 # `garmin_activity:` is the Connect activity whose GPX tools/fetch_garmin.py
 # downloads, and whose ascent/descent the sync uses instead of the GPX's noisy
 # `<ele>` sums. Where the GPX is a hand-merged track spanning several activities,
@@ -18,7 +22,7 @@
 collections:
   - id: ecrin
     name: "GR54 - Tour des massifs de l’Oisans et des Écrins"
-    region: "Écrins National Park"
+    region: "Écrins National Park, France"
     kind: outdoor
     outings:
       - id: gr54_1
@@ -92,23 +96,38 @@ collections:
         garmin_activity: 23847277948
 
   - id: mercantour
-    name: Mercantour
-    region: "Mercantour National Park, Alpes-Maritimes"
-    dates: "Jul–Sep 2025"
+    name: Parc national du Mercantour
+    region: "Mercantour National Park, France"
     kind: outdoor
     outings:
-      - id: merveilles
-        name: "Vallée des Merveilles"
-        activity: hike            # hike | bike | run
-        date: "Sep 2025"
-        gpx: tracks/merveilles.gpx
-        immich_album: "Merveilles 2025"
-      - id: begoridge
-        name: "Mont Bégo Ridge"
+      - id: lac_allos_pelat
+        name: "Lac d'Allos and Mont Pelat"
         activity: hike
-        date: "Aug 2025"
-        gpx: tracks/begoridge.gpx
-        immich_album: "Mont Bego 2025"
+        garmin_activity: "20083613496"
+        gpx: tracks/mercantour/mont_pelat.gpx
+        immich_album: "Lac d'Allos, Mont Pelat & Entreveux (Website)"
+
+      - id: mont_mounier
+        name: "Mont Mounier"
+        activity: hike
+        garmin_activity: "23582484269"
+        gpx: tracks/mercantour/mounier.gpx
+        immich_album: "Mont Mounier"
+
+      - id: gordalesque
+        name: "Vallée de la Gordolasque"
+        activity: hike
+        gpx: tracks/mercantour/Refuge_de_Nice.gpx
+        immich_album: "Vallée de la Gordolasque"
+
+  - id: sinhagad_bird_valley
+    name: Sinhagad Bird Valley
+    region: "Pune, India"
+    kind: outdoor
+    outings:
+      - id: sinhagad_bird_valley
+        name: "Sinhagad Bird Valley"
+        immich_album: "Sinhagad Bird Valley"
 
   - id: esterel
     name: Estérel

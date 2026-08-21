@@ -1,4 +1,18 @@
 {
+  "20083613496": {
+    "ascent_m": 755.0,
+    "descent_m": 752.0,
+    "distance_m": 13146.63,
+    "moving_s": 9387.0,
+    "name": "Allos Hiking"
+  },
+  "23582484269": {
+    "ascent_m": 1064.0,
+    "descent_m": 1052.0,
+    "distance_m": 16623.57,
+    "moving_s": 12951.0,
+    "name": "P\u00e9one Hiking"
+  },
   "23747621090": {
     "ascent_m": 910.0,
     "descent_m": 162.0,

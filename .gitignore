@@ -6,5 +6,6 @@ _site
 
 # Trips pipeline — secrets & junk
 immich_key
+assets/trips/**/.sync-stage/
 tools/__pycache__/
 *.pyc

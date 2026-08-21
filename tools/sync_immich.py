@@ -20,6 +20,12 @@ Usage:
   python3 tools/sync_immich.py            # full sync
   python3 tools/sync_immich.py --albums   # list albums and exit (find names/UUIDs)
   python3 tools/sync_immich.py --dry-run  # resolve + report, download nothing
+  python3 tools/sync_immich.py --force    # re-download every photo, ignoring the cache
+
+Photos already downloaded are reused: `_data/immich_cache.json` remembers which
+Immich asset produced which file, so a re-run only fetches photos that are new or
+changed (and renames the rest in place when an album's order shifts). Delete that
+file, or pass --force, to rebuild every derivative from scratch.
 
 Dependencies:  requests, pyyaml, pillow   (pip install requests pyyaml pillow)
 
@@ -42,7 +48,10 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GRID_W, FULL_W = 800, 1800          # derivative widths (px)
+QUALITY = 82                        # WebP quality of both derivatives
 GARMIN_STATS = os.path.join(ROOT, "_data", "garmin_stats.json")
+IMMICH_CACHE = os.path.join(ROOT, "_data", "immich_cache.json")
+STAGE_DIR = ".sync-stage"           # scratch dir used while photos are reshuffled
 
 IMMICH_URL = os.environ.get("IMMICH_URL", "").rstrip("/")
 IMMICH_KEY = os.environ.get("IMMICH_KEY", "")
@@ -97,7 +106,7 @@ def download_derivatives(asset_id, out_dir, stem):
             scale = min(1.0, width / float(w))
             r = im.resize((max(1, int(w * scale)), max(1, int(h * scale))), Image.LANCZOS)
             p = os.path.join(out_dir, stem + suffix + ".webp")
-            r.save(p, "WEBP", quality=82, method=6)
+            r.save(p, "WEBP", quality=QUALITY, method=6)
             return "/" + rel + "/" + os.path.basename(p), r.size
         grid, _ = save(GRID_W, "-thumb")
         full, (fw, fh) = save(FULL_W, "")
@@ -108,6 +117,133 @@ def download_derivatives(asset_id, out_dir, stem):
         f.write(raw.content)
     src = "/" + rel + "/" + os.path.basename(p)
     return src, src, None, None
+
+# ---------------- derivative cache ----------------
+# Re-encoding every photo on every run is the slow part of a sync, and almost all
+# of it is wasted: the pixels rarely change. `_data/immich_cache.json` records
+# which asset produced which file on disk, so an unchanged photo is skipped.
+# `--force` ignores the cache and rebuilds everything.
+def derivative_params():
+    """What the files on disk were produced with — change any of it and they're stale."""
+    return dict(version=1, grid_w=GRID_W, full_w=FULL_W, quality=QUALITY, pil=HAVE_PIL)
+
+def load_cache(force):
+    """{asset id: entry} from the last run, or {} if forced/absent/stale."""
+    if force:
+        return {}
+    try:
+        with open(IMMICH_CACHE) as f:
+            data = json.load(f)
+    except (IOError, ValueError):
+        return {}
+    if data.get("params") != derivative_params():
+        print("Derivative settings changed — rebuilding every photo.")
+        return {}
+    return data.get("assets") or {}
+
+def save_cache(fresh, previous):
+    """Write the entries this run produced, keeping still-valid older ones.
+
+    An asset that wasn't synced this run (its album failed to resolve, say) keeps
+    its entry so the next run can still reuse its files — but only if no asset
+    from this run now owns those files, otherwise a photo re-added to an album
+    later would claim derivatives that no longer show it.
+    """
+    owned = set()
+    for e in fresh.values():
+        owned.update(x for x in (e.get("grid"), e.get("full")) if x)
+    merged = dict(fresh)
+    for aid, e in previous.items():
+        if aid not in merged and not ({e.get("grid"), e.get("full")} & owned):
+            merged[aid] = e
+    with open(IMMICH_CACHE, "w") as f:
+        json.dump(dict(params=derivative_params(), assets=merged), f,
+                  indent=2, sort_keys=True)
+
+def asset_sig(a):
+    """Identity of the pixels we derived from — changes if the photo is replaced or edited."""
+    ex = a.get("exifInfo") or {}
+    return "|".join(str(x or "") for x in (a.get("checksum"), a.get("updatedAt"),
+                                           a.get("fileModifiedAt"), ex.get("orientation")))
+
+def site_path(path):
+    """Absolute path -> the site-absolute URL stored in collections.json."""
+    return "/" + os.path.relpath(path, ROOT).replace(os.sep, "/")
+
+def abs_path(url):
+    return os.path.join(ROOT, url.lstrip("/").replace("/", os.sep))
+
+def target_paths(out_dir, stem):
+    """(grid, full) files this photo should end up in — the same file without Pillow."""
+    if HAVE_PIL:
+        return (os.path.join(out_dir, stem + "-thumb.webp"),
+                os.path.join(out_dir, stem + ".webp"))
+    p = os.path.join(out_dir, stem + ".jpg")
+    return (p, p)
+
+def uniq(paths):
+    seen, out = set(), []
+    for p in paths:
+        if p and p not in seen:
+            seen.add(p); out.append(p)
+    return out
+
+def stage_moves(assets, cache, out_dir):
+    """Park cached derivatives whose filename must change in out_dir/.sync-stage.
+
+    Files are named by album position, so inserting one photo shifts every stem
+    after it. Moving all of those aside *before* anything is written means a
+    reshuffle can never overwrite a file another photo is still waiting to reuse.
+    Returns {asset id: [staged paths]}.
+    """
+    staged, stage = {}, os.path.join(out_dir, STAGE_DIR)
+    for i, a in enumerate(assets):
+        e = cache.get(a["id"])
+        if not e or e.get("sig") != asset_sig(a):
+            continue
+        srcs = uniq([abs_path(p) for p in (e.get("grid"), e.get("full"))])
+        tgts = uniq(list(target_paths(out_dir, "%02d" % i)))
+        if srcs == tgts or len(srcs) != len(tgts):
+            continue
+        if not all(os.path.exists(p) for p in srcs):
+            continue
+        if any(os.path.dirname(p) != os.path.normpath(out_dir) for p in srcs):
+            continue                          # lives under another outing — leave it alone
+        os.makedirs(stage, exist_ok=True)
+        moved = []
+        for src in srcs:
+            dest = os.path.join(stage, os.path.basename(src))
+            os.replace(src, dest)
+            moved.append(dest)
+        staged[a["id"]] = moved
+    return staged
+
+def reuse_derivatives(a, out_dir, stem, cache, staged):
+    """(grid, full, w, h) for an unchanged photo, or None if it must be downloaded."""
+    e = cache.get(a["id"])
+    if not e or e.get("sig") != asset_sig(a):
+        return None
+    tgts = uniq(list(target_paths(out_dir, stem)))
+    parked = staged.get(a["id"])
+    if parked:
+        os.makedirs(out_dir, exist_ok=True)
+        for src, dest in zip(parked, tgts):
+            os.replace(src, dest)
+    elif not all(os.path.exists(p) for p in tgts):
+        return None                           # cached, but the file is gone from the tree
+    grid, full = target_paths(out_dir, stem)
+    return site_path(grid), site_path(full), e.get("width"), e.get("height")
+
+def clear_stage(out_dir):
+    stage = os.path.join(out_dir, STAGE_DIR)
+    if not os.path.isdir(stage):
+        return
+    left = os.listdir(stage)
+    if left:
+        print("    ! %d staged file(s) left in %s — they will be rebuilt next run"
+              % (len(left), os.path.relpath(stage, ROOT)))
+        return
+    os.rmdir(stage)
 
 # ---------------- GPX stats ----------------
 def haversine(a, b):
@@ -179,6 +315,7 @@ def garmin_elevation(outing, stats):
             sum(e["descent_m"] for e in entries))
 
 SPEED = {"hike": 3.6, "bike": 15.0, "run": 9.5}
+DEFAULT_SPEED = 4.0        # `activity:` is optional; unknown/absent walks at this pace
 # Okabe–Ito colourblind-safe palette — highly distinguishable over the topo basemap
 ROUTE_COLORS = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#E69F00", "#56B4E9"]
 
@@ -218,6 +355,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--albums", action="store_true", help="list Immich albums and exit")
     ap.add_argument("--dry-run", action="store_true", help="resolve + report, download nothing")
+    ap.add_argument("--force", "--no-cache", dest="force", action="store_true",
+                    help="ignore the derivative cache and re-download every photo")
     args = ap.parse_args()
 
     if not IMMICH_URL or not IMMICH_KEY:
@@ -236,6 +375,8 @@ def main():
     if not garmin_stats:
         print("No %s — elevation will come from GPX. Run tools/fetch_garmin.py for "
               "Garmin's figures." % os.path.relpath(GARMIN_STATS, ROOT))
+    cache = load_cache(args.force)
+    fresh, reused, fetched = {}, 0, 0
     collections_out = []
     for c in manifest["collections"]:
         outings_out, total_km = [], 0.0
@@ -249,9 +390,11 @@ def main():
             assets = album_assets(album_id)
             print("  %s/%s: %d photos" % (c["id"], o["id"], len(assets)))
 
-            entry = dict(id=o["id"], name=o["name"], activity=o["activity"], color=color)
+            entry = dict(id=o["id"], name=o["name"], color=color)
+            if o.get("activity"):                 # optional — only pace estimation uses it
+                entry["activity"] = o["activity"]
             if o.get("gpx"):
-                st = gpx_stats(os.path.join(ROOT, o["gpx"]), SPEED.get(o["activity"], 4.0))
+                st = gpx_stats(os.path.join(ROOT, o["gpx"]), SPEED.get(o.get("activity"), DEFAULT_SPEED))
                 if st:
                     # Garmin's barometric ascent/descent beats summing GPX <ele>
                     gm = garmin_elevation(o, garmin_stats)
@@ -265,7 +408,9 @@ def main():
                                  elevation_source="garmin" if gm else "gpx")
                     total_km += st["km"]
 
-            out_dir = os.path.join(ROOT, "assets", "trips", c["id"], o["id"])
+            out_dir = os.path.normpath(os.path.join(ROOT, "assets", "trips", c["id"], o["id"]))
+            # one pass up front, before anything is written: see stage_moves()
+            staged = {} if args.dry_run else stage_moves(assets, cache, out_dir)
             photos = []
             o_span = (None, None)
             for i, a in enumerate(assets):
@@ -279,10 +424,20 @@ def main():
                 if args.dry_run:
                     p["grid"] = p["full"] = "(dry-run)"
                 else:
-                    grid, full, gw, gh = download_derivatives(a["id"], out_dir, "%02d" % i)
+                    got = reuse_derivatives(a, out_dir, "%02d" % i, cache, staged)
+                    if got:
+                        reused += 1
+                    else:
+                        got = download_derivatives(a["id"], out_dir, "%02d" % i)
+                        fetched += 1
+                    grid, full, gw, gh = got
                     p["grid"], p["full"] = grid, full
                     if gw: p["width"], p["height"] = gw, gh
+                    fresh[a["id"]] = dict(sig=asset_sig(a), grid=grid, full=full,
+                                          width=gw, height=gh)
                 photos.append(p)
+            if not args.dry_run:
+                clear_stage(out_dir)
             # date: manifest value wins, else derived from photo capture times
             entry["date"] = o.get("date") or fmt_span(o_span)
             entry["photos"] = photos
@@ -310,7 +465,9 @@ def main():
     if not args.dry_run:
         with open(os.path.join(ROOT, "_data", "collections.json"), "w") as f:
             json.dump(collections_out, f, indent=2, ensure_ascii=False)
-    print("Done: %d collections." % len(collections_out))
+        save_cache(fresh, cache)
+    print("Done: %d collections (%d photos reused from cache, %d downloaded)."
+          % (len(collections_out), reused, fetched))
 
 if __name__ == "__main__":
     main()
