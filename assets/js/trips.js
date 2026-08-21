@@ -189,7 +189,9 @@
   }
   function filterGroups() {
     Array.prototype.forEach.call(groupsEl.querySelectorAll(".pgroup"), function (sec) {
-      sec.style.display = (!state.active || sec.dataset.oid === state.active) ? "" : "none";
+      var shown = !state.active || sec.dataset.oid === state.active;
+      sec.style.display = shown ? "" : "none";
+      sec.classList.toggle("filtered", !shown);   // keeps hidden photos out of the lightbox sequence
     });
   }
   function toggleActive(oid) {

@@ -74,8 +74,11 @@ layout: default
 <script type="module">
   import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
   const lb = new PhotoSwipeLightbox({
-    gallery: '.photos',
-    children: 'a.photo',
+    // one gallery for the whole collection, so navigation runs across every
+    // outing rather than stopping at the end of one; hidden groups (when an
+    // outing is isolated) drop out of the sequence
+    gallery: '#groups',
+    children: '.pgroup:not(.filtered) a.photo',
     pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js')
   });
   lb.init();
