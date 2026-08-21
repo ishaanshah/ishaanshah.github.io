@@ -647,7 +647,7 @@
   {
     "id": "sinhagad_bird_valley",
     "name": "Sinhagad Bird Valley",
-    "dates": "Jan 2018",
+    "dates": "Dec 2016 – Jan 2018",
     "kind": "outdoor",
     "cover": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
     "outings": [
@@ -655,21 +655,49 @@
         "id": "sinhagad_bird_valley",
         "name": "Sinhagad Bird Valley",
         "color": "#0072B2",
-        "date": "Jan 2018",
+        "date": "Dec 2016 – Jan 2018",
         "photos": [
           {
-            "caption": "Red-Vented Bulbul",
-            "width": 1440,
-            "height": 2356,
+            "caption": "",
+            "width": 1800,
+            "height": 1212,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp"
           },
           {
             "caption": "",
-            "width": 1611,
-            "height": 1440,
+            "width": 1080,
+            "height": 1865,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01-thumb.webp",
             "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1283,
+            "height": 1341,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2114,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp"
+          },
+          {
+            "caption": "Red-Vented Bulbul",
+            "width": 1440,
+            "height": 2356,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp"
+          },
+          {
+            "caption": "",
+            "width": 1611,
+            "height": 1440,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp"
           },
           {
             "caption": "",
@@ -677,8 +705,8 @@
             "height": 1290,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp"
           },
           {
             "caption": "",
@@ -686,8 +714,8 @@
             "height": 1440,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp"
           },
           {
             "caption": "",
@@ -695,8 +723,8 @@
             "height": 1440,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp"
           },
           {
             "caption": "Asian Paradise Flycatcher",
@@ -704,8 +732,8 @@
             "height": 1708,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp"
           },
           {
             "caption": "Tickell's Blue Flycatcher",
@@ -713,8 +741,8 @@
             "height": 1191,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp"
           },
           {
             "caption": "Asian Paradise Flycatcher",
@@ -722,8 +750,8 @@
             "height": 2160,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp"
           },
           {
             "caption": "",
@@ -731,8 +759,8 @@
             "height": 1129,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12.webp"
           },
           {
             "caption": "Red-Vented Bulbul",
@@ -740,8 +768,8 @@
             "height": 1118,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13.webp"
           },
           {
             "caption": "",
@@ -749,8 +777,8 @@
             "height": 1232,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14.webp"
           },
           {
             "caption": "Asian Paradise Flycatcher",
@@ -758,8 +786,8 @@
             "height": 1430,
             "lat": 18.375658,
             "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp"
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15.webp"
           }
         ]
       }
@@ -935,5 +963,101 @@
     ],
     "region": "Kedarnath Wildlife Sanctuary, India",
     "total_distance": "32.4 km"
+  },
+  {
+    "id": "flamingo_migration",
+    "name": "Flamingo Migration",
+    "dates": "Dec 2015",
+    "kind": "outdoor",
+    "cover": "/assets/trips/flamingo_migration/bhigwan/00-thumb.webp",
+    "outings": [
+      {
+        "id": "bhigwan",
+        "name": "Bhigwan",
+        "color": "#0072B2",
+        "date": "Dec 2015",
+        "photos": [
+          {
+            "caption": "White-throated Kingfisher",
+            "width": 955,
+            "height": 1619,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/00-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/00.webp"
+          },
+          {
+            "caption": "Open-billed Stork",
+            "width": 1120,
+            "height": 1272,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/01-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/01.webp"
+          },
+          {
+            "caption": "Baby Greater Flamingo",
+            "width": 1392,
+            "height": 1584,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/02-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/02.webp"
+          },
+          {
+            "caption": "Greater Flamingo",
+            "width": 1800,
+            "height": 1061,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/03-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/03.webp"
+          },
+          {
+            "caption": "Greater Flamingo",
+            "width": 1800,
+            "height": 1012,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/04-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/04.webp"
+          },
+          {
+            "caption": "Painted Stork",
+            "width": 1073,
+            "height": 1908,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/05-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/05.webp"
+          },
+          {
+            "caption": "Seagull",
+            "width": 1440,
+            "height": 1697,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/06-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/06.webp"
+          },
+          {
+            "caption": "Grey Heron",
+            "width": 1440,
+            "height": 1465,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/07-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/07.webp"
+          },
+          {
+            "caption": "Painted Stork",
+            "width": 1440,
+            "height": 1714,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/08-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/08.webp"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 1597,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/09-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/09.webp"
+          },
+          {
+            "caption": "Green Bea-eater",
+            "width": 1128,
+            "height": 1584,
+            "grid": "/assets/trips/flamingo_migration/bhigwan/10-thumb.webp",
+            "full": "/assets/trips/flamingo_migration/bhigwan/10.webp"
+          }
+        ]
+      }
+    ],
+    "region": "Bhigwan, India",
+    "total_distance": "0.0 km"
   }
 ]

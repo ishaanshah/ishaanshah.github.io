@@ -155,3 +155,13 @@ collections:
       - id: rishikesh
         name: "Rishikesh"
         immich_album: "Rishikesh"
+
+  - id: flamingo_migration
+    name: "Flamingo Migration"
+    region: "Bhigwan, India"
+    kind: outdoor
+    outings:
+      - id: bhigwan
+        name: "Bhigwan"
+        immich_album: "Bhigwan"
+
