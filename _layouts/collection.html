@@ -55,7 +55,8 @@ layout: default
            data-oid="{{ o.id }}" data-i="{{ forloop.index0 }}" data-gidx="{{ gidx }}"
            data-pswp-width="{{ pw }}" data-pswp-height="{{ ph }}"
            target="_blank" rel="noopener">
-          <img src="{{ p.grid }}" alt="{{ p.caption }}" loading="lazy">
+          <img src="{{ p.grid }}" alt="{{ p.caption }}" loading="lazy"
+               style="object-position:{{ p.focus | default: '50% 50%' }}">
           {% if p.caption %}<span class="cap">{{ p.caption }}</span>{% endif %}
         </a>
         {% assign gidx = gidx | plus: 1 %}

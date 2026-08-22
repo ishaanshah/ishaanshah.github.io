@@ -5,6 +5,7 @@
     "dates": "Jul–Aug 2026",
     "kind": "outdoor",
     "cover": "/assets/trips/ecrin/gr54_1/00-thumb.webp",
+    "cover_focus": "44.8% 30.8%",
     "outings": [
       {
         "id": "gr54_1",
@@ -26,7 +27,8 @@
             "lat": 45.079336,
             "lng": 6.191608,
             "grid": "/assets/trips/ecrin/gr54_1/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_1/00.webp"
+            "full": "/assets/trips/ecrin/gr54_1/00.webp",
+            "focus": "44.8% 30.8%"
           },
           {
             "caption": "",
@@ -35,7 +37,8 @@
             "lat": 45.073378,
             "lng": 6.205653,
             "grid": "/assets/trips/ecrin/gr54_1/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_1/01.webp"
+            "full": "/assets/trips/ecrin/gr54_1/01.webp",
+            "focus": "50% 29.6%"
           },
           {
             "caption": "",
@@ -44,14 +47,16 @@
             "lat": 45.059236,
             "lng": 6.238753,
             "grid": "/assets/trips/ecrin/gr54_1/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_1/02.webp"
+            "full": "/assets/trips/ecrin/gr54_1/02.webp",
+            "focus": "50% 25.5%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_1/03-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_1/03.webp"
+            "full": "/assets/trips/ecrin/gr54_1/03.webp",
+            "focus": "54% 62.7%"
           }
         ]
       },
@@ -75,7 +80,8 @@
             "lat": 45.057247,
             "lng": 6.245319,
             "grid": "/assets/trips/ecrin/gr54_2/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_2/00.webp"
+            "full": "/assets/trips/ecrin/gr54_2/00.webp",
+            "focus": "50% 54.3%"
           },
           {
             "caption": "",
@@ -84,7 +90,8 @@
             "lat": 45.055989,
             "lng": 6.253433,
             "grid": "/assets/trips/ecrin/gr54_2/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_2/01.webp"
+            "full": "/assets/trips/ecrin/gr54_2/01.webp",
+            "focus": "50.6% 76.1%"
           },
           {
             "caption": "",
@@ -93,7 +100,8 @@
             "lat": 45.050578,
             "lng": 6.289014,
             "grid": "/assets/trips/ecrin/gr54_2/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_2/02.webp"
+            "full": "/assets/trips/ecrin/gr54_2/02.webp",
+            "focus": "56.3% 51.2%"
           },
           {
             "caption": "",
@@ -102,7 +110,8 @@
             "lat": 45.007017,
             "lng": 6.379606,
             "grid": "/assets/trips/ecrin/gr54_2/03-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_2/03.webp"
+            "full": "/assets/trips/ecrin/gr54_2/03.webp",
+            "focus": "47.3% 47.5%"
           },
           {
             "caption": "",
@@ -111,14 +120,16 @@
             "lat": 44.996842,
             "lng": 6.384433,
             "grid": "/assets/trips/ecrin/gr54_2/04-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_2/04.webp"
+            "full": "/assets/trips/ecrin/gr54_2/04.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_2/05-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_2/05.webp"
+            "full": "/assets/trips/ecrin/gr54_2/05.webp",
+            "focus": "55.5% 52.6%"
           }
         ]
       },
@@ -142,14 +153,16 @@
             "lat": 44.978908,
             "lng": 6.405961,
             "grid": "/assets/trips/ecrin/gr54_3/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_3/00.webp"
+            "full": "/assets/trips/ecrin/gr54_3/00.webp",
+            "focus": "60.9% 50%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_3/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_3/01.webp"
+            "full": "/assets/trips/ecrin/gr54_3/01.webp",
+            "focus": "50.2% 39.7%"
           },
           {
             "caption": "",
@@ -158,7 +171,8 @@
             "lat": 44.982258,
             "lng": 6.424431,
             "grid": "/assets/trips/ecrin/gr54_3/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_3/02.webp"
+            "full": "/assets/trips/ecrin/gr54_3/02.webp",
+            "focus": "36% 54.1%"
           }
         ]
       },
@@ -182,7 +196,8 @@
             "lat": 44.932033,
             "lng": 6.507036,
             "grid": "/assets/trips/ecrin/gr54_4/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_4/00.webp"
+            "full": "/assets/trips/ecrin/gr54_4/00.webp",
+            "focus": "45% 60.1%"
           },
           {
             "caption": "",
@@ -191,7 +206,8 @@
             "lat": 44.909906,
             "lng": 6.49865,
             "grid": "/assets/trips/ecrin/gr54_4/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_4/01.webp"
+            "full": "/assets/trips/ecrin/gr54_4/01.webp",
+            "focus": "36.6% 50%"
           }
         ]
       },
@@ -215,7 +231,8 @@
             "lat": 44.787336,
             "lng": 6.362672,
             "grid": "/assets/trips/ecrin/gr54_5/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_5/00.webp"
+            "full": "/assets/trips/ecrin/gr54_5/00.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
@@ -224,7 +241,8 @@
             "lat": 44.774906,
             "lng": 6.361142,
             "grid": "/assets/trips/ecrin/gr54_5/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_5/01.webp"
+            "full": "/assets/trips/ecrin/gr54_5/01.webp",
+            "focus": "82.4% 45.4%"
           },
           {
             "caption": "",
@@ -233,7 +251,8 @@
             "lat": 44.768478,
             "lng": 6.353975,
             "grid": "/assets/trips/ecrin/gr54_5/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_5/02.webp"
+            "full": "/assets/trips/ecrin/gr54_5/02.webp",
+            "focus": "73.6% 44.7%"
           }
         ]
       },
@@ -257,14 +276,16 @@
             "lat": 44.780467,
             "lng": 6.288889,
             "grid": "/assets/trips/ecrin/gr54_6/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/00.webp"
+            "full": "/assets/trips/ecrin/gr54_6/00.webp",
+            "focus": "50% 35%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_6/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/01.webp"
+            "full": "/assets/trips/ecrin/gr54_6/01.webp",
+            "focus": "50% 34.8%"
           },
           {
             "caption": "",
@@ -273,7 +294,8 @@
             "lat": 44.788689,
             "lng": 6.281806,
             "grid": "/assets/trips/ecrin/gr54_6/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/02.webp"
+            "full": "/assets/trips/ecrin/gr54_6/02.webp",
+            "focus": "46% 23.4%"
           },
           {
             "caption": "",
@@ -282,7 +304,8 @@
             "lat": 44.794778,
             "lng": 6.287386,
             "grid": "/assets/trips/ecrin/gr54_6/03-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/03.webp"
+            "full": "/assets/trips/ecrin/gr54_6/03.webp",
+            "focus": "37.9% 38.4%"
           },
           {
             "caption": "",
@@ -291,7 +314,8 @@
             "lat": 44.797717,
             "lng": 6.290678,
             "grid": "/assets/trips/ecrin/gr54_6/04-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/04.webp"
+            "full": "/assets/trips/ecrin/gr54_6/04.webp",
+            "focus": "47.5% 56.8%"
           },
           {
             "caption": "",
@@ -300,7 +324,8 @@
             "lat": 44.798475,
             "lng": 6.290594,
             "grid": "/assets/trips/ecrin/gr54_6/05-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/05.webp"
+            "full": "/assets/trips/ecrin/gr54_6/05.webp",
+            "focus": "40.1% 45.2%"
           }
         ]
       },
@@ -324,7 +349,8 @@
             "lat": 44.831936,
             "lng": 6.142575,
             "grid": "/assets/trips/ecrin/gr54_7/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_7/00.webp"
+            "full": "/assets/trips/ecrin/gr54_7/00.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
@@ -333,7 +359,8 @@
             "lat": 44.845786,
             "lng": 6.146844,
             "grid": "/assets/trips/ecrin/gr54_7/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_7/01.webp"
+            "full": "/assets/trips/ecrin/gr54_7/01.webp",
+            "focus": "48% 35.6%"
           }
         ]
       },
@@ -357,7 +384,8 @@
             "lat": 44.846917,
             "lng": 6.115131,
             "grid": "/assets/trips/ecrin/gr54_8/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_8/00.webp"
+            "full": "/assets/trips/ecrin/gr54_8/00.webp",
+            "focus": "50% 50%"
           }
         ]
       },
@@ -381,21 +409,24 @@
             "lat": 44.927881,
             "lng": 6.086131,
             "grid": "/assets/trips/ecrin/gr54_9/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/00.webp"
+            "full": "/assets/trips/ecrin/gr54_9/00.webp",
+            "focus": "44.5% 68.2%"
           },
           {
             "caption": "",
             "width": 1440,
             "height": 1920,
             "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/01.webp"
+            "full": "/assets/trips/ecrin/gr54_9/01.webp",
+            "focus": "69.4% 37.8%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/02.webp"
+            "full": "/assets/trips/ecrin/gr54_9/02.webp",
+            "focus": "37.2% 28.4%"
           },
           {
             "caption": "",
@@ -404,14 +435,16 @@
             "lat": 44.932681,
             "lng": 6.088275,
             "grid": "/assets/trips/ecrin/gr54_9/03-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/03.webp"
+            "full": "/assets/trips/ecrin/gr54_9/03.webp",
+            "focus": "50% 33.7%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/04.webp"
+            "full": "/assets/trips/ecrin/gr54_9/04.webp",
+            "focus": "48.9% 82.2%"
           },
           {
             "caption": "",
@@ -420,7 +453,8 @@
             "lat": 44.951503,
             "lng": 6.102778,
             "grid": "/assets/trips/ecrin/gr54_9/05-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/05.webp"
+            "full": "/assets/trips/ecrin/gr54_9/05.webp",
+            "focus": "50% 34.1%"
           }
         ]
       },
@@ -442,7 +476,8 @@
             "width": 1800,
             "height": 1230,
             "grid": "/assets/trips/ecrin/gr54_10/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_10/00.webp"
+            "full": "/assets/trips/ecrin/gr54_10/00.webp",
+            "focus": "50% 45.4%"
           },
           {
             "caption": "Lac Lauvital",
@@ -451,7 +486,8 @@
             "lat": 44.973194,
             "lng": 6.067542,
             "grid": "/assets/trips/ecrin/gr54_10/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_10/01.webp"
+            "full": "/assets/trips/ecrin/gr54_10/01.webp",
+            "focus": "50% 31.7%"
           }
         ]
       }
@@ -465,6 +501,7 @@
     "dates": "Jun 2025 – Jul 2026",
     "kind": "outdoor",
     "cover": "/assets/trips/mercantour/lac_allos_pelat/00-thumb.webp",
+    "cover_focus": "40.5% 52.3%",
     "outings": [
       {
         "id": "lac_allos_pelat",
@@ -486,7 +523,8 @@
             "lat": 44.237794,
             "lng": 6.706539,
             "grid": "/assets/trips/mercantour/lac_allos_pelat/00-thumb.webp",
-            "full": "/assets/trips/mercantour/lac_allos_pelat/00.webp"
+            "full": "/assets/trips/mercantour/lac_allos_pelat/00.webp",
+            "focus": "40.5% 52.3%"
           },
           {
             "caption": "",
@@ -495,7 +533,8 @@
             "lat": 44.237081,
             "lng": 6.706675,
             "grid": "/assets/trips/mercantour/lac_allos_pelat/01-thumb.webp",
-            "full": "/assets/trips/mercantour/lac_allos_pelat/01.webp"
+            "full": "/assets/trips/mercantour/lac_allos_pelat/01.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
@@ -504,21 +543,24 @@
             "lat": 44.264969,
             "lng": 6.705739,
             "grid": "/assets/trips/mercantour/lac_allos_pelat/02-thumb.webp",
-            "full": "/assets/trips/mercantour/lac_allos_pelat/02.webp"
+            "full": "/assets/trips/mercantour/lac_allos_pelat/02.webp",
+            "focus": "66.4% 68.6%"
           },
           {
             "caption": "",
             "width": 1200,
             "height": 1600,
             "grid": "/assets/trips/mercantour/lac_allos_pelat/03-thumb.webp",
-            "full": "/assets/trips/mercantour/lac_allos_pelat/03.webp"
+            "full": "/assets/trips/mercantour/lac_allos_pelat/03.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
             "width": 1600,
             "height": 1200,
             "grid": "/assets/trips/mercantour/lac_allos_pelat/04-thumb.webp",
-            "full": "/assets/trips/mercantour/lac_allos_pelat/04.webp"
+            "full": "/assets/trips/mercantour/lac_allos_pelat/04.webp",
+            "focus": "77.5% 44.6%"
           },
           {
             "caption": "",
@@ -527,7 +569,8 @@
             "lat": 43.949144,
             "lng": 6.811675,
             "grid": "/assets/trips/mercantour/lac_allos_pelat/05-thumb.webp",
-            "full": "/assets/trips/mercantour/lac_allos_pelat/05.webp"
+            "full": "/assets/trips/mercantour/lac_allos_pelat/05.webp",
+            "focus": "54.9% 53.4%"
           }
         ]
       },
@@ -551,7 +594,8 @@
             "lat": 44.144203,
             "lng": 6.953483,
             "grid": "/assets/trips/mercantour/mont_mounier/00-thumb.webp",
-            "full": "/assets/trips/mercantour/mont_mounier/00.webp"
+            "full": "/assets/trips/mercantour/mont_mounier/00.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "The ridge to Mount Mounier from Petit Mounier.",
@@ -560,7 +604,8 @@
             "lat": 44.151117,
             "lng": 6.963347,
             "grid": "/assets/trips/mercantour/mont_mounier/01-thumb.webp",
-            "full": "/assets/trips/mercantour/mont_mounier/01.webp"
+            "full": "/assets/trips/mercantour/mont_mounier/01.webp",
+            "focus": "46.5% 40.8%"
           }
         ]
       },
@@ -584,7 +629,8 @@
             "lat": 44.100456,
             "lng": 7.396222,
             "grid": "/assets/trips/mercantour/gordalesque/00-thumb.webp",
-            "full": "/assets/trips/mercantour/gordalesque/00.webp"
+            "full": "/assets/trips/mercantour/gordalesque/00.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
@@ -593,7 +639,8 @@
             "lat": 44.104456,
             "lng": 7.396717,
             "grid": "/assets/trips/mercantour/gordalesque/01-thumb.webp",
-            "full": "/assets/trips/mercantour/gordalesque/01.webp"
+            "full": "/assets/trips/mercantour/gordalesque/01.webp",
+            "focus": "57.4% 46.7%"
           },
           {
             "caption": "",
@@ -602,7 +649,8 @@
             "lat": 44.103986,
             "lng": 7.403636,
             "grid": "/assets/trips/mercantour/gordalesque/02-thumb.webp",
-            "full": "/assets/trips/mercantour/gordalesque/02.webp"
+            "full": "/assets/trips/mercantour/gordalesque/02.webp",
+            "focus": "50% 38%"
           },
           {
             "caption": "",
@@ -611,7 +659,8 @@
             "lat": 44.101217,
             "lng": 7.414928,
             "grid": "/assets/trips/mercantour/gordalesque/03-thumb.webp",
-            "full": "/assets/trips/mercantour/gordalesque/03.webp"
+            "full": "/assets/trips/mercantour/gordalesque/03.webp",
+            "focus": "50% 36.8%"
           },
           {
             "caption": "",
@@ -620,7 +669,8 @@
             "lat": 44.100197,
             "lng": 7.419758,
             "grid": "/assets/trips/mercantour/gordalesque/04-thumb.webp",
-            "full": "/assets/trips/mercantour/gordalesque/04.webp"
+            "full": "/assets/trips/mercantour/gordalesque/04.webp",
+            "focus": "40.7% 44.5%"
           },
           {
             "caption": "",
@@ -629,14 +679,16 @@
             "lat": 44.096931,
             "lng": 7.423981,
             "grid": "/assets/trips/mercantour/gordalesque/05-thumb.webp",
-            "full": "/assets/trips/mercantour/gordalesque/05.webp"
+            "full": "/assets/trips/mercantour/gordalesque/05.webp",
+            "focus": "42.1% 50%"
           },
           {
             "caption": "",
             "width": 1440,
             "height": 1920,
             "grid": "/assets/trips/mercantour/gordalesque/06-thumb.webp",
-            "full": "/assets/trips/mercantour/gordalesque/06.webp"
+            "full": "/assets/trips/mercantour/gordalesque/06.webp",
+            "focus": "49.3% 55.1%"
           }
         ]
       }
@@ -649,12 +701,61 @@
     "name": "Côte d'Azur",
     "dates": "Jul 2024 – Aug 2026",
     "kind": "outdoor",
-    "cover": "/assets/trips/cote_dazur/eze/00-thumb.webp",
+    "cover": "/assets/trips/cote_dazur/tdf_femmes_26/00-thumb.webp",
+    "cover_focus": "35.5% 36.1%",
     "outings": [
+      {
+        "id": "tdf_femmes_26",
+        "name": "Tour de France Femmes",
+        "color": "#0072B2",
+        "date": "Aug 2026",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1368,
+            "height": 2028,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/00-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/00.webp",
+            "focus": "35.5% 36.1%"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2224,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/01-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/01.webp",
+            "focus": "62.1% 30.2%"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 1870,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/02-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/02.webp",
+            "focus": "65.6% 64.6%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1333,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/03-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/03.webp",
+            "focus": "50% 42.9%"
+          }
+        ]
+      },
       {
         "id": "eze",
         "name": "Éze",
-        "color": "#0072B2",
+        "color": "#D55E00",
         "activity": "hike",
         "gpx": "/tracks/cote_dazur/eze.gpx",
         "distance": "7.2 km",
@@ -671,7 +772,8 @@
             "lat": 43.728453,
             "lng": 7.362781,
             "grid": "/assets/trips/cote_dazur/eze/00-thumb.webp",
-            "full": "/assets/trips/cote_dazur/eze/00.webp"
+            "full": "/assets/trips/cote_dazur/eze/00.webp",
+            "focus": "54.6% 58%"
           },
           {
             "caption": "",
@@ -680,7 +782,8 @@
             "lat": 43.727459,
             "lng": 7.361678,
             "grid": "/assets/trips/cote_dazur/eze/01-thumb.webp",
-            "full": "/assets/trips/cote_dazur/eze/01.webp"
+            "full": "/assets/trips/cote_dazur/eze/01.webp",
+            "focus": "49.2% 62.4%"
           },
           {
             "caption": "",
@@ -689,14 +792,63 @@
             "lat": 43.731719,
             "lng": 7.358497,
             "grid": "/assets/trips/cote_dazur/eze/02-thumb.webp",
-            "full": "/assets/trips/cote_dazur/eze/02.webp"
+            "full": "/assets/trips/cote_dazur/eze/02.webp",
+            "focus": "50% 50%"
+          }
+        ]
+      },
+      {
+        "id": "fireworks",
+        "name": "Fireworks during closing of Carnaval de Nice",
+        "color": "#009E73",
+        "date": "Feb 2026",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2046,
+            "lat": 43.687218,
+            "lng": 7.238271,
+            "grid": "/assets/trips/cote_dazur/fireworks/00-thumb.webp",
+            "full": "/assets/trips/cote_dazur/fireworks/00.webp",
+            "focus": "50.8% 34.9%"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2219,
+            "lat": 43.687218,
+            "lng": 7.238271,
+            "grid": "/assets/trips/cote_dazur/fireworks/01-thumb.webp",
+            "full": "/assets/trips/cote_dazur/fireworks/01.webp",
+            "focus": "45.3% 23.2%"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 1854,
+            "lat": 43.687218,
+            "lng": 7.238271,
+            "grid": "/assets/trips/cote_dazur/fireworks/02-thumb.webp",
+            "full": "/assets/trips/cote_dazur/fireworks/02.webp",
+            "focus": "47.5% 32.7%"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2037,
+            "lat": 43.687218,
+            "lng": 7.238271,
+            "grid": "/assets/trips/cote_dazur/fireworks/03-thumb.webp",
+            "full": "/assets/trips/cote_dazur/fireworks/03.webp",
+            "focus": "57.9% 29%"
           }
         ]
       },
       {
         "id": "col_deze_gravel",
         "name": "Col d'Éze (Gravel)",
-        "color": "#D55E00",
+        "color": "#CC79A7",
         "activity": "gravel",
         "gpx": "/tracks/cote_dazur/eze_gravel.gpx",
         "distance": "34.7 km",
@@ -713,7 +865,8 @@
             "lat": 43.726499,
             "lng": 7.315891,
             "grid": "/assets/trips/cote_dazur/col_deze_gravel/00-thumb.webp",
-            "full": "/assets/trips/cote_dazur/col_deze_gravel/00.webp"
+            "full": "/assets/trips/cote_dazur/col_deze_gravel/00.webp",
+            "focus": "38.4% 36.4%"
           },
           {
             "caption": "",
@@ -722,7 +875,8 @@
             "lat": 43.730255,
             "lng": 7.318862,
             "grid": "/assets/trips/cote_dazur/col_deze_gravel/01-thumb.webp",
-            "full": "/assets/trips/cote_dazur/col_deze_gravel/01.webp"
+            "full": "/assets/trips/cote_dazur/col_deze_gravel/01.webp",
+            "focus": "50% 38.5%"
           },
           {
             "caption": "",
@@ -731,51 +885,8 @@
             "lat": 43.730631,
             "lng": 7.320204,
             "grid": "/assets/trips/cote_dazur/col_deze_gravel/02-thumb.webp",
-            "full": "/assets/trips/cote_dazur/col_deze_gravel/02.webp"
-          }
-        ]
-      },
-      {
-        "id": "tdf_femmes_26",
-        "name": "Tour de France Femmes",
-        "color": "#009E73",
-        "date": "Aug 2026",
-        "photos": [
-          {
-            "caption": "",
-            "width": 1368,
-            "height": 2028,
-            "lat": 43.686516,
-            "lng": 7.237619,
-            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/00-thumb.webp",
-            "full": "/assets/trips/cote_dazur/tdf_femmes_26/00.webp"
-          },
-          {
-            "caption": "",
-            "width": 1440,
-            "height": 2224,
-            "lat": 43.686516,
-            "lng": 7.237619,
-            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/01-thumb.webp",
-            "full": "/assets/trips/cote_dazur/tdf_femmes_26/01.webp"
-          },
-          {
-            "caption": "",
-            "width": 1440,
-            "height": 1870,
-            "lat": 43.686516,
-            "lng": 7.237619,
-            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/02-thumb.webp",
-            "full": "/assets/trips/cote_dazur/tdf_femmes_26/02.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1333,
-            "lat": 43.686516,
-            "lng": 7.237619,
-            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/03-thumb.webp",
-            "full": "/assets/trips/cote_dazur/tdf_femmes_26/03.webp"
+            "full": "/assets/trips/cote_dazur/col_deze_gravel/02.webp",
+            "focus": "50% 41.4%"
           }
         ]
       }
@@ -789,6 +900,7 @@
     "dates": "Apr 2017",
     "kind": "outdoor",
     "cover": "/assets/trips/chandrashila_chopta/sari_deoriatal/00-thumb.webp",
+    "cover_focus": "50% 50%",
     "outings": [
       {
         "id": "sari_deoriatal",
@@ -808,35 +920,40 @@
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/00-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/00.webp"
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/00.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1200,
             "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/01-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/01.webp"
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/01.webp",
+            "focus": "56.2% 56.2%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1110,
             "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/02-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/02.webp"
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/02.webp",
+            "focus": "34.1% 42.2%"
           },
           {
             "caption": "Himalayan Griffon",
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/03-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/03.webp"
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/03.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1200,
             "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/04-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/04.webp"
+            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/04.webp",
+            "focus": "47.9% 45.6%"
           }
         ]
       },
@@ -858,28 +975,32 @@
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/00-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/00.webp"
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/00.webp",
+            "focus": "50% 58.7%"
           },
           {
             "caption": "Verditer Flycatcher",
             "width": 1440,
             "height": 2078,
             "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/01-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/01.webp"
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/01.webp",
+            "focus": "58.1% 60.2%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/02-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/02.webp"
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/02.webp",
+            "focus": "54.8% 43.7%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1200,
             "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/03-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/03.webp"
+            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/03.webp",
+            "focus": "50% 50%"
           }
         ]
       },
@@ -901,21 +1022,24 @@
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/chandrashila_chopta/chopta-chandrashila/00-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/00.webp"
+            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/00.webp",
+            "focus": "50% 62.5%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1200,
             "grid": "/assets/trips/chandrashila_chopta/chopta-chandrashila/01-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/01.webp"
+            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/01.webp",
+            "focus": "44.4% 63.8%"
           },
           {
             "caption": "",
             "width": 1600,
             "height": 1066,
             "grid": "/assets/trips/chandrashila_chopta/chopta-chandrashila/02-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/02.webp"
+            "full": "/assets/trips/chandrashila_chopta/chopta-chandrashila/02.webp",
+            "focus": "49.6% 34.6%"
           }
         ]
       },
@@ -930,21 +1054,24 @@
             "width": 1440,
             "height": 2560,
             "grid": "/assets/trips/chandrashila_chopta/rishikesh/00-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/rishikesh/00.webp"
+            "full": "/assets/trips/chandrashila_chopta/rishikesh/00.webp",
+            "focus": "65.9% 40.8%"
           },
           {
             "caption": "",
             "width": 1126,
             "height": 1600,
             "grid": "/assets/trips/chandrashila_chopta/rishikesh/01-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/rishikesh/01.webp"
+            "full": "/assets/trips/chandrashila_chopta/rishikesh/01.webp",
+            "focus": "28.6% 34.2%"
           },
           {
             "caption": "",
             "width": 1800,
             "height": 1200,
             "grid": "/assets/trips/chandrashila_chopta/rishikesh/02-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/rishikesh/02.webp"
+            "full": "/assets/trips/chandrashila_chopta/rishikesh/02.webp",
+            "focus": "42.1% 45%"
           }
         ]
       }
@@ -958,6 +1085,7 @@
     "dates": "Dec 2016 – Jan 2018",
     "kind": "outdoor",
     "cover": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
+    "cover_focus": "50% 44.9%",
     "outings": [
       {
         "id": "sinhagad_bird_valley",
@@ -970,42 +1098,48 @@
             "width": 1800,
             "height": 1212,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp",
+            "focus": "50% 44.9%"
           },
           {
             "caption": "",
             "width": 1080,
             "height": 1865,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp",
+            "focus": "43.2% 36.9%"
           },
           {
             "caption": "",
             "width": 1283,
             "height": 1341,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "",
             "width": 1440,
             "height": 2114,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp",
+            "focus": "49.2% 41.1%"
           },
           {
             "caption": "Red-Vented Bulbul",
             "width": 1440,
             "height": 2356,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp",
+            "focus": "31.2% 11.9%"
           },
           {
             "caption": "",
             "width": 1611,
             "height": 1440,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp",
+            "focus": "59.5% 61.6%"
           },
           {
             "caption": "",
@@ -1014,7 +1148,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp",
+            "focus": "44.4% 58.6%"
           },
           {
             "caption": "",
@@ -1023,7 +1158,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp",
+            "focus": "50% 54.3%"
           },
           {
             "caption": "",
@@ -1032,7 +1168,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp",
+            "focus": "56.3% 61.4%"
           },
           {
             "caption": "Asian Paradise Flycatcher",
@@ -1041,7 +1178,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp",
+            "focus": "50% 45.9%"
           },
           {
             "caption": "Tickell's Blue Flycatcher",
@@ -1050,7 +1188,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp",
+            "focus": "61.2% 56.4%"
           },
           {
             "caption": "Asian Paradise Flycatcher",
@@ -1059,7 +1198,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp",
+            "focus": "51.7% 49.8%"
           },
           {
             "caption": "",
@@ -1068,7 +1208,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12.webp",
+            "focus": "50% 57.8%"
           },
           {
             "caption": "Red-Vented Bulbul",
@@ -1077,7 +1218,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13.webp",
+            "focus": "55% 42.8%"
           },
           {
             "caption": "",
@@ -1086,7 +1228,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "Asian Paradise Flycatcher",
@@ -1095,7 +1238,8 @@
             "lat": 18.375658,
             "lng": 73.767552,
             "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15.webp"
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15.webp",
+            "focus": "41% 58.5%"
           }
         ]
       }
@@ -1109,6 +1253,7 @@
     "dates": "Dec 2015",
     "kind": "outdoor",
     "cover": "/assets/trips/flamingo_migration/bhigwan/00-thumb.webp",
+    "cover_focus": "52.4% 44.7%",
     "outings": [
       {
         "id": "bhigwan",
@@ -1121,77 +1266,88 @@
             "width": 955,
             "height": 1619,
             "grid": "/assets/trips/flamingo_migration/bhigwan/00-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/00.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/00.webp",
+            "focus": "52.4% 44.7%"
           },
           {
             "caption": "Open-billed Stork",
             "width": 1120,
             "height": 1272,
             "grid": "/assets/trips/flamingo_migration/bhigwan/01-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/01.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/01.webp",
+            "focus": "50% 54.8%"
           },
           {
             "caption": "Baby Greater Flamingo",
             "width": 1392,
             "height": 1584,
             "grid": "/assets/trips/flamingo_migration/bhigwan/02-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/02.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/02.webp",
+            "focus": "50% 56.3%"
           },
           {
             "caption": "Greater Flamingo",
             "width": 1800,
             "height": 1061,
             "grid": "/assets/trips/flamingo_migration/bhigwan/03-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/03.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/03.webp",
+            "focus": "68.5% 68.6%"
           },
           {
             "caption": "Greater Flamingo",
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/flamingo_migration/bhigwan/04-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/04.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/04.webp",
+            "focus": "50% 50%"
           },
           {
             "caption": "Painted Stork",
             "width": 1073,
             "height": 1908,
             "grid": "/assets/trips/flamingo_migration/bhigwan/05-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/05.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/05.webp",
+            "focus": "40% 40.5%"
           },
           {
             "caption": "Seagull",
             "width": 1440,
             "height": 1697,
             "grid": "/assets/trips/flamingo_migration/bhigwan/06-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/06.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/06.webp",
+            "focus": "41.1% 55.2%"
           },
           {
             "caption": "Grey Heron",
             "width": 1440,
             "height": 1465,
             "grid": "/assets/trips/flamingo_migration/bhigwan/07-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/07.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/07.webp",
+            "focus": "50% 46%"
           },
           {
             "caption": "Painted Stork",
             "width": 1440,
             "height": 1714,
             "grid": "/assets/trips/flamingo_migration/bhigwan/08-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/08.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/08.webp",
+            "focus": "50% 55.8%"
           },
           {
             "caption": "",
             "width": 1440,
             "height": 1597,
             "grid": "/assets/trips/flamingo_migration/bhigwan/09-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/09.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/09.webp",
+            "focus": "50% 65.8%"
           },
           {
             "caption": "Green Bea-eater",
             "width": 1128,
             "height": 1584,
             "grid": "/assets/trips/flamingo_migration/bhigwan/10-thumb.webp",
-            "full": "/assets/trips/flamingo_migration/bhigwan/10.webp"
+            "full": "/assets/trips/flamingo_migration/bhigwan/10.webp",
+            "focus": "61.8% 46.7%"
           }
         ]
       }

@@ -1,0 +1,187 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Focal points</title>
+<style>
+  :root { --bg:#151a1e; --card:#1e252b; --hair:#2d3841; --ink:#e7eef2; --muted:#93a4b0; --accent:#5bc8a0; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  header { position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:14px;
+           padding:10px 16px; background:#11161a; border-bottom:1px solid var(--hair); }
+  header h1 { font-size:15px; margin:0; font-weight:650; }
+  .spacer { flex:1; }
+  .pill { border:1px solid var(--hair); background:var(--card); color:var(--muted);
+          border-radius:999px; padding:5px 12px; cursor:pointer; font-size:13px; }
+  .pill.on { border-color:var(--accent); color:var(--accent); }
+  .count { color:var(--muted); font-size:13px; }
+
+  /* ---- editing pane: the photo, plus the crops it feeds ---- */
+  .stage { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:18px; padding:16px; }
+  .shot { position:relative; background:#0d1114; border-radius:10px; overflow:hidden;
+          display:flex; align-items:center; justify-content:center; max-height:62vh; }
+  .shot img { max-width:100%; max-height:62vh; display:block; cursor:crosshair; }
+  .dot { position:absolute; width:22px; height:22px; margin:-11px 0 0 -11px; border-radius:50%;
+         border:2px solid #fff; box-shadow:0 0 0 2px rgba(0,0,0,.55), 0 0 12px rgba(0,0,0,.5);
+         pointer-events:none; }
+  .dot::after { content:""; position:absolute; inset:7px; border-radius:50%; background:var(--accent); }
+  .side h3 { margin:0 0 6px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .side .box { background:#0d1114; border-radius:8px; overflow:hidden; margin-bottom:14px; }
+  .side .box img { width:100%; display:block; }
+  .cover16 { aspect-ratio:16/10; }
+  .thumb43 { aspect-ratio:4/3; width:160px; }
+  .side img.fit { width:100%; height:100%; object-fit:cover; }
+  .meta { color:var(--muted); font-size:12.5px; margin-bottom:12px; word-break:break-all; }
+  .meta b { color:var(--ink); font-weight:600; }
+  .btns { display:flex; gap:8px; flex-wrap:wrap; }
+  kbd { background:var(--card); border:1px solid var(--hair); border-bottom-width:2px;
+        border-radius:4px; padding:1px 5px; font-size:11px; color:var(--muted); }
+  .hint { color:var(--muted); font-size:12px; margin-top:10px; line-height:1.6; }
+
+  /* ---- filmstrip ---- */
+  .strip { display:grid; grid-template-columns:repeat(auto-fill,minmax(118px,1fr));
+           gap:8px; padding:0 16px 28px; }
+  .cell { position:relative; aspect-ratio:16/10; border-radius:7px; overflow:hidden;
+          border:2px solid transparent; cursor:pointer; background:#0d1114; }
+  .cell img { width:100%; height:100%; object-fit:cover; display:block; }
+  .cell.sel { border-color:var(--accent); }
+  .cell .tag { position:absolute; right:4px; top:4px; width:8px; height:8px; border-radius:50%;
+               box-shadow:0 0 0 1.5px rgba(0,0,0,.5); }
+  .tag.manual { background:var(--accent); }
+  .tag.auto { background:#7f8f9c; }
+  .tag.none { background:#d9534f; }
+</style>
+
+<header>
+  <h1>Focal points</h1>
+  <span class="count" id="count"></span>
+  <div class="spacer"></div>
+  <button class="pill on" data-filter="all">All</button>
+  <button class="pill" data-filter="auto">Auto only</button>
+  <button class="pill" data-filter="manual">Manual only</button>
+</header>
+
+<div class="stage">
+  <div>
+    <div class="shot" id="shot">
+      <img id="hero" alt="">
+      <div class="dot" id="dot"></div>
+    </div>
+    <div class="hint">
+      Click anywhere on the photo to pin the focal point there — it saves to
+      <b>_data/focus.json</b> immediately. <kbd>←</kbd><kbd>→</kbd> photo ·
+      <kbd>c</kbd> centre · <kbd>a</kbd> re-run auto detection.
+    </div>
+  </div>
+  <div class="side">
+    <div class="meta" id="meta"></div>
+    <h3>Collection cover · 16/10</h3>
+    <div class="box cover16"><img class="fit" id="p16" alt=""></div>
+    <h3>Map thumbnail · 4/3</h3>
+    <div class="box thumb43"><img class="fit" id="p43" alt=""></div>
+    <div class="btns">
+      <button class="pill" id="btn-auto">Re-run auto</button>
+      <button class="pill" id="btn-center">Centre</button>
+    </div>
+  </div>
+</div>
+
+<div class="strip" id="strip"></div>
+
+<script>
+(function () {
+  var photos = [], view = [], i = 0, filter = "all";
+  var hero = document.getElementById("hero"), dot = document.getElementById("dot");
+  var p16 = document.getElementById("p16"), p43 = document.getElementById("p43");
+
+  function cur() { return view[i]; }
+
+  function paint() {
+    var p = cur(); if (!p) return;
+    hero.src = p.grid; p16.src = p.grid; p43.src = p.grid;
+    var pos = (p.x * 100).toFixed(1) + "% " + (p.y * 100).toFixed(1) + "%";
+    p16.style.objectPosition = pos; p43.style.objectPosition = pos;
+    document.getElementById("meta").innerHTML =
+      "<b>" + p.collection + "</b> · " + p.outing + "<br>" + p.grid +
+      "<br>focus <b>" + pos + "</b> · " + p.src;
+    placeDot();
+    Array.prototype.forEach.call(document.querySelectorAll(".cell"), function (c, n) {
+      c.classList.toggle("sel", n === i);
+      if (n === i) c.scrollIntoView({block: "nearest"});
+    });
+    var tag = document.querySelectorAll(".cell .tag")[i];
+    if (tag) tag.className = "tag " + p.src;
+  }
+
+  // the dot rides the rendered image box, which is letterboxed inside .shot
+  function placeDot() {
+    var p = cur(); if (!p || !hero.clientWidth) return;
+    var r = hero.getBoundingClientRect(), s = document.getElementById("shot").getBoundingClientRect();
+    dot.style.left = (r.left - s.left + p.x * r.width) + "px";
+    dot.style.top = (r.top - s.top + p.y * r.height) + "px";
+  }
+
+  function save(p) {
+    return fetch("/api/save", {method: "POST", headers: {"Content-Type": "application/json"},
+                               body: JSON.stringify({id: p.id, x: p.x, y: p.y})})
+      .then(function () { p.src = "manual"; paint(); });
+  }
+
+  hero.addEventListener("click", function (e) {
+    var p = cur(); if (!p) return;
+    var r = hero.getBoundingClientRect();
+    p.x = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    p.y = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+    save(p);
+  });
+  hero.addEventListener("load", placeDot);
+  window.addEventListener("resize", placeDot);
+
+  document.getElementById("btn-center").onclick = function () {
+    var p = cur(); if (!p) return; p.x = 0.5; p.y = 0.5; save(p);
+  };
+  document.getElementById("btn-auto").onclick = function () {
+    var p = cur(); if (!p) return;
+    fetch("/api/auto", {method: "POST", headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({id: p.id})})
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d.ok) { p.x = d.x; p.y = d.y; p.src = "auto"; paint(); } });
+  };
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { i = Math.min(view.length - 1, i + 1); paint(); }
+    else if (e.key === "ArrowLeft") { i = Math.max(0, i - 1); paint(); }
+    else if (e.key === "c") document.getElementById("btn-center").click();
+    else if (e.key === "a") document.getElementById("btn-auto").click();
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"), function (b) {
+    b.onclick = function () {
+      Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"),
+        function (o) { o.classList.toggle("on", o === b); });
+      filter = b.dataset.filter; i = 0; render();
+    };
+  });
+
+  function render() {
+    view = photos.filter(function (p) { return filter === "all" || p.src === filter; });
+    var strip = document.getElementById("strip");
+    strip.innerHTML = "";
+    view.forEach(function (p, n) {
+      var c = document.createElement("div");
+      c.className = "cell";
+      c.innerHTML = '<img src="' + p.grid + '" loading="lazy" style="object-position:' +
+                    (p.x * 100) + '% ' + (p.y * 100) + '%"><span class="tag ' + p.src + '"></span>';
+      c.onclick = function () { i = n; paint(); };
+      strip.appendChild(c);
+    });
+    var man = photos.filter(function (p) { return p.src === "manual"; }).length;
+    document.getElementById("count").textContent =
+      photos.length + " photos · " + man + " set by hand";
+    paint();
+  }
+
+  fetch("/api/photos").then(function (r) { return r.json(); }).then(function (d) {
+    photos = d.photos; render();
+  });
+})();
+</script>

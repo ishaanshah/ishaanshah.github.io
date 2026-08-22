@@ -34,6 +34,24 @@ _data/trips.yml (you edit)                    tools/fetch_garmin.py
 - **`_data/garmin_stats.json`** — activity summaries cached by `fetch_garmin.py`
   (ascent, descent, distance, moving time per activity id). Generated, but
   **commit it**: the sync reads it, so nobody needs Garmin credentials to build.
+- **`tools/focus.py`** — focal points for the crops. The justified photo grid
+  never crops, but the collection covers (16/10) and the map hover thumbnails
+  (4/3) do, and a cover is picked at random from *every* photo in the
+  collection — so each photo carries a focal point that CSS `object-position`
+  keeps inside the crop. The sync detects one for each new photo (saliency +
+  edge energy + Immich's face boxes); `--edit` opens a click-to-fix editor for
+  the ones it reads wrong.
+
+      python3 tools/focus.py --edit     # localhost:8777, every click saves
+      python3 tools/focus.py --seed     # detect for photos with no entry yet
+      python3 tools/focus.py --stamp    # push the store into collections.json
+      python3 tools/focus.py --montage qa.png   # centred vs focal, side by side
+
+- **`_data/focus.json`** — the focal point store, keyed by Immich asset id so it
+  survives the renumbering a re-sync does when an album's order shifts.
+  **Commit it.** Entries marked `"src": "manual"` came from the editor and are
+  never overwritten; `"src": "auto"` ones are recomputed by
+  `sync_immich.py --reseed-focus`.
 - **`tools/geotag_immich.py`** — writes GPS back *to* Immich for photos that have
   none, reading the position off the outing's GPX. The only tool here that
   modifies Immich; run it before a sync.

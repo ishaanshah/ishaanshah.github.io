@@ -342,7 +342,9 @@
     var s = state.outings[oid];
     var p = s && (s.o.photos || [])[i];
     if (!p || !p.grid) return;
-    elevTip.querySelector("img").src = p.grid;
+    var tipImg = elevTip.querySelector("img");
+    tipImg.src = p.grid;
+    tipImg.style.objectPosition = p.focus || "50% 50%";
     var cap = elevTip.querySelector(".cap");
     cap.textContent = p.caption || "";
     cap.hidden = !p.caption;

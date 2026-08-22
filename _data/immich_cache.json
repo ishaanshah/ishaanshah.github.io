@@ -1,5 +1,12 @@
 {
   "assets": {
+    "031f1901-79fe-4bbd-8eef-25cf111f41ed": {
+      "full": "/assets/trips/cote_dazur/fireworks/03.webp",
+      "grid": "/assets/trips/cote_dazur/fireworks/03-thumb.webp",
+      "height": 2037,
+      "sig": "s6sNJcNMf/q+psRTDqZLaLb1fM8=|2026-08-22T12:51:24.169105+00:00|2026-03-11T18:19:09.792+00:00|1",
+      "width": 1440
+    },
     "038c8c1a-a76b-41c8-9f2c-5ace9952fbdf": {
       "full": "/assets/trips/cote_dazur/eze/01.webp",
       "grid": "/assets/trips/cote_dazur/eze/01-thumb.webp",
@@ -132,6 +139,13 @@
       "height": 1012,
       "sig": "wA+qhKs6yljH1driplSxB2tk1xk=|2026-08-05T11:11:32.51101+00:00|2026-07-31T09:30:15+00:00|1",
       "width": 1800
+    },
+    "22e699b8-ec81-4baf-9962-78daad991fdd": {
+      "full": "/assets/trips/cote_dazur/fireworks/01.webp",
+      "grid": "/assets/trips/cote_dazur/fireworks/01-thumb.webp",
+      "height": 2219,
+      "sig": "k6B64g8tiuDRAMbYBJCBZBDO2Pw=|2026-08-22T12:51:24.243167+00:00|2026-08-22T12:45:34.682+00:00|1",
+      "width": 1440
     },
     "2cc9c20e-8bd2-47fd-872e-9ac672d71be5": {
       "full": "/assets/trips/mercantour/gordalesque/06.webp",
@@ -301,6 +315,13 @@
       "sig": "oOxfae651IJvVrY0WnxTahL8s18=|2026-08-05T11:10:47.039161+00:00|2026-08-05T11:07:53.671+00:00|1",
       "width": 1800
     },
+    "76a845b0-ae0f-4c78-a9a4-613afb3ab55f": {
+      "full": "/assets/trips/cote_dazur/fireworks/02.webp",
+      "grid": "/assets/trips/cote_dazur/fireworks/02-thumb.webp",
+      "height": 1854,
+      "sig": "OdiZkxcYm63EuYiXVKZq4t2biSo=|2026-08-22T12:51:24.303368+00:00|2026-08-22T12:43:35.489+00:00|1",
+      "width": 1440
+    },
     "773cf09a-5e8c-4cb6-ba85-a80c054241e4": {
       "full": "/assets/trips/ecrin/gr54_9/02.webp",
       "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
@@ -405,6 +426,13 @@
       "height": 1026,
       "sig": "LTaEZL1hLiWH4+K926myspmVLCM=|2026-04-23T14:13:02.1498+00:00|2025-08-17T18:53:29+00:00|1",
       "width": 1800
+    },
+    "a17f85cf-c1f2-4116-80c6-8fa4741fec6c": {
+      "full": "/assets/trips/cote_dazur/fireworks/00.webp",
+      "grid": "/assets/trips/cote_dazur/fireworks/00-thumb.webp",
+      "height": 2046,
+      "sig": "+qnMs5P7CFJPaZGMgYAaO3alTcM=|2026-08-22T12:51:24.237374+00:00|2026-08-22T12:28:29.666+00:00|1",
+      "width": 1440
     },
     "a3eaae89-6458-4989-be76-2622fdddf6d4": {
       "full": "/assets/trips/ecrin/gr54_6/01.webp",

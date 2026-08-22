@@ -12,11 +12,13 @@ layout: default
       {% assign nout = collection.outings | size %}
       {% assign nph = 0 %}
       {% for o in collection.outings %}{% assign nph = nph | plus: o.photos.size %}{% endfor %}
-      {% capture coverlist %}{% for o in collection.outings %}{% for p in o.photos %}{{ p.grid }}|{% endfor %}{% endfor %}{% endcapture %}
+      {% capture coverlist %}{% for o in collection.outings %}{% for p in o.photos %}{{ p.grid }}::{{ p.focus | default: "50% 50%" }}|{% endfor %}{% endfor %}{% endcapture %}
       <a class="collection-card" href="{{ site.baseurl }}/pics/{{ collection.id | slugify }}/"
          data-kind="{{ collection.kind }}" data-acts="{{ acts | strip }}">
         <div class="cover">
-          <img src="{{ collection.cover }}" alt="{{ collection.name }}" loading="lazy" data-covers="{{ coverlist | strip }}">
+          <img src="{{ collection.cover }}" alt="{{ collection.name }}" loading="lazy"
+               style="object-position:{{ collection.cover_focus | default: '50% 50%' }}"
+               data-covers="{{ coverlist | strip }}">
         </div>
         <div class="body">
           <h3>{{ collection.name }}</h3>
@@ -36,10 +38,15 @@ layout: default
 
 <script>
 (function () {
-  // randomise each collection cover on every load, from that collection's photos
+  // randomise each collection cover on every load, from that collection's photos.
+  // each candidate carries its own focal point (`path::x% y%`), so the 16/10 crop
+  // keeps the subject whichever photo comes up
   Array.prototype.forEach.call(document.querySelectorAll(".collection-card .cover img[data-covers]"), function (img) {
     var covers = img.getAttribute("data-covers").split("|").filter(Boolean);
-    if (covers.length) img.src = covers[Math.floor(Math.random() * covers.length)];
+    if (!covers.length) return;
+    var pick = covers[Math.floor(Math.random() * covers.length)].split("::");
+    img.src = pick[0];
+    img.style.objectPosition = pick[1] || "50% 50%";
   });
 })();
 </script>

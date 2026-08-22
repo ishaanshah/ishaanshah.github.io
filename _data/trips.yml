@@ -170,6 +170,10 @@ collections:
     region: "Alpes-Maritimes, France"
     kind: outdoor
     outings:
+      - id: tdf_femmes_26
+        name: "Tour de France Femmes"
+        immich_album: "TdF Femmes 26"
+
       - id: eze
         name: Éze
         immich_album: Eze
@@ -177,13 +181,13 @@ collections:
         garmin_activity: 23506938336
         gpx: tracks/cote_dazur/eze.gpx
 
+      - id: fireworks
+        name: "Fireworks during closing of Carnaval de Nice"
+        immich_album: "Fireworks (Carnaval de Nice)"
+
       - id: col_deze_gravel
         name: "Col d'Éze (Gravel)"
         immich_album: Col d'Eze Gravel
         activity: gravel
         garmin_activity: 21948061596
         gpx: tracks/cote_dazur/eze_gravel.gpx
-
-      - id: tdf_femmes_26
-        name: "Tour de France Femmes"
-        immich_album: "TdF Femmes 26"

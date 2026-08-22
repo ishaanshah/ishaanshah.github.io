@@ -46,6 +46,9 @@ try:
 except ImportError:
     HAVE_PIL = False
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import focus as focus_mod            # focal points for the cover/thumbnail crops
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GRID_W, FULL_W = 800, 1800          # derivative widths (px)
 QUALITY = 82                        # WebP quality of both derivatives
@@ -350,6 +353,24 @@ def fmt_span(span):
         return "%s–%s %d" % (MONTHS[lo.month], MONTHS[hi.month], hi.year)
     return "%s %d – %s %d" % (MONTHS[lo.month], lo.year, MONTHS[hi.month], hi.year)
 
+# ---------------- focal points ----------------
+def focal_point(grid, asset_id, store, reseed=False):
+    """The CSS `object-position` for one photo, detecting it if it's new.
+
+    Hand-set entries (`src: manual`, written by `tools/focus.py --edit`) always
+    win; auto ones are only recomputed on --reseed-focus."""
+    entry = store["assets"].get(asset_id)
+    if entry and (entry.get("src") == "manual" or not reseed):
+        return focus_mod.as_css(entry)
+    path = os.path.join(ROOT, grid.lstrip("/"))
+    if not os.path.exists(path):
+        return "50% 50%"
+    faces = focus_mod.fetch_faces(S, IMMICH_URL, asset_id)
+    fx, fy = focus_mod.compute_focus(path, faces)
+    entry = dict(x=fx, y=fy, src="auto")
+    store["assets"][asset_id] = entry
+    return focus_mod.as_css(entry)
+
 # ---------------- main ----------------
 def main():
     ap = argparse.ArgumentParser()
@@ -357,6 +378,8 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="resolve + report, download nothing")
     ap.add_argument("--force", "--no-cache", dest="force", action="store_true",
                     help="ignore the derivative cache and re-download every photo")
+    ap.add_argument("--reseed-focus", action="store_true",
+                    help="recompute every auto focal point (hand-set ones are kept)")
     args = ap.parse_args()
 
     if not IMMICH_URL or not IMMICH_KEY:
@@ -376,6 +399,7 @@ def main():
         print("No %s — elevation will come from GPX. Run tools/fetch_garmin.py for "
               "Garmin's figures." % os.path.relpath(GARMIN_STATS, ROOT))
     cache = load_cache(args.force)
+    focus_store = focus_mod.load_store()
     fresh, reused, fetched = {}, 0, 0
     collections_out = []
     for c in manifest["collections"]:
@@ -435,6 +459,11 @@ def main():
                     if gw: p["width"], p["height"] = gw, gh
                     fresh[a["id"]] = dict(sig=asset_sig(a), grid=grid, full=full,
                                           width=gw, height=gh)
+                    # focal point for the cover / map-thumbnail crops: detected
+                    # once and remembered, so re-syncs are cheap and anything
+                    # corrected in `tools/focus.py --edit` is never clobbered
+                    p["focus"] = focal_point(p["grid"], a["id"], focus_store,
+                                             reseed=args.reseed_focus)
                 photos.append(p)
             if not args.dry_run:
                 clear_stage(out_dir)
@@ -447,10 +476,12 @@ def main():
         if not outings_out:
             continue
         # cover fallback = first photo's thumbnail (JS randomises it per load)
-        cover = outings_out[0]["photos"][0].get("grid") if outings_out[0]["photos"] else ""
+        first = outings_out[0]["photos"][0] if outings_out[0]["photos"] else {}
+        cover = first.get("grid", "")
         col = dict(id=c["id"], name=c["name"],
                    dates=c.get("dates") or fmt_span(col_span),
-                   kind=c["kind"], cover=cover, outings=outings_out)
+                   kind=c["kind"], cover=cover,
+                   cover_focus=first.get("focus", "50% 50%"), outings=outings_out)
         if c.get("region"):                       # optional geographic region for this collection
             col["region"] = c["region"]
         if c["kind"] == "outdoor":
@@ -472,7 +503,9 @@ def main():
     if not args.dry_run:
         with open(os.path.join(ROOT, "_data", "collections.json"), "w") as f:
             json.dump(collections_out, f, indent=2, ensure_ascii=False)
+            f.write("\n")
         save_cache(fresh, cache)
+        focus_mod.save_store(focus_store)
     print("Done: %d collections (%d photos reused from cache, %d downloaded)."
           % (len(collections_out), reused, fetched))
 
