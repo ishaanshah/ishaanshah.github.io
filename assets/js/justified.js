@@ -1,22 +1,28 @@
 /* Justified photo rows — the Immich timeline layout.
    Every photo keeps its own aspect ratio (nothing is cropped); each row is
-   scaled to exactly fill the container at a shared height near --row-h, which
-   itself scales with the viewport so the same code covers phone → desktop.
+   scaled to exactly fill the container at a shared height near --row-h.
    The CSS flex rules already give an approximate justification without JS;
-   this refines the row breaks so a nearly-empty row can't balloon. */
+   this refines the row breaks so a nearly-empty row can't balloon.
+   Below the phone breakpoint the stylesheet switches .photos to a uniform
+   2-up grid (--mode: uniform) and this script stands down, undoing the inline
+   sizing it left behind so the grid rules apply cleanly. */
 (function () {
   "use strict";
 
   var boxes = Array.prototype.slice.call(document.querySelectorAll(".trips .photos"));
   if (!boxes.length) return;
 
-  // below this container width a row holds only one or two photos, so the
-  // trailing row is justified rather than left short
-  var NARROW = 500;
-
   function ratio(el) {
     var ar = parseFloat(el.style.getPropertyValue("--ar"));
     return ar > 0 ? ar : 1.5;
+  }
+
+  // hand the element back to the stylesheet
+  function unplace(el) {
+    el.style.flex = "";
+    el.style.aspectRatio = "";
+    el.style.width = "";
+    el.style.height = "";
   }
 
   // width of each item, rounded so the pixels add up to exactly the row width
@@ -42,14 +48,20 @@
       w: box.clientWidth,
       gap: parseFloat(cs.columnGap) || 0,
       // --row-h is a clamp() against the viewport, so it moves with the screen
-      target: parseFloat(cs.getPropertyValue("--row-h")) || 215
+      target: parseFloat(cs.getPropertyValue("--row-h")) || 215,
+      mode: (cs.getPropertyValue("--mode") || "").trim() || "justified"
     };
   }
 
   function layout(box, m) {
     var items = Array.prototype.slice.call(box.querySelectorAll(".photo"));
     var w = m.w, gap = m.gap, target = m.target;
-    if (!items.length || !w) return;             // hidden group: laid out again when shown
+    if (!items.length) return;
+    if (m.mode !== "justified") {                // phone: the CSS grid owns it
+      items.forEach(unplace);
+      return;
+    }
+    if (!w) return;                              // hidden group: laid out again when shown
 
     var row = [], sum = 0;
     items.forEach(function (el) {
@@ -71,16 +83,10 @@
       }
     });
     if (row.length) {
-      // Trailing row. On a wide container it stays at the target height, so a
-      // lone photo doesn't balloon across the grid. On a narrow one — a phone,
-      // where a row holds one or two photos — every other row is essentially
-      // full width, so a short last row reads as a broken grid: stretch it to
-      // fill, as long as that isn't a wild blow-up (a lone portrait).
-      // `Math.min` also caps the height at what fits, so a wide photo can
-      // never push the row past the container.
-      var full = fit(w, gap, row.length, sum);
-      var stretch = w < NARROW && full <= target * 1.8;
-      place(row, stretch ? full : Math.min(target, full));
+      // Trailing row: hold it at the target height rather than stretching it
+      // across the width, but never above the height that fits — a wide photo
+      // must not push the row past the container.
+      place(row, Math.min(target, fit(w, gap, row.length, sum)));
     }
   }
 
@@ -91,15 +97,15 @@
     var last = "";
     function run() {
       var m = metrics(box);
-      var key = m.w + "/" + m.gap + "/" + m.target;
+      var key = m.mode + "/" + m.w + "/" + m.gap + "/" + m.target;
       if (key === last) return;
       last = key;
       layout(box, m);
     }
     run();
     if (window.ResizeObserver) new ResizeObserver(run).observe(box);
-    // --row-h is viewport-relative, so it can move without the box resizing
-    // (rotation while the container width is capped): watch the window too
+    // --row-h and --mode are viewport-driven, so they can change without the
+    // box resizing (the container width is capped): watch the window too
     window.addEventListener("resize", run);
     window.addEventListener("orientationchange", run);
   });

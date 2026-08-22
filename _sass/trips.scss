@@ -13,6 +13,7 @@ $trip-soft: #e4f0ef;
 $radius: 4px;          // corner softness for cards, photos, chips, overlays
 $radius-sm: 2px;       // inner bits: thumbnails inside a frame, colour bars
 $radius-pill: 999px;   // clickable controls: chips, legend buttons
+$photo-grid-bp: 650px; // below this a row fits too few photos to justify; also where the map goes portrait
 
 .trips {
   /* ---------- shared bits ---------- */
@@ -116,29 +117,43 @@ $radius-pill: 999px;   // clickable controls: chips, legend buttons
   .pgroup-head .swatch { width: 16px; height: 3px; border-radius: 1px; flex: none; }
   .pgroup-head h4 { margin: 0; font-size: 15px; }
   .pgroup-head .sub { color: $trip-faint; font-size: 12px; }
-  /* justified rows, Immich-timeline style: photos keep their own aspect ratio
-     and are scaled so each row fills the width at a shared height — nothing is
-     cropped. Widths within a row stay proportional to each photo's ratio
-     (basis and grow both scale with --ar), so the heights come out equal. */
+  /* Two layouts, one breakpoint ($photo-grid-bp, matching the map's).
+     Wide: justified rows, Immich-timeline style — photos keep their own aspect
+     ratio (nothing is cropped) and each row is scaled to fill the width at a
+     shared height. Widths within a row stay proportional to each photo's ratio
+     (basis and grow both scale with --ar), so the heights come out equal.
+     Narrow: a phone row only fits one or two photos, so justified rows come
+     out ragged — fall back to a uniform 2-up grid of 4:3 crops.
+     --mode tells justified.js which one is live; it must not place photos in
+     uniform mode, and clears its inline sizing when crossing the breakpoint. */
   .photos {
-    /* row height tracks the container instead of jumping at a breakpoint, so
-       the rows shrink smoothly from desktop down to a narrow phone */
-    --row-h: clamp(150px, 27vw, 215px);
-    display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(6px, 1.4vw, 10px);
+    --mode: justified;
+    /* row height tracks the viewport rather than jumping, so the rows shrink
+       smoothly from desktop down to the breakpoint */
+    --row-h: clamp(180px, 27vw, 215px);
+    display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px;
     /* soaks up the leftover space on the last row so a short final row keeps
        the target height instead of stretching across the full width */
     &::after { content: ""; flex: 999999 0 0; }
+
+    @media (max-width: $photo-grid-bp) {
+      --mode: uniform;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+      &::after { content: none; }        // a flex spacer would be an empty grid cell
+    }
   }
   .photo {
     --ar: 1.5;
     position: relative; border-radius: $radius; overflow: hidden; box-sizing: border-box;
     border: 1px solid $trip-hair; display: block;
     flex: var(--ar) 1 calc(var(--ar) * var(--row-h));
-    /* a wide photo's basis can exceed a phone's container: never let one
-       overflow the grid before the JS pass places it */
+    /* a wide photo's basis can exceed the container: never let one overflow
+       the grid before the JS pass places it */
     max-width: 100%;
     aspect-ratio: var(--ar);
     transition: .15s; background: #eef4f2;
+
+    @media (max-width: $photo-grid-bp) { aspect-ratio: 4 / 3; }
     img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; }
     .cap {
       position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 9px 7px;
@@ -204,7 +219,7 @@ $radius-pill: 999px;   // clickable controls: chips, legend buttons
 
   /* on phones a 16/9 box is too short to pan: go portrait, keeping the
      container width so the map lines up with the photo grid below */
-  @media (max-width: 650px) {
+  @media (max-width: $photo-grid-bp) {
     .map {
       aspect-ratio: 3 / 4;
       max-height: 78vh;
