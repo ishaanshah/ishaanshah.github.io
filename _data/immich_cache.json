@@ -1,5 +1,12 @@
 {
   "assets": {
+    "038c8c1a-a76b-41c8-9f2c-5ace9952fbdf": {
+      "full": "/assets/trips/cote_dazur/eze/01.webp",
+      "grid": "/assets/trips/cote_dazur/eze/01-thumb.webp",
+      "height": 2163,
+      "sig": "WZ8rPx5UujTf58idzj2SmmWD/zo=|2026-08-22T09:58:13.009657+00:00|2026-03-11T18:04:05.469+00:00|1",
+      "width": 1440
+    },
     "06bf1986-7cae-4abe-8d62-f64fb30d5dda": {
       "full": "/assets/trips/mercantour/mont_mounier/00.webp",
       "grid": "/assets/trips/mercantour/mont_mounier/00-thumb.webp",
@@ -48,6 +55,13 @@
       "height": 1012,
       "sig": "WyDihHlmePTkdZNfo/Hn++QeH0M=|2026-04-23T14:13:02.207211+00:00|2017-04-10T14:46:03+00:00|1",
       "width": 1800
+    },
+    "0ee28692-3208-432d-8d21-83137a30446a": {
+      "full": "/assets/trips/cote_dazur/tdf_femmes_26/00.webp",
+      "grid": "/assets/trips/cote_dazur/tdf_femmes_26/00-thumb.webp",
+      "height": 2028,
+      "sig": "21j/oqayyl19SP2eW3k88pNq2wA=|2026-08-22T11:59:35.678059+00:00|2026-08-22T11:44:43.878+00:00|1",
+      "width": 1368
     },
     "10d54234-9b3d-4145-aac8-a51254e484eb": {
       "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15.webp",
@@ -125,6 +139,13 @@
       "height": 1920,
       "sig": "m+4v+vPVh7XGTpNlfb35UrvORx8=|2026-04-23T14:13:02.134122+00:00|2025-06-15T10:24:40.258+00:00|",
       "width": 1440
+    },
+    "2fcac3b0-a597-439d-b324-024d37c904f7": {
+      "full": "/assets/trips/cote_dazur/tdf_femmes_26/03.webp",
+      "grid": "/assets/trips/cote_dazur/tdf_femmes_26/03-thumb.webp",
+      "height": 1333,
+      "sig": "ltlVJLxSz96QhVZ0MyNhF2Jf8UE=|2026-08-22T11:59:35.63179+00:00|2026-08-22T11:57:09.416+00:00|1",
+      "width": 1800
     },
     "349f5496-0b32-4ec9-bb3b-9dc9836c8ed0": {
       "full": "/assets/trips/ecrin/gr54_2/02.webp",
@@ -208,6 +229,13 @@
       "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
       "height": 1920,
       "sig": "YnCULPAZcHUalMyW+VsIAnwoEss=|2026-08-05T11:09:08.662856+00:00|2026-08-05T11:07:52.251+00:00|1",
+      "width": 1440
+    },
+    "54af0561-bd24-4bce-80ec-b459cc78a8b5": {
+      "full": "/assets/trips/cote_dazur/tdf_femmes_26/02.webp",
+      "grid": "/assets/trips/cote_dazur/tdf_femmes_26/02-thumb.webp",
+      "height": 1870,
+      "sig": "VwN//w8/w7MbAF/YYlIeCYQ+l80=|2026-08-22T11:59:35.711744+00:00|2026-08-22T11:53:38.258+00:00|1",
       "width": 1440
     },
     "585a2aae-dd04-4d8f-8290-04e1d242fd7c": {
@@ -343,6 +371,13 @@
       "sig": "5qUDJpT3qyH97agUZwNNj9r+X5Y=|2026-04-23T14:13:02.363775+00:00|2017-04-10T06:14:06+00:00|1",
       "width": 1800
     },
+    "8fe9c1a7-8380-44ec-a5f1-513a9b9f5eb6": {
+      "full": "/assets/trips/cote_dazur/col_deze_gravel/02.webp",
+      "grid": "/assets/trips/cote_dazur/col_deze_gravel/02-thumb.webp",
+      "height": 1102,
+      "sig": "5e+5L2IkoMCQpsFqAObNhaPNBOg=|2026-08-22T10:39:29.248604+00:00|2026-02-23T16:14:56.745+00:00|1",
+      "width": 1800
+    },
     "9310b373-baab-489f-a184-794078644d89": {
       "full": "/assets/trips/ecrin/gr54_7/01.webp",
       "grid": "/assets/trips/ecrin/gr54_7/01-thumb.webp",
@@ -378,6 +413,13 @@
       "sig": "kPuWNW0DQRXyG0wHOFOUkZAybUE=|2026-08-05T11:09:53.437305+00:00|2026-08-05T11:07:52.771+00:00|1",
       "width": 1800
     },
+    "a44d7776-d845-43b9-8c9a-c33f7ee945b2": {
+      "full": "/assets/trips/cote_dazur/col_deze_gravel/01.webp",
+      "grid": "/assets/trips/cote_dazur/col_deze_gravel/01-thumb.webp",
+      "height": 799,
+      "sig": "z5LE86kmVU3l3DUfBI8sVLYbhlc=|2026-08-22T10:39:29.119253+00:00|2026-02-23T15:45:54.751+00:00|1",
+      "width": 1799
+    },
     "a576afc3-e793-4567-a0d7-6709f856ed39": {
       "full": "/assets/trips/mercantour/gordalesque/02.webp",
       "grid": "/assets/trips/mercantour/gordalesque/02-thumb.webp",
@@ -397,6 +439,13 @@
       "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
       "height": 2114,
       "sig": "U7ahcFpvDs5E+dQfCVod3lw4e50=|2026-04-23T14:13:02.196172+00:00|2016-12-11T08:09:35+00:00|1",
+      "width": 1440
+    },
+    "abfddef6-234a-43b8-925b-3dac8646bea8": {
+      "full": "/assets/trips/cote_dazur/tdf_femmes_26/01.webp",
+      "grid": "/assets/trips/cote_dazur/tdf_femmes_26/01-thumb.webp",
+      "height": 2224,
+      "sig": "R1IxqNh2l/Mem1g9o9UMJR5WZGU=|2026-08-22T11:59:35.693249+00:00|2026-08-22T11:50:27.623+00:00|1",
       "width": 1440
     },
     "af7cb64f-e42d-4a5a-921d-127cc99192d9": {
@@ -434,6 +483,13 @@
       "sig": "VDjZWHa9uicFnTWb2FOebwO4Gs0=|2026-08-05T11:11:10.632692+00:00|2026-07-31T11:09:30+00:00|1",
       "width": 1800
     },
+    "bbdec90d-ea73-44b0-98bb-b4d873867517": {
+      "full": "/assets/trips/cote_dazur/eze/00.webp",
+      "grid": "/assets/trips/cote_dazur/eze/00-thumb.webp",
+      "height": 1350,
+      "sig": "agIrSGAyo344pBqwA777c5rCSKI=|2026-04-23T14:13:01.634784+00:00|2024-07-14T09:14:42+00:00|1",
+      "width": 1800
+    },
     "bdd399ed-a960-4da7-906a-35352b1622a3": {
       "full": "/assets/trips/ecrin/gr54_9/05.webp",
       "grid": "/assets/trips/ecrin/gr54_9/05-thumb.webp",
@@ -460,6 +516,13 @@
       "grid": "/assets/trips/ecrin/gr54_4/01-thumb.webp",
       "height": 1012,
       "sig": "ki5hYNprhnj0pRyEgx2Btltgkb4=|2026-08-05T11:12:25.032247+00:00|2026-07-29T10:44:07+00:00|1",
+      "width": 1800
+    },
+    "cab9770f-be06-4f73-a6a2-c13ebafa0122": {
+      "full": "/assets/trips/cote_dazur/col_deze_gravel/00.webp",
+      "grid": "/assets/trips/cote_dazur/col_deze_gravel/00-thumb.webp",
+      "height": 1092,
+      "sig": "rosdOUNCsa5cKKsQC10bmx/uuL0=|2026-08-22T10:39:28.987198+00:00|2026-02-23T15:46:02.553+00:00|1",
       "width": 1800
     },
     "cb07fd38-1ac0-42f4-aa53-515ddaff56b4": {
@@ -537,6 +600,13 @@
       "grid": "/assets/trips/mercantour/gordalesque/05-thumb.webp",
       "height": 1012,
       "sig": "PSD3v3E4pkvi029EdC4+7IRSqfY=|2026-04-23T14:13:02.160325+00:00|2025-06-14T13:38:41+00:00|1",
+      "width": 1800
+    },
+    "dda2be96-3382-4109-9cbd-5c8e16759841": {
+      "full": "/assets/trips/cote_dazur/eze/02.webp",
+      "grid": "/assets/trips/cote_dazur/eze/02-thumb.webp",
+      "height": 1012,
+      "sig": "DZFmz31SarPS3m17g0mxlgdIoio=|2026-08-05T11:13:33.010936+00:00|2026-07-07T05:37:24+00:00|1",
       "width": 1800
     },
     "ddd698d3-5fa1-4cac-873f-cf2256d3c6fa": {

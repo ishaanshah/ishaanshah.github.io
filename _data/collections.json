@@ -645,155 +645,143 @@
     "total_distance": "47.3 km"
   },
   {
-    "id": "sinhagad_bird_valley",
-    "name": "Sinhagad Bird Valley",
-    "dates": "Dec 2016 – Jan 2018",
+    "id": "cote_dazur",
+    "name": "Côte d'Azur",
+    "dates": "Jul 2024 – Aug 2026",
     "kind": "outdoor",
-    "cover": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
+    "cover": "/assets/trips/cote_dazur/eze/00-thumb.webp",
     "outings": [
       {
-        "id": "sinhagad_bird_valley",
-        "name": "Sinhagad Bird Valley",
+        "id": "eze",
+        "name": "Éze",
         "color": "#0072B2",
-        "date": "Dec 2016 – Jan 2018",
+        "activity": "hike",
+        "gpx": "/tracks/cote_dazur/eze.gpx",
+        "distance": "7.2 km",
+        "ascent": "570 m",
+        "descent": "570 m",
+        "duration": "2h 00m",
+        "elevation_source": "garmin",
+        "date": "Jul 2024 – Jul 2026",
         "photos": [
           {
             "caption": "",
             "width": 1800,
-            "height": 1212,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp"
-          },
-          {
-            "caption": "",
-            "width": 1080,
-            "height": 1865,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp"
-          },
-          {
-            "caption": "",
-            "width": 1283,
-            "height": 1341,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp"
+            "height": 1350,
+            "lat": 43.728453,
+            "lng": 7.362781,
+            "grid": "/assets/trips/cote_dazur/eze/00-thumb.webp",
+            "full": "/assets/trips/cote_dazur/eze/00.webp"
           },
           {
             "caption": "",
             "width": 1440,
-            "height": 2114,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp"
+            "height": 2163,
+            "lat": 43.727459,
+            "lng": 7.361678,
+            "grid": "/assets/trips/cote_dazur/eze/01-thumb.webp",
+            "full": "/assets/trips/cote_dazur/eze/01.webp"
           },
           {
-            "caption": "Red-Vented Bulbul",
+            "caption": "",
+            "width": 1800,
+            "height": 1012,
+            "lat": 43.731719,
+            "lng": 7.358497,
+            "grid": "/assets/trips/cote_dazur/eze/02-thumb.webp",
+            "full": "/assets/trips/cote_dazur/eze/02.webp"
+          }
+        ]
+      },
+      {
+        "id": "col_deze_gravel",
+        "name": "Col d'Éze (Gravel)",
+        "color": "#D55E00",
+        "activity": "gravel",
+        "gpx": "/tracks/cote_dazur/eze_gravel.gpx",
+        "distance": "34.7 km",
+        "ascent": "530 m",
+        "descent": "560 m",
+        "duration": "8h 41m",
+        "elevation_source": "garmin",
+        "date": "Feb 2026",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1092,
+            "lat": 43.726499,
+            "lng": 7.315891,
+            "grid": "/assets/trips/cote_dazur/col_deze_gravel/00-thumb.webp",
+            "full": "/assets/trips/cote_dazur/col_deze_gravel/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1799,
+            "height": 799,
+            "lat": 43.730255,
+            "lng": 7.318862,
+            "grid": "/assets/trips/cote_dazur/col_deze_gravel/01-thumb.webp",
+            "full": "/assets/trips/cote_dazur/col_deze_gravel/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1102,
+            "lat": 43.730631,
+            "lng": 7.320204,
+            "grid": "/assets/trips/cote_dazur/col_deze_gravel/02-thumb.webp",
+            "full": "/assets/trips/cote_dazur/col_deze_gravel/02.webp"
+          }
+        ]
+      },
+      {
+        "id": "tdf_femmes_26",
+        "name": "Tour de France Femmes",
+        "color": "#009E73",
+        "date": "Aug 2026",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1368,
+            "height": 2028,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/00-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/00.webp"
+          },
+          {
+            "caption": "",
             "width": 1440,
-            "height": 2356,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp"
+            "height": 2224,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/01-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/01.webp"
           },
           {
             "caption": "",
-            "width": 1611,
-            "height": 1440,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1290,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp"
-          },
-          {
-            "caption": "",
-            "width": 1597,
-            "height": 1440,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp"
-          },
-          {
-            "caption": "",
-            "width": 1731,
-            "height": 1440,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp"
-          },
-          {
-            "caption": "Asian Paradise Flycatcher",
             "width": 1440,
-            "height": 1708,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp"
-          },
-          {
-            "caption": "Tickell's Blue Flycatcher",
-            "width": 1800,
-            "height": 1191,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp"
-          },
-          {
-            "caption": "Asian Paradise Flycatcher",
-            "width": 1440,
-            "height": 2160,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp"
+            "height": 1870,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/02-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/02.webp"
           },
           {
             "caption": "",
             "width": 1800,
-            "height": 1129,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12.webp"
-          },
-          {
-            "caption": "Red-Vented Bulbul",
-            "width": 1800,
-            "height": 1118,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13.webp"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1232,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14.webp"
-          },
-          {
-            "caption": "Asian Paradise Flycatcher",
-            "width": 1287,
-            "height": 1430,
-            "lat": 18.375658,
-            "lng": 73.767552,
-            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15-thumb.webp",
-            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15.webp"
+            "height": 1333,
+            "lat": 43.686516,
+            "lng": 7.237619,
+            "grid": "/assets/trips/cote_dazur/tdf_femmes_26/03-thumb.webp",
+            "full": "/assets/trips/cote_dazur/tdf_femmes_26/03.webp"
           }
         ]
       }
     ],
-    "region": "Pune, India",
-    "total_distance": "0.0 km"
+    "region": "Alpes-Maritimes, France",
+    "total_distance": "42.0 km"
   },
   {
     "id": "chandrashila_chopta",
@@ -963,6 +951,157 @@
     ],
     "region": "Kedarnath Wildlife Sanctuary, India",
     "total_distance": "32.4 km"
+  },
+  {
+    "id": "sinhagad_bird_valley",
+    "name": "Sinhagad Bird Valley",
+    "dates": "Dec 2016 – Jan 2018",
+    "kind": "outdoor",
+    "cover": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
+    "outings": [
+      {
+        "id": "sinhagad_bird_valley",
+        "name": "Sinhagad Bird Valley",
+        "color": "#0072B2",
+        "date": "Dec 2016 – Jan 2018",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1212,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/00.webp"
+          },
+          {
+            "caption": "",
+            "width": 1080,
+            "height": 1865,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/01.webp"
+          },
+          {
+            "caption": "",
+            "width": 1283,
+            "height": 1341,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/02.webp"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 2114,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/03.webp"
+          },
+          {
+            "caption": "Red-Vented Bulbul",
+            "width": 1440,
+            "height": 2356,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/04.webp"
+          },
+          {
+            "caption": "",
+            "width": 1611,
+            "height": 1440,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/05.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1290,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/06.webp"
+          },
+          {
+            "caption": "",
+            "width": 1597,
+            "height": 1440,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/07.webp"
+          },
+          {
+            "caption": "",
+            "width": 1731,
+            "height": 1440,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/08.webp"
+          },
+          {
+            "caption": "Asian Paradise Flycatcher",
+            "width": 1440,
+            "height": 1708,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/09.webp"
+          },
+          {
+            "caption": "Tickell's Blue Flycatcher",
+            "width": 1800,
+            "height": 1191,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/10.webp"
+          },
+          {
+            "caption": "Asian Paradise Flycatcher",
+            "width": 1440,
+            "height": 2160,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/11.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1129,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/12.webp"
+          },
+          {
+            "caption": "Red-Vented Bulbul",
+            "width": 1800,
+            "height": 1118,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/13.webp"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1232,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/14.webp"
+          },
+          {
+            "caption": "Asian Paradise Flycatcher",
+            "width": 1287,
+            "height": 1430,
+            "lat": 18.375658,
+            "lng": 73.767552,
+            "grid": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15-thumb.webp",
+            "full": "/assets/trips/sinhagad_bird_valley/sinhagad_bird_valley/15.webp"
+          }
+        ]
+      }
+    ],
+    "region": "Pune, India",
+    "total_distance": "0.0 km"
   },
   {
     "id": "flamingo_migration",

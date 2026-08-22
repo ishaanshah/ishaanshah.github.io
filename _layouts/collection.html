@@ -48,9 +48,12 @@ layout: default
       </div>
       <div class="photos">
         {% for p in o.photos %}
-        <a class="photo" href="{{ p.full }}"
+        {% assign pw = p.width | default: 1600 %}
+        {% assign ph = p.height | default: 1200 %}
+        {% assign ar = pw | times: 1.0 | divided_by: ph %}
+        <a class="photo" href="{{ p.full }}" style="--ar:{{ ar }}"
            data-oid="{{ o.id }}" data-i="{{ forloop.index0 }}" data-gidx="{{ gidx }}"
-           data-pswp-width="{{ p.width | default: 1600 }}" data-pswp-height="{{ p.height | default: 1200 }}"
+           data-pswp-width="{{ pw }}" data-pswp-height="{{ ph }}"
            target="_blank" rel="noopener">
           <img src="{{ p.grid }}" alt="{{ p.caption }}" loading="lazy">
           {% if p.caption %}<span class="cap">{{ p.caption }}</span>{% endif %}
@@ -83,4 +86,5 @@ layout: default
   });
   lb.init();
 </script>
+<script src="{{ site.baseurl }}/assets/js/justified.js"></script>
 <script src="{{ site.baseurl }}/assets/js/trips.js"></script>

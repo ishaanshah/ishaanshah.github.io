@@ -165,3 +165,25 @@ collections:
         name: "Bhigwan"
         immich_album: "Bhigwan"
 
+  - id: "cote_dazur"
+    name: Côte d'Azur 
+    region: "Alpes-Maritimes, France"
+    kind: outdoor
+    outings:
+      - id: eze
+        name: Éze
+        immich_album: Eze
+        activity: hike
+        garmin_activity: 23506938336
+        gpx: tracks/cote_dazur/eze.gpx
+
+      - id: col_deze_gravel
+        name: "Col d'Éze (Gravel)"
+        immich_album: Col d'Eze Gravel
+        activity: gravel
+        garmin_activity: 21948061596
+        gpx: tracks/cote_dazur/eze_gravel.gpx
+
+      - id: tdf_femmes_26
+        name: "Tour de France Femmes"
+        immich_album: "TdF Femmes 26"

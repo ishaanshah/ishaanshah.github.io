@@ -34,6 +34,9 @@ _data/trips.yml (you edit)                    tools/fetch_garmin.py
 - **`_data/garmin_stats.json`** — activity summaries cached by `fetch_garmin.py`
   (ascent, descent, distance, moving time per activity id). Generated, but
   **commit it**: the sync reads it, so nobody needs Garmin credentials to build.
+- **`tools/geotag_immich.py`** — writes GPS back *to* Immich for photos that have
+  none, reading the position off the outing's GPX. The only tool here that
+  modifies Immich; run it before a sync.
 - **`tools/gen_sample.py`** — generates placeholder sample data/assets so the
   gallery renders without Immich. Run once to preview; the real sync overwrites it.
 
@@ -53,6 +56,35 @@ python3 tools/fetch_garmin.py             # prompts for login on first run, then
                                           # reuses the cached session (--force to refresh)
 python3 tools/fetch_garmin.py --stats     # refresh only the stats cache
 ```
+
+## Geotagging from GPX
+Camera photos have no GPS, so they land in the grid without a map pin.
+`tools/geotag_immich.py` fills that in: for each photo in an outing's album with
+no coordinates, it finds where the outing's GPX track was at the moment of
+capture — interpolating between the two trackpoints that bracket it — and writes
+that position back to Immich. Album and track come from `_data/trips.yml`, so you
+name an outing rather than repeating paths.
+
+```bash
+python3 tools/geotag_immich.py eze              # dry run: one outing (or a collection id, or an album name)
+python3 tools/geotag_immich.py cote_dazur --apply   # write the coordinates to Immich
+python3 tools/sync_immich.py                    # then re-sync to pull them into the site
+```
+
+Nothing is written without `--apply`; the default prints the match it would make
+for each photo. Other flags: `--force` re-places photos that already have GPS,
+`--tolerance SEC` sets how far a photo may sit from the nearest recorded
+trackpoint (default 300 — this is what rejects photos taken before the watch was
+started, after it stopped, or during a paused stretch), and `--offset MIN` shifts
+every capture time to correct a camera clock.
+
+Matching is on absolute instants: GPX is UTC and Immich returns a timezone-aware
+capture time. A camera set to the wrong timezone therefore misses by a whole
+number of hours — a dry run that lands photos outside the track says which
+`--offset` would fix it.
+
+The API key needs **`asset.update`** on top of the read permissions the sync
+uses; see below.
 
 ## Elevation
 Ascent and descent come from **Garmin's activity summary**, not from the GPX.
@@ -83,6 +115,8 @@ pip install requests pyyaml pillow
 
 export IMMICH_URL=https://photos.example.com     # no trailing /api
 export IMMICH_KEY=<your Immich API key>          # Account Settings → API Keys
+#   permissions: album.read, asset.read, asset.view  (sync)
+#              + asset.update                        (geotagging)
 
 python3 tools/fetch_garmin.py             # optional: pull GPX + elevation from Garmin
 python3 tools/sync_immich.py --albums     # list album names/UUIDs to fill trips.yml

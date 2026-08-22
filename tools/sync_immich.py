@@ -455,12 +455,19 @@ def main():
             col["region"] = c["region"]
         if c["kind"] == "outdoor":
             col["total_distance"] = "%.1f km" % total_km
-        collections_out.append(col)
+        # keep the raw span alongside the card: `dates` is a display string,
+        # so the newest-first sort below needs the real dates
+        collections_out.append((col_span, col))
 
         stub = os.path.join(ROOT, "_pics", c["id"] + ".md")
         os.makedirs(os.path.dirname(stub), exist_ok=True)
         with open(stub, "w") as f:
             f.write("---\nlayout: collection\ncollection_id: %s\ntitle: %s\n---\n" % (c["id"], c["name"]))
+
+    # newest first: by start date, end date breaks ties (undated collections last)
+    collections_out.sort(key=lambda t: (t[0][0] or date.min, t[0][1] or date.min),
+                         reverse=True)
+    collections_out = [col for _, col in collections_out]
 
     if not args.dry_run:
         with open(os.path.join(ROOT, "_data", "collections.json"), "w") as f:
