@@ -59,9 +59,11 @@ $radius-pill: 999px;   // clickable controls: chips, legend buttons
   /* ---------- collection index grid ---------- */
   .collection-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    @media (max-width: $small-width) { grid-template-columns: 1fr; }
+    /* container-driven rather than viewport-driven: the page body is a
+       percentage of a phone's screen, so a viewport breakpoint would keep two
+       cramped columns well after the cards have run out of room */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: clamp(12px, 2.4vw, 18px);
   }
   .collection-card {
     display: flex; flex-direction: column;
@@ -119,18 +121,22 @@ $radius-pill: 999px;   // clickable controls: chips, legend buttons
      cropped. Widths within a row stay proportional to each photo's ratio
      (basis and grow both scale with --ar), so the heights come out equal. */
   .photos {
-    --row-h: 215px;
-    display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px;
+    /* row height tracks the container instead of jumping at a breakpoint, so
+       the rows shrink smoothly from desktop down to a narrow phone */
+    --row-h: clamp(150px, 27vw, 215px);
+    display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(6px, 1.4vw, 10px);
     /* soaks up the leftover space on the last row so a short final row keeps
        the target height instead of stretching across the full width */
     &::after { content: ""; flex: 999999 0 0; }
-    @media (max-width: $small-width) { --row-h: 170px; gap: 8px; }
   }
   .photo {
     --ar: 1.5;
     position: relative; border-radius: $radius; overflow: hidden; box-sizing: border-box;
     border: 1px solid $trip-hair; display: block;
     flex: var(--ar) 1 calc(var(--ar) * var(--row-h));
+    /* a wide photo's basis can exceed a phone's container: never let one
+       overflow the grid before the JS pass places it */
+    max-width: 100%;
     aspect-ratio: var(--ar);
     transition: .15s; background: #eef4f2;
     img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; }
