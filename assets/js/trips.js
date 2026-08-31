@@ -15,6 +15,10 @@
   if (!traced.length) return;
 
   var groupsEl = document.getElementById("groups");
+  // from here on a #outing link isolates that outing rather than merely scrolling
+  // to it, so the stylesheet's plain :target highlight is redundant — and it
+  // would linger after a selection is cleared through the History API
+  if (groupsEl) groupsEl.classList.add("js-selection");
   var legendEl = document.getElementById("legend");
   var outingFilters = document.getElementById("outing-filters");
   var elevSvg = document.getElementById("elev");
@@ -53,6 +57,7 @@
   map.on("click", function () {
     if (!state.active) return;
     state.active = null;
+    syncHash(null);
     syncFilterUI(); filterGroups(); applyFocus();
   });
 
@@ -152,8 +157,39 @@
     buildLegend();
     buildFilters();
     wirePhotos();
+    applyHash();            // a shared #outing link opens with that outing isolated
     applyFocus();
   });
+
+  /* ---------- deep links (#outing) ---------- */
+  // The hash and the current selection are two views of one thing: opening a
+  // shared link isolates that outing, and isolating an outing writes it to the
+  // URL, so the address bar is always the link to share.
+  function hashOid() {
+    var raw = (location.hash || "").slice(1);
+    var id;
+    try { id = decodeURIComponent(raw); } catch (e) { id = raw; }   // a stray % is not an outing
+    // own-property check: `#toString` names a thing on every object, not an outing
+    return Object.prototype.hasOwnProperty.call(state.outings, id) ? id : null;
+  }
+  function applyHash() {
+    var oid = hashOid();
+    if (oid === state.active) return;
+    state.active = oid;                     // no (or unknown) hash clears the selection
+    syncFilterUI(); filterGroups(); applyFocus();
+    // hiding the other groups moved the target out from under the browser's own
+    // jump to the anchor, so land on it again
+    var el = oid && document.getElementById(oid);
+    if (el) el.scrollIntoView();
+  }
+  function syncHash(oid) {
+    if (!history.replaceState) { if (oid) location.hash = oid; return; }
+    // replace rather than push: picking through outings is reading the page, not
+    // a trail of history entries to walk back out of
+    history.replaceState(null, "", location.pathname + location.search + (oid ? "#" + oid : ""));
+  }
+  // clicking a permalink while another outing is isolated switches to it
+  window.addEventListener("hashchange", applyHash);
 
   /* ---------- filters / legend ---------- */
   function buildFilters() {
@@ -161,6 +197,7 @@
     outingFilters.addEventListener("click", function (e) {
       var b = e.target.closest(".chip"); if (!b) return;
       state.active = b.dataset.oid || null;
+      syncHash(state.active);
       syncFilterUI();
       filterGroups();
       applyFocus();
@@ -196,6 +233,7 @@
   }
   function toggleActive(oid) {
     state.active = state.active === oid ? null : oid;
+    syncHash(state.active);
     syncFilterUI(); filterGroups(); applyFocus();
   }
 

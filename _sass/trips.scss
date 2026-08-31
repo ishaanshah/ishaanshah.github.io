@@ -112,11 +112,30 @@ $photo-grid-bp: 650px; // below this a row fits too few photos to justify; also 
   .back-link { display: inline-block; margin: .2em 0 1em; color: $trip-muted; &:hover { color: $accent; } }
 
   /* ---------- photo groups ---------- */
-  .pgroup { margin: 0 0 1.6em 0; }
+  .pgroup { margin: 0 0 1.6em 0; scroll-margin-top: 14px; }
   .pgroup-head { display: flex; align-items: center; gap: 9px; margin: 0 0 .7em; flex-wrap: wrap; }
   .pgroup-head .swatch { width: 16px; height: 3px; border-radius: 1px; flex: none; }
   .pgroup-head h4 { margin: 0; font-size: 15px; }
   .pgroup-head .sub { color: $trip-faint; font-size: 12px; }
+  /* Deep link to one outing. Hidden until the heading is hovered so it doesn't
+     clutter the row, but always there for keyboard focus and for touch, where
+     there is no hover to reveal it. The gap sits between the title and the #,
+     so pull it back in — the link belongs to the title, not the stats. */
+  .pgroup-head .permalink {
+    margin-left: -5px; font-size: 13px; line-height: 1; color: $trip-faint;
+    opacity: 0; transition: opacity .15s;
+    &:hover, &:focus-visible { color: $accent; text-decoration: none; }
+    &:focus-visible { opacity: 1; }
+  }
+  .pgroup-head:hover .permalink { opacity: 1; }
+  @media (hover: none) { .pgroup-head .permalink { opacity: .55; } }
+  /* The outing a shared link landed on, so it's obvious which one is meant.
+     Only where the page isn't filtering: once trips.js takes the hash over, that
+     outing is the only one on show and a highlight would just be noise. */
+  #groups:not(.js-selection) .pgroup:target .pgroup-head {
+    h4 { color: $accent; }
+    .permalink { opacity: 1; }
+  }
   /* Two layouts, one breakpoint ($photo-grid-bp, matching the map's).
      Wide: justified rows, Immich-timeline style — photos keep their own aspect
      ratio (nothing is cropped) and each row is scaled to fill the width at a

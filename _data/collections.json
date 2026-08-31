@@ -413,7 +413,7 @@
             "focus": "44.5% 68.2%"
           },
           {
-            "caption": "",
+            "caption": "Climbing up the 50 switchbacks upto Col de la Muzelle. Photo Credits: Chandradeep Pokhariya.",
             "width": 1440,
             "height": 1920,
             "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
@@ -421,7 +421,7 @@
             "focus": "69.4% 37.8%"
           },
           {
-            "caption": "",
+            "caption": "Valsenestre Valley from Col de la Muzelle.",
             "width": 1800,
             "height": 1012,
             "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
@@ -429,7 +429,7 @@
             "focus": "37.2% 28.4%"
           },
           {
-            "caption": "",
+            "caption": "Lac de la Muzelle from Col de la Muzelle",
             "width": 1800,
             "height": 1012,
             "lat": 44.932681,
@@ -439,7 +439,7 @@
             "focus": "50% 33.7%"
           },
           {
-            "caption": "",
+            "caption": "Photo Credits: Chandradeep Pokhariya.",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
@@ -447,7 +447,7 @@
             "focus": "48.9% 82.2%"
           },
           {
-            "caption": "",
+            "caption": "La Roche Percée",
             "width": 1800,
             "height": 1012,
             "lat": 44.951503,
@@ -498,15 +498,100 @@
   {
     "id": "mercantour",
     "name": "Parc national du Mercantour",
-    "dates": "Jun 2025 – Jul 2026",
+    "dates": "Jun 2025 – Aug 2026",
     "kind": "outdoor",
-    "cover": "/assets/trips/mercantour/lac_allos_pelat/00-thumb.webp",
-    "cover_focus": "40.5% 52.3%",
+    "cover": "/assets/trips/mercantour/vallee_des_mervielles/00-thumb.webp",
+    "cover_focus": "50% 71.6%",
     "outings": [
+      {
+        "id": "vallee_des_mervielles",
+        "name": "Vallée des Merveilles",
+        "color": "#0072B2",
+        "activity": "hike",
+        "gpx": "/tracks/mercantour/vallee_des_merveilles.gpx",
+        "distance": "20.6 km",
+        "ascent": "1140 m",
+        "descent": "1400 m",
+        "duration": "5h 43m",
+        "elevation_source": "garmin",
+        "date": "Aug 2026",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1186,
+            "lat": 44.060195,
+            "lng": 7.434991,
+            "grid": "/assets/trips/mercantour/vallee_des_mervielles/00-thumb.webp",
+            "full": "/assets/trips/mercantour/vallee_des_mervielles/00.webp",
+            "focus": "50% 71.6%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1026,
+            "lat": 44.060079,
+            "lng": 7.44298,
+            "grid": "/assets/trips/mercantour/vallee_des_mervielles/01-thumb.webp",
+            "full": "/assets/trips/mercantour/vallee_des_mervielles/01.webp",
+            "focus": "36.6% 42.2%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 952,
+            "lat": 44.063298,
+            "lng": 7.445611,
+            "grid": "/assets/trips/mercantour/vallee_des_mervielles/02-thumb.webp",
+            "full": "/assets/trips/mercantour/vallee_des_mervielles/02.webp",
+            "focus": "41.4% 71.2%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1329,
+            "lat": 44.064347,
+            "lng": 7.444347,
+            "grid": "/assets/trips/mercantour/vallee_des_mervielles/03-thumb.webp",
+            "full": "/assets/trips/mercantour/vallee_des_mervielles/03.webp",
+            "focus": "38.3% 54%"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 1930,
+            "lat": 44.064925,
+            "lng": 7.444594,
+            "grid": "/assets/trips/mercantour/vallee_des_mervielles/04-thumb.webp",
+            "full": "/assets/trips/mercantour/vallee_des_mervielles/04.webp",
+            "focus": "66.5% 78.4%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1164,
+            "lat": 44.061247,
+            "lng": 7.448254,
+            "grid": "/assets/trips/mercantour/vallee_des_mervielles/05-thumb.webp",
+            "full": "/assets/trips/mercantour/vallee_des_mervielles/05.webp",
+            "focus": "50% 55.7%"
+          },
+          {
+            "caption": "",
+            "width": 1440,
+            "height": 1440,
+            "lat": 44.060921,
+            "lng": 7.44961,
+            "grid": "/assets/trips/mercantour/vallee_des_mervielles/06-thumb.webp",
+            "full": "/assets/trips/mercantour/vallee_des_mervielles/06.webp",
+            "focus": "50% 57.6%"
+          }
+        ]
+      },
       {
         "id": "lac_allos_pelat",
         "name": "Lac d'Allos and Mont Pelat",
-        "color": "#0072B2",
+        "color": "#D55E00",
         "activity": "hike",
         "gpx": "/tracks/mercantour/mont_pelat.gpx",
         "distance": "13.2 km",
@@ -577,7 +662,7 @@
       {
         "id": "mont_mounier",
         "name": "Mont Mounier",
-        "color": "#D55E00",
+        "color": "#009E73",
         "activity": "hike",
         "gpx": "/tracks/mercantour/mounier.gpx",
         "distance": "16.6 km",
@@ -612,7 +697,7 @@
       {
         "id": "gordalesque",
         "name": "Vallée de la Gordolasque",
-        "color": "#009E73",
+        "color": "#CC79A7",
         "activity": "hike",
         "gpx": "/tracks/mercantour/Refuge_de_Nice.gpx",
         "distance": "17.5 km",
@@ -694,7 +779,7 @@
       }
     ],
     "region": "Mercantour National Park, France",
-    "total_distance": "47.3 km"
+    "total_distance": "67.8 km"
   },
   {
     "id": "cote_dazur",

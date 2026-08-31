@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Download GPX tracks + activity stats from Garmin Connect.
 
-Reads `_data/trips.yml`; for every outing that has a `garmin_activity:` id it
-  * downloads that activity's GPX to the outing's `gpx:` path, and
-  * caches Garmin's own activity summary in `_data/garmin_stats.json`.
+Reads `_data/trips.yml`; for every outing linked to Garmin activities it
+  * downloads their GPX to the outing's `gpx:` path (several ids are joined
+    into one track), and
+  * caches Garmin's own activity summaries in `_data/garmin_stats.json`.
 
 Run this BEFORE tools/sync_immich.py. The sync uses the cached Garmin
 **elevation gain/loss** in preference to summing GPX `<ele>` deltas — barometric
@@ -21,14 +22,18 @@ connect.garmin.com/modern/activity/<id>):
       gpx: tracks/gr54.gpx        # where this script writes it
       garmin_activity: 12345678901
 
-If an outing's GPX is a hand-merged track spanning several Garmin activities,
-leave `garmin_activity:` off (so the merge isn't overwritten) and list the ids
-under `garmin_activities:` instead — their elevation gain/loss is summed and no
-GPX is downloaded:
+If an outing's track spans several Garmin activities (two rides in one day, a
+watch restarted mid-hike), leave `garmin_activity:` off and list the ids under
+`garmin_activities:` instead — each one's GPX is downloaded and they're joined,
+in time order, into a single track at the outing's `gpx:` path. Their elevation
+gain/loss is summed too:
 
     - id: gr54_2
-      gpx: tracks/gr54/day_2.gpx          # manual merge, not overwritten
+      gpx: tracks/gr54/day_2.gpx          # written as one joined track
       garmin_activities: [12345678901, 12345678902]
+
+An existing file is left alone unless --force is passed, so a hand-edited merge
+survives (drop the ids to a comment if you never want it rewritten).
 
 Auth: the first run prompts for your email + password (password hidden), logs
 in, and caches the session in GARMINTOKENS (default ~/.garminconnect). Every run
@@ -46,7 +51,7 @@ Dependencies:  pip install garminconnect pyyaml
 NOTE: python-garminconnect is an UNOFFICIAL client and can break when Garmin
 changes their login flow. If auth fails, upgrade it: pip install -U garminconnect
 """
-import argparse, getpass, json, os, sys
+import argparse, getpass, json, os, sys, xml.etree.ElementTree as ET
 
 try:
     import yaml
@@ -58,6 +63,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRACKS = os.path.join(ROOT, "tracks")
 STATS_FILE = os.path.join(ROOT, "_data", "garmin_stats.json")
 GARMINTOKENS = os.environ.get("GARMINTOKENS", os.path.expanduser("~/.garminconnect"))
+
+GPX_NS = "http://www.topografix.com/GPX/1/1"
+# Garmin's per-point extensions (heart rate, cadence) ride along in the merge;
+# registering the usual prefixes keeps the joined file readable.
+ET.register_namespace("", GPX_NS)          # <trkpt> etc. stay unprefixed
+ET.register_namespace("gpxtpx", "http://www.garmin.com/xmlschemas/TrackPointExtension/v1")
+ET.register_namespace("gpxx", "http://www.garmin.com/xmlschemas/GpxExtensions/v3")
 
 
 def make_client():
@@ -89,8 +101,8 @@ def make_client():
 def outings_with_garmin(manifest):
     """Yield (collection_id, outing, [activity ids]) for every Garmin-linked outing.
 
-    `garmin_activity:` is the single activity whose GPX we download;
-    `garmin_activities:` is a list used for stats only (hand-merged tracks).
+    Both `garmin_activity:` (one id) and `garmin_activities:` (a list) count —
+    every id contributes to the summed elevation.
     """
     for r in manifest.get("collections", []):
         for o in r.get("outings", []):
@@ -100,10 +112,45 @@ def outings_with_garmin(manifest):
                 yield r["id"], o, ids
 
 
+def gpx_ids(outing):
+    """The activity ids making up this outing's track.
+
+    `garmin_activity:` names the one activity downloaded as-is. An outing with
+    only `garmin_activities:` gets all of them downloaded and joined into a
+    single GPX — one day split across several recordings.
+    """
+    if outing.get("garmin_activity"):
+        return [outing["garmin_activity"]]
+    return list(outing.get("garmin_activities") or [])
+
+
 def track_path(o):
     # honour the manifest's gpx: path, else default to tracks/<id>.gpx
     rel = o.get("gpx") or ("tracks/%s.gpx" % o["id"])
     return os.path.join(ROOT, rel.lstrip("/"))
+
+
+def merge_gpx(blobs, name):
+    """Join downloaded GPX files into one track: every `<trkseg>`, in time order.
+
+    Segments are kept whole and simply strung together under a single `<trk>`,
+    so points (and their heart-rate/cadence extensions) survive untouched and
+    the gap between two recordings stays a gap rather than an invented point.
+    """
+    segs = []
+    for blob in blobs:
+        for seg in ET.fromstring(blob).iterfind(".//{%s}trkseg" % GPX_NS):
+            t = seg.find("{%s}trkpt/{%s}time" % (GPX_NS, GPX_NS))
+            segs.append(("" if t is None else (t.text or ""), seg))
+    segs.sort(key=lambda s: s[0])          # stable: untimed segs keep their order
+
+    gpx = ET.Element("{%s}gpx" % GPX_NS, {"version": "1.1", "creator": "trips merge"})
+    trk = ET.SubElement(gpx, "{%s}trk" % GPX_NS)
+    if name:
+        ET.SubElement(trk, "{%s}name" % GPX_NS).text = name
+    for _, seg in segs:
+        trk.append(seg)
+    return ET.tostring(gpx, encoding="UTF-8", xml_declaration=True)
 
 
 # ---------------- activity stats cache ----------------
@@ -158,14 +205,14 @@ def main():
     manifest = yaml.safe_load(open(os.path.join(ROOT, "_data", "trips.yml")))
     jobs = list(outings_with_garmin(manifest))
     if not jobs:
-        print("No outings have a `garmin_activity:` id — nothing to fetch.")
+        print("No outings have a `garmin_activity:`/`garmin_activities:` id — nothing to fetch.")
         return
 
     stats = load_stats()
-    # tracks: only outings with a single `garmin_activity:` (merged tracks are manual)
+    # tracks: one activity written as-is, several joined into a single GPX
     tracks_todo = [] if args.stats else [
-        (rid, o) for rid, o, _ in jobs
-        if o.get("garmin_activity") and (args.force or not os.path.exists(track_path(o)))
+        (rid, o, gpx_ids(o)) for rid, o, _ in jobs
+        if gpx_ids(o) and (args.force or not os.path.exists(track_path(o)))
     ]
     # stats: every linked activity id we don't already have cached
     stats_todo = []
@@ -193,18 +240,35 @@ def main():
             return None
 
     ok = 0
-    for rid, o in tracks_todo:
-        act_id = o["garmin_activity"]
+    for rid, o, ids in tracks_todo:
         dest = track_path(o)
-        data = guard("%s/%s: activity %s" % (rid, o["id"], act_id),
-                     lambda: client.download_activity(
-                         act_id, dl_fmt=client.ActivityDownloadFormat.GPX))
-        if data is None:
+        blobs = []
+        for act_id in ids:
+            data = guard("%s/%s: activity %s" % (rid, o["id"], act_id),
+                         lambda act_id=act_id: client.download_activity(
+                             act_id, dl_fmt=client.ActivityDownloadFormat.GPX))
+            if data is None:
+                break                      # partial merge would be a wrong track
+            blobs.append(data)
+        if len(blobs) != len(ids):
+            print("  ! %s/%s: skipped, only %d of %d activities downloaded"
+                  % (rid, o["id"], len(blobs), len(ids)))
             continue
+
+        if len(blobs) == 1:
+            data = blobs[0]
+        else:
+            try:
+                data = merge_gpx(blobs, o.get("name") or o["id"])
+            except ET.ParseError as e:
+                print("  ! %s/%s: could not join GPX files: %s" % (rid, o["id"], e))
+                continue
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         with open(dest, "wb") as f:
             f.write(data)
-        print("  %s/%s: activity %s -> %s" % (rid, o["id"], act_id, os.path.relpath(dest, ROOT)))
+        print("  %s/%s: activit%s %s -> %s"
+              % (rid, o["id"], "y" if len(ids) == 1 else "ies",
+                 " + ".join(str(i) for i in ids), os.path.relpath(dest, ROOT)))
         ok += 1
 
     got = 0

@@ -12,9 +12,10 @@
 #
 # `garmin_activity:` is the Connect activity whose GPX tools/fetch_garmin.py
 # downloads, and whose ascent/descent the sync uses instead of the GPX's noisy
-# `<ele>` sums. Where the GPX is a hand-merged track spanning several activities,
-# leave that off and list the ids under `garmin_activities:` — the merge is then
-# never overwritten, but the elevation still comes from Garmin (summed).
+# `<ele>` sums. Where one outing spans several activities, leave that off and
+# list the ids under `garmin_activities:` — their GPX files are downloaded and
+# joined, in time order, into the one `gpx:` track, and their elevation is
+# summed. Either way an existing file is only rewritten with --force.
 #
 # This sample mirrors what tools/gen_sample.py generates, so you can see the
 # shape. Replace with your real collections/albums, then run the sync.
@@ -36,8 +37,8 @@ collections:
         name: "Plateau d'Emparis - L'Alpe de Villar d'Arêne"
         activity: hike
         immich_album: "GR54 - Day 2"          # combined album (was Day 2a + Day 2b)
-        gpx: tracks/gr54/day_2.gpx            # manual merge of day_2a + day_2b (no garmin_activity so it isn't overwritten)
-        # garmin_activities: [<day 2a id>, <day 2b id>]   # fill in for Garmin elevation
+        gpx: tracks/gr54/day_2.gpx            # merge of day_2a + day_2b
+        # garmin_activities: [<day 2a id>, <day 2b id>]   # fill in for Garmin elevation (and to rebuild the merge)
 
       - id: gr54_3
         name: "L'Alpe de Villar d'Arêne - Le Monêtier-les-Bains"
@@ -64,8 +65,8 @@ collections:
         name: "Pré de la Chaumette - La Chapelle-en-Valgaudemar"
         activity: hike
         immich_album: "GR54 - Day 6"          # combined album (was Day 6a + Day 6b)
-        gpx: tracks/gr54/day_6.gpx            # manual merge of day_6a + day_6b (no garmin_activity so it isn't overwritten)
-        # garmin_activities: [<day 6a id>, <day 6b id>]   # fill in for Garmin elevation
+        gpx: tracks/gr54/day_6.gpx            # merge of day_6a + day_6b
+        # garmin_activities: [<day 6a id>, <day 6b id>]   # fill in for Garmin elevation (and to rebuild the merge)
 
       - id: gr54_7
         name: "La Chapelle-en-Valgaudemar - Les Souffles"
@@ -100,6 +101,13 @@ collections:
     region: "Mercantour National Park, France"
     kind: outdoor
     outings:
+      - id: vallee_des_mervielles
+        name: "Vallée des Merveilles"
+        activity: hike
+        gpx: tracks/mercantour/vallee_des_merveilles.gpx    # joined from the three activities below
+        immich_album: "Vallée des Merveilles"
+        garmin_activities: ["24168446655", "24168450528", "24168453854"]
+
       - id: lac_allos_pelat
         name: "Lac d'Allos and Mont Pelat"
         activity: hike

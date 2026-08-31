@@ -422,7 +422,7 @@ def main():
                 if st:
                     # Garmin's barometric ascent/descent beats summing GPX <ele>
                     gm = garmin_elevation(o, garmin_stats)
-                    if gm is None and o.get("garmin_activity"):
+                    if gm is None and (o.get("garmin_activity") or o.get("garmin_activities")):
                         print("    (no cached Garmin stats for %s — using GPX elevation; "
                               "run tools/fetch_garmin.py)" % o["id"])
                     ascent_m, descent_m = gm or (st["ascent_m"], st["descent_m"])

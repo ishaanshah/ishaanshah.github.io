@@ -40,10 +40,12 @@ layout: default
   {% assign gidx = 0 %}
   <div id="groups">
     {% for o in collection.outings %}
-    <div class="pgroup" data-oid="{{ o.id }}">
+    <div class="pgroup" id="{{ o.id }}" data-oid="{{ o.id }}">
       <div class="pgroup-head">
         <span class="swatch" style="background:{% if o.gpx %}{{ o.color }}{% else %}#8a9994{% endif %}"></span>
         <h4>{{ o.name }}</h4>
+        {%- comment -%} shareable deep link straight to this outing {%- endcomment -%}
+        <a class="permalink" href="#{{ o.id }}" aria-label="Link to {{ o.name }}" title="Link to this outing">#</a>
         <span class="sub">{% if o.gpx %}{{ o.distance }} · ↑{{ o.ascent }} · ↓{{ o.descent }} · {% endif %}{{ o.photos | size }} photos</span>
       </div>
       <div class="photos">
@@ -89,3 +91,16 @@ layout: default
 </script>
 <script src="{{ site.baseurl }}/assets/js/justified.js"></script>
 <script src="{{ site.baseurl }}/assets/js/trips.js"></script>
+<script>
+  // A shared #outing link is scrolled to by the browser before justified.js has
+  // reflowed the rows (and before any late image settles the heights), which
+  // leaves it pointing at the wrong place — re-align once the page has loaded.
+  (function () {
+    var id = location.hash && decodeURIComponent(location.hash.slice(1));
+    var el = id && document.getElementById(id);
+    if (!el || !el.classList.contains("pgroup")) return;
+    window.addEventListener("load", function () {
+      requestAnimationFrame(function () { el.scrollIntoView(); });
+    });
+  })();
+</script>

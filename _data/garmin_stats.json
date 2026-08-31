@@ -82,5 +82,26 @@
     "distance_m": 13016.38,
     "moving_s": 8478.0,
     "name": "Les Deux Alpes Randonn\u00e9e"
+  },
+  "24168446655": {
+    "ascent_m": 889.0,
+    "descent_m": 395.0,
+    "distance_m": 7422.26,
+    "moving_s": 5046.0,
+    "name": "Belv\u00e9d\u00e8re Randonn\u00e9e"
+  },
+  "24168450528": {
+    "ascent_m": 189.0,
+    "descent_m": 200.0,
+    "distance_m": 3897.62,
+    "moving_s": 1393.0,
+    "name": "Tende Randonn\u00e9e"
+  },
+  "24168453854": {
+    "ascent_m": 62.0,
+    "descent_m": 810.0,
+    "distance_m": 8572.51,
+    "moving_s": 6485.0,
+    "name": "Tende Randonn\u00e9e"
   }
 }

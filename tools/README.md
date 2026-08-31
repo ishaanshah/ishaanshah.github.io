@@ -65,7 +65,8 @@ Two ways to get an outing's track into `tracks/`:
   `tracks/<outing>.gpx`. Reliable, no code.
 - **Automated (`tools/fetch_garmin.py`):** add `garmin_activity: <id>` to the outing
   (the number in the Connect activity URL) and run the fetcher — it downloads each
-  activity's GPX to the outing's `gpx:` path. Uses the unofficial `garminconnect`
+  activity's GPX to the outing's `gpx:` path. Several ids under
+  `garmin_activities:` are downloaded and joined into one track (see *Elevation*). Uses the unofficial `garminconnect`
   client; tokens are cached after the first login so MFA is a one-time prompt.
 
 ```bash
@@ -113,16 +114,20 @@ is barometric and already smoothed. `fetch_garmin.py` caches those numbers in
 back to the GPX sum for any outing with no cached figure. Distance and moving
 time still come from the GPX.
 
-An outing whose GPX is a **hand-merged** track (e.g. two Garmin activities in one
-day) should leave `garmin_activity:` off so the merge isn't overwritten, and list
-the ids under `garmin_activities:` instead — no GPX is downloaded for those, and
-their gains are summed:
+An outing spanning **several activities** (two rides in one day, a watch
+restarted mid-hike) should leave `garmin_activity:` off and list the ids under
+`garmin_activities:` instead. Each one's GPX is downloaded and the `<trkseg>`s
+are joined, in time order, into the single track at `gpx:` — segments stay
+separate, so the gap between two recordings isn't bridged by an invented point.
+Their gains are summed as well:
 
 ```yaml
 - id: gr54_2
-  gpx: tracks/gr54/day_2.gpx            # manual merge, left alone
+  gpx: tracks/gr54/day_2.gpx            # written as one joined track
   garmin_activities: [12345678901, 12345678902]
 ```
+As with a single activity, an existing file is left alone unless you pass
+`--force`, so a hand-edited track survives a re-run.
 The first run asks for your Garmin email/password (hidden) and caches the session
 in `~/.garminconnect`; later runs need no credentials. For cron/CI you can set
 `GARMIN_EMAIL` / `GARMIN_PASSWORD` to skip the prompt.
