@@ -1074,17 +1074,9 @@
           {
             "caption": "",
             "width": 1800,
-            "height": 1012,
+            "height": 1200,
             "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/02-thumb.webp",
             "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/02.webp",
-            "focus": "54.8% 43.7%"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1200,
-            "grid": "/assets/trips/chandrashila_chopta/deoriatal_chopta/03-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/deoriatal_chopta/03.webp",
             "focus": "50% 50%"
           }
         ]
