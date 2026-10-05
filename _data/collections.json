@@ -31,7 +31,7 @@
             "focus": "44.8% 30.8%"
           },
           {
-            "caption": "",
+            "caption": "Plateau d'Emparis.",
             "width": 1800,
             "height": 1012,
             "lat": 45.073378,
@@ -41,7 +41,7 @@
             "focus": "50% 29.6%"
           },
           {
-            "caption": "",
+            "caption": "Glacier de la Meije from Plateau d'Emparis.",
             "width": 1800,
             "height": 1012,
             "lat": 45.059236,
@@ -51,7 +51,7 @@
             "focus": "50% 25.5%"
           },
           {
-            "caption": "",
+            "caption": "Bivouac spot near Plateau d'Emparis. Photo Credits: Chandradeep Pokhariya.",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_1/03-thumb.webp",
@@ -983,14 +983,6 @@
             "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/03-thumb.webp",
             "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/03.webp",
             "focus": "50% 50%"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1200,
-            "grid": "/assets/trips/chandrashila_chopta/sari_deoriatal/04-thumb.webp",
-            "full": "/assets/trips/chandrashila_chopta/sari_deoriatal/04.webp",
-            "focus": "47.9% 45.6%"
           }
         ]
       },
