@@ -133,13 +133,6 @@
       "sig": "FqlEZoysYq1f4Ik6lE+Etps84kg=|2026-08-21T17:45:33.751412+00:00|2026-07-13T11:13:24+00:00|1",
       "width": 1440
     },
-    "22bd01ad-0b88-4a00-8481-7fd1417f3cd0": {
-      "full": "/assets/trips/ecrin/gr54_6/02.webp",
-      "grid": "/assets/trips/ecrin/gr54_6/02-thumb.webp",
-      "height": 1012,
-      "sig": "wA+qhKs6yljH1driplSxB2tk1xk=|2026-08-05T11:11:32.51101+00:00|2026-07-31T09:30:15+00:00|1",
-      "width": 1800
-    },
     "22e699b8-ec81-4baf-9962-78daad991fdd": {
       "full": "/assets/trips/cote_dazur/fireworks/01.webp",
       "grid": "/assets/trips/cote_dazur/fireworks/01-thumb.webp",
@@ -193,7 +186,7 @@
       "full": "/assets/trips/ecrin/gr54_3/00.webp",
       "grid": "/assets/trips/ecrin/gr54_3/00-thumb.webp",
       "height": 1012,
-      "sig": "eYHjXVNK0hs/NQi7yNCnzI3/zVs=|2026-08-05T11:12:38.116989+00:00|2026-07-28T07:54:22+00:00|1",
+      "sig": "eYHjXVNK0hs/NQi7yNCnzI3/zVs=|2026-10-05T14:43:41.905964+00:00|2026-07-28T07:54:22+00:00|1",
       "width": 1800
     },
     "3aa12a10-98fc-4f33-8b2f-a28ac5e1fa29": {
@@ -216,13 +209,6 @@
       "height": 1908,
       "sig": "4zFxnsoQE5e4BZNry8YoUmkPEF8=|2026-08-21T22:51:43.964579+00:00|2015-12-30T08:31:51+00:00|1",
       "width": 1073
-    },
-    "439b12f4-29cc-4ac6-b055-269e74f2ebaf": {
-      "full": "/assets/trips/ecrin/gr54_9/00.webp",
-      "grid": "/assets/trips/ecrin/gr54_9/00-thumb.webp",
-      "height": 2560,
-      "sig": "Yq16T3KdZsazr99ZnN4R3cALny4=|2026-08-21T17:49:35.767031+00:00|2026-08-03T07:51:05+00:00|1",
-      "width": 1440
     },
     "46a4a0df-64ee-4d2c-bfcd-c239f33835b4": {
       "full": "/assets/trips/mercantour/vallee_des_mervielles/01.webp",
@@ -260,8 +246,8 @@
       "width": 1800
     },
     "5284cabd-c5b3-409d-b31e-334012ae5fba": {
-      "full": "/assets/trips/ecrin/gr54_9/01.webp",
-      "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
+      "full": "/assets/trips/ecrin/gr54_9/00.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/00-thumb.webp",
       "height": 1920,
       "sig": "YnCULPAZcHUalMyW+VsIAnwoEss=|2026-08-26T07:18:40.401917+00:00|2026-08-05T11:07:52.251+00:00|1",
       "width": 1440
@@ -284,7 +270,7 @@
       "full": "/assets/trips/ecrin/gr54_3/02.webp",
       "grid": "/assets/trips/ecrin/gr54_3/02-thumb.webp",
       "height": 1012,
-      "sig": "DQ9bkQsEgDdopTg3O1hAl+CDiVk=|2026-08-05T11:12:32.911161+00:00|2026-07-28T09:36:48+00:00|1",
+      "sig": "DQ9bkQsEgDdopTg3O1hAl+CDiVk=|2026-10-05T14:44:12.124519+00:00|2026-07-28T09:36:48+00:00|1",
       "width": 1800
     },
     "66759f99-1125-402f-9f3f-e261893a3090": {
@@ -316,8 +302,8 @@
       "width": 1800
     },
     "6c80f492-2b96-43a3-b346-f187ead7f48d": {
-      "full": "/assets/trips/ecrin/gr54_9/04.webp",
-      "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
+      "full": "/assets/trips/ecrin/gr54_9/03.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/03-thumb.webp",
       "height": 1350,
       "sig": "pfE5d5iuyrwMwQDQXJNzV07feAk=|2026-08-26T07:18:56.89694+00:00|2026-08-05T11:07:52.047+00:00|1",
       "width": 1800
@@ -344,8 +330,8 @@
       "width": 1440
     },
     "773cf09a-5e8c-4cb6-ba85-a80c054241e4": {
-      "full": "/assets/trips/ecrin/gr54_9/02.webp",
-      "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
+      "full": "/assets/trips/ecrin/gr54_9/01.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
       "height": 1012,
       "sig": "NXIq0Af9C1hQqRubINSQwQkDd2o=|2026-08-26T07:17:40.704943+00:00|2026-08-03T08:31:26+00:00|1",
       "width": 1800
@@ -466,7 +452,7 @@
       "full": "/assets/trips/ecrin/gr54_6/01.webp",
       "grid": "/assets/trips/ecrin/gr54_6/01-thumb.webp",
       "height": 1350,
-      "sig": "kPuWNW0DQRXyG0wHOFOUkZAybUE=|2026-08-05T11:09:53.437305+00:00|2026-08-05T11:07:52.771+00:00|1",
+      "sig": "kPuWNW0DQRXyG0wHOFOUkZAybUE=|2026-10-05T14:40:22.818955+00:00|2026-08-05T11:07:52.771+00:00|1",
       "width": 1800
     },
     "a44d7776-d845-43b9-8c9a-c33f7ee945b2": {
@@ -484,8 +470,8 @@
       "width": 1800
     },
     "a5f5666a-5d87-46c8-a642-9b2262ea6315": {
-      "full": "/assets/trips/ecrin/gr54_9/03.webp",
-      "grid": "/assets/trips/ecrin/gr54_9/03-thumb.webp",
+      "full": "/assets/trips/ecrin/gr54_9/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
       "height": 1012,
       "sig": "SNQmL+1JT8TbBTo0R8BpSI6QHtg=|2026-08-26T07:16:15.897236+00:00|2026-08-03T08:43:43+00:00|1",
       "width": 1800
@@ -540,10 +526,10 @@
       "width": 1800
     },
     "b6770efc-63b9-4810-aed6-d9383b968be2": {
-      "full": "/assets/trips/ecrin/gr54_6/04.webp",
-      "grid": "/assets/trips/ecrin/gr54_6/04-thumb.webp",
+      "full": "/assets/trips/ecrin/gr54_6/02.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/02-thumb.webp",
       "height": 1012,
-      "sig": "VDjZWHa9uicFnTWb2FOebwO4Gs0=|2026-08-05T11:11:10.632692+00:00|2026-07-31T11:09:30+00:00|1",
+      "sig": "VDjZWHa9uicFnTWb2FOebwO4Gs0=|2026-10-05T14:38:10.520645+00:00|2026-07-31T11:09:30+00:00|1",
       "width": 1800
     },
     "bbd0947a-e9af-490e-9344-d0a2ca17123f": {
@@ -561,8 +547,8 @@
       "width": 1800
     },
     "bdd399ed-a960-4da7-906a-35352b1622a3": {
-      "full": "/assets/trips/ecrin/gr54_9/05.webp",
-      "grid": "/assets/trips/ecrin/gr54_9/05-thumb.webp",
+      "full": "/assets/trips/ecrin/gr54_9/04.webp",
+      "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
       "height": 1012,
       "sig": "z/qR1vmX+VdrBZ6ywZrCpJyFcx0=|2026-08-26T07:15:43.667834+00:00|2026-08-03T15:26:10+00:00|1",
       "width": 1800
@@ -610,8 +596,8 @@
       "width": 1800
     },
     "cd96a932-6fc6-41c0-b32f-4bb38546ab14": {
-      "full": "/assets/trips/ecrin/gr54_6/05.webp",
-      "grid": "/assets/trips/ecrin/gr54_6/05-thumb.webp",
+      "full": "/assets/trips/ecrin/gr54_6/03.webp",
+      "grid": "/assets/trips/ecrin/gr54_6/03-thumb.webp",
       "height": 1012,
       "sig": "4PSdptTaW7YXVMe5KoQnVcOrPqA=|2026-08-05T11:11:11.958585+00:00|2026-07-31T11:15:52+00:00|1",
       "width": 1800
@@ -621,13 +607,6 @@
       "grid": "/assets/trips/ecrin/gr54_10/01-thumb.webp",
       "height": 1012,
       "sig": "6+Z3FHzl4T1djt/hZXuT/ZvbrqE=|2026-08-21T17:45:58.465821+00:00|2026-08-04T09:20:22+00:00|1",
-      "width": 1800
-    },
-    "cefad6a5-a8d1-4189-91d7-04cd608607e3": {
-      "full": "/assets/trips/ecrin/gr54_6/03.webp",
-      "grid": "/assets/trips/ecrin/gr54_6/03-thumb.webp",
-      "height": 1012,
-      "sig": "uQQnQUAsbgrUNQZiPBZngjFY1Wk=|2026-08-05T11:11:26.039141+00:00|2026-07-31T09:55:21+00:00|1",
       "width": 1800
     },
     "cfa13ab4-5215-4f52-b5d1-75ab066defd7": {
@@ -655,7 +634,7 @@
       "full": "/assets/trips/ecrin/gr54_5/01.webp",
       "grid": "/assets/trips/ecrin/gr54_5/01-thumb.webp",
       "height": 1012,
-      "sig": "YAmi+hDnwqxOO307WIaRH/vKr7M=|2026-08-05T11:12:10.17396+00:00|2026-07-30T11:43:07+00:00|1",
+      "sig": "YAmi+hDnwqxOO307WIaRH/vKr7M=|2026-10-05T14:41:13.114043+00:00|2026-07-30T11:43:07+00:00|1",
       "width": 1800
     },
     "da9a5ac4-ff6a-44ce-b2a4-8b7073a581d5": {
@@ -739,7 +718,7 @@
       "full": "/assets/trips/ecrin/gr54_8/00.webp",
       "grid": "/assets/trips/ecrin/gr54_8/00-thumb.webp",
       "height": 1012,
-      "sig": "OziSAsNlQ44NbhB1FvhO/MM7o8A=|2026-08-05T11:10:23.303942+00:00|2026-08-02T07:11:28+00:00|1",
+      "sig": "OziSAsNlQ44NbhB1FvhO/MM7o8A=|2026-10-05T14:37:08.959902+00:00|2026-08-02T07:11:28+00:00|1",
       "width": 1800
     },
     "ec3d4b27-7103-40fe-ad90-d0174493cda2": {
@@ -760,14 +739,14 @@
       "full": "/assets/trips/ecrin/gr54_6/00.webp",
       "grid": "/assets/trips/ecrin/gr54_6/00-thumb.webp",
       "height": 1012,
-      "sig": "Ktfx1F9TCW4qPbas56bX2CeiG9g=|2026-08-05T11:11:58.495367+00:00|2026-07-31T08:41:13+00:00|1",
+      "sig": "Ktfx1F9TCW4qPbas56bX2CeiG9g=|2026-10-05T14:40:08.056475+00:00|2026-07-31T08:41:13+00:00|1",
       "width": 1800
     },
     "f4ddf604-9078-4e46-92ca-65896a4579a8": {
       "full": "/assets/trips/ecrin/gr54_3/01.webp",
       "grid": "/assets/trips/ecrin/gr54_3/01-thumb.webp",
       "height": 1350,
-      "sig": "7Wa74QhK8Mbvr+r8hP2ZlO3kNE8=|2026-08-05T11:10:37.37261+00:00|2026-08-05T11:07:53.403+00:00|1",
+      "sig": "7Wa74QhK8Mbvr+r8hP2ZlO3kNE8=|2026-10-05T14:42:41.582367+00:00|2026-08-05T11:07:53.403+00:00|1",
       "width": 1800
     },
     "f6613d96-fa8d-4f09-bd73-76695027ed7b": {

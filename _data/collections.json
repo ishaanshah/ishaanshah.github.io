@@ -122,14 +122,6 @@
             "grid": "/assets/trips/ecrin/gr54_2/04-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_2/04.webp",
             "focus": "50% 50%"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1350,
-            "grid": "/assets/trips/ecrin/gr54_2/05-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_2/05.webp",
-            "focus": "55.5% 52.6%"
           }
         ]
       },
@@ -147,7 +139,7 @@
         "date": "Jul 2026",
         "photos": [
           {
-            "caption": "",
+            "caption": "View from Col d'Arsine.",
             "width": 1800,
             "height": 1012,
             "lat": 44.978908,
@@ -157,7 +149,7 @@
             "focus": "60.9% 50%"
           },
           {
-            "caption": "",
+            "caption": "Lacs du Glacier d'Arsine. Photo Credits: Chandradeep Pokhariya.",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_3/01-thumb.webp",
@@ -165,7 +157,7 @@
             "focus": "50.2% 39.7%"
           },
           {
-            "caption": "",
+            "caption": "Glacial streams.",
             "width": 1800,
             "height": 1012,
             "lat": 44.982258,
@@ -235,7 +227,7 @@
             "focus": "50% 50%"
           },
           {
-            "caption": "",
+            "caption": "View from Col de l'Aup Martin.",
             "width": 1800,
             "height": 1012,
             "lat": 44.774906,
@@ -270,7 +262,7 @@
         "date": "Jul 2026",
         "photos": [
           {
-            "caption": "",
+            "caption": "View from Col de Gouiran.",
             "width": 1800,
             "height": 1012,
             "lat": 44.780467,
@@ -280,7 +272,7 @@
             "focus": "50% 35%"
           },
           {
-            "caption": "",
+            "caption": "Photo Credits: Chandradeep Pokhariya.",
             "width": 1800,
             "height": 1350,
             "grid": "/assets/trips/ecrin/gr54_6/01-thumb.webp",
@@ -288,33 +280,13 @@
             "focus": "50% 34.8%"
           },
           {
-            "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.788689,
-            "lng": 6.281806,
-            "grid": "/assets/trips/ecrin/gr54_6/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/02.webp",
-            "focus": "46% 23.4%"
-          },
-          {
-            "caption": "",
-            "width": 1800,
-            "height": 1012,
-            "lat": 44.794778,
-            "lng": 6.287386,
-            "grid": "/assets/trips/ecrin/gr54_6/03-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/03.webp",
-            "focus": "37.9% 38.4%"
-          },
-          {
-            "caption": "",
+            "caption": "Refuge de Vallonpierre.",
             "width": 1800,
             "height": 1012,
             "lat": 44.797717,
             "lng": 6.290678,
-            "grid": "/assets/trips/ecrin/gr54_6/04-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/04.webp",
+            "grid": "/assets/trips/ecrin/gr54_6/02-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_6/02.webp",
             "focus": "47.5% 56.8%"
           },
           {
@@ -323,8 +295,8 @@
             "height": 1012,
             "lat": 44.798475,
             "lng": 6.290594,
-            "grid": "/assets/trips/ecrin/gr54_6/05-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_6/05.webp",
+            "grid": "/assets/trips/ecrin/gr54_6/03-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_6/03.webp",
             "focus": "40.1% 45.2%"
           }
         ]
@@ -351,16 +323,6 @@
             "grid": "/assets/trips/ecrin/gr54_7/00-thumb.webp",
             "full": "/assets/trips/ecrin/gr54_7/00.webp",
             "focus": "50% 50%"
-          },
-          {
-            "caption": "",
-            "width": 1440,
-            "height": 2560,
-            "lat": 44.845786,
-            "lng": 6.146844,
-            "grid": "/assets/trips/ecrin/gr54_7/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_7/01.webp",
-            "focus": "48% 35.6%"
           }
         ]
       },
@@ -378,7 +340,7 @@
         "date": "Aug 2026",
         "photos": [
           {
-            "caption": "",
+            "caption": "Séveraisse Valley from Col de la Vaurze.",
             "width": 1800,
             "height": 1012,
             "lat": 44.846917,
@@ -403,29 +365,19 @@
         "date": "Aug 2026",
         "photos": [
           {
-            "caption": "Quick snack stop - wild blueberries",
-            "width": 1440,
-            "height": 2560,
-            "lat": 44.927881,
-            "lng": 6.086131,
-            "grid": "/assets/trips/ecrin/gr54_9/00-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/00.webp",
-            "focus": "44.5% 68.2%"
-          },
-          {
             "caption": "Climbing up the 50 switchbacks upto Col de la Muzelle. Photo Credits: Chandradeep Pokhariya.",
             "width": 1440,
             "height": 1920,
-            "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/01.webp",
+            "grid": "/assets/trips/ecrin/gr54_9/00-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/00.webp",
             "focus": "69.4% 37.8%"
           },
           {
             "caption": "Valsenestre Valley from Col de la Muzelle.",
             "width": 1800,
             "height": 1012,
-            "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/02.webp",
+            "grid": "/assets/trips/ecrin/gr54_9/01-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/01.webp",
             "focus": "37.2% 28.4%"
           },
           {
@@ -434,16 +386,16 @@
             "height": 1012,
             "lat": 44.932681,
             "lng": 6.088275,
-            "grid": "/assets/trips/ecrin/gr54_9/03-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/03.webp",
+            "grid": "/assets/trips/ecrin/gr54_9/02-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/02.webp",
             "focus": "50% 33.7%"
           },
           {
             "caption": "Photo Credits: Chandradeep Pokhariya.",
             "width": 1800,
             "height": 1350,
-            "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/04.webp",
+            "grid": "/assets/trips/ecrin/gr54_9/03-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/03.webp",
             "focus": "48.9% 82.2%"
           },
           {
@@ -452,8 +404,8 @@
             "height": 1012,
             "lat": 44.951503,
             "lng": 6.102778,
-            "grid": "/assets/trips/ecrin/gr54_9/05-thumb.webp",
-            "full": "/assets/trips/ecrin/gr54_9/05.webp",
+            "grid": "/assets/trips/ecrin/gr54_9/04-thumb.webp",
+            "full": "/assets/trips/ecrin/gr54_9/04.webp",
             "focus": "50% 34.1%"
           }
         ]
