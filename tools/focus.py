@@ -19,6 +19,11 @@ silently drift onto the wrong photo). Each entry records how it was set:
 `src: "manual"` entries come from the editor and are NEVER touched again by the
 auto pass; `src: "auto"` ones are re-seeded when `--reseed` is passed.
 
+An entry may also carry `"no_cover": true` — the photo still shows in the grid,
+but it is dropped from the pool the collection card picks its cover from (a
+photo that reads fine at full size but not cropped to 16/10, or one you simply
+don't want fronting the collection). Toggle it with `x` in the editor.
+
 Detection combines three cues, all Pillow-only (no numpy/opencv):
   * frequency-tuned saliency — per-pixel LAB distance from the image mean,
     which lights up a bird against sky or a jacket against scree;
@@ -36,6 +41,7 @@ Usage:
   python3 tools/focus.py --seed            # fill in every photo missing an entry
   python3 tools/focus.py --seed --reseed   # also recompute existing auto entries
   python3 tools/focus.py --edit            # click-to-fix editor on localhost:8777
+                                           #   (also: `x` excludes a photo from the covers)
   python3 tools/focus.py --montage out.png # QA contact sheet of the 16/10 crops
 """
 import argparse, json, math, os, sys
@@ -77,6 +83,11 @@ def as_css(entry):
     if not entry:
         return "50% 50%"
     return "%.4g%% %.4g%%" % (round(entry["x"] * 100, 1), round(entry["y"] * 100, 1))
+
+
+def covers_ok(entry):
+    """Whether this photo may be picked as a collection cover."""
+    return not (entry or {}).get("no_cover")
 
 
 # ---------------- saliency ----------------
@@ -315,6 +326,13 @@ def seed(store, reseed=False, verbose=True):
     return done
 
 
+def pick_cover(collection):
+    """The photo the card paints before the randomiser runs: the first one not
+    excluded from covers, else the first photo at all."""
+    photos = [p for o in collection["outings"] for p in o["photos"]]
+    return next((p for p in photos if not p.get("no_cover")), photos[0] if photos else None)
+
+
 def stamp_collections(store):
     """Write the stored focal points into `_data/collections.json`.
 
@@ -326,15 +344,28 @@ def stamp_collections(store):
     by_grid = {p["grid"]: p["id"] for p in inventory()}
     n = 0
     for c in collections:
-        # the card paints `cover` before the randomiser swaps it in
-        c["cover_focus"] = as_css(store["assets"].get(by_grid.get(c.get("cover"))))
         for o in c["outings"]:
             for p in o["photos"]:
                 aid = by_grid.get(p.get("grid"))
-                css = as_css(store["assets"].get(aid)) if aid else "50% 50%"
+                entry = store["assets"].get(aid) if aid else None
+                css = as_css(entry) if aid else "50% 50%"
                 if p.get("focus") != css:
                     p["focus"] = css
                     n += 1
+                # the layout skips `no_cover` photos when building the pool
+                was, now = p.get("no_cover", False), not covers_ok(entry)
+                if was != now:
+                    n += 1
+                if now:
+                    p["no_cover"] = True
+                else:
+                    p.pop("no_cover", None)
+        # the card paints `cover` before the randomiser swaps it in, so it has
+        # to be an eligible photo too
+        cover = pick_cover(c)
+        if cover:
+            c["cover"] = cover.get("grid", "")
+        c["cover_focus"] = as_css(store["assets"].get(by_grid.get(c.get("cover"))))
     with open(COLLECTIONS, "w") as f:
         json.dump(collections, f, indent=2, ensure_ascii=False)
         f.write("\n")
@@ -378,7 +409,8 @@ def serve_editor(port=8777):
                 for ph in inventory():
                     e = store["assets"].get(ph["id"]) or {}
                     photos.append(dict(ph, x=e.get("x", 0.5), y=e.get("y", 0.5),
-                                       src=e.get("src", "none")))
+                                       src=e.get("src", "none"),
+                                       no_cover=bool(e.get("no_cover"))))
                 return self._json(dict(photos=photos))
             return super().do_GET()
 
@@ -394,6 +426,15 @@ def serve_editor(port=8777):
                 save_store(store)
                 stamp_collections(store)
                 return self._json(dict(ok=True))
+            if path == "/api/cover":
+                e = store["assets"].setdefault(req["id"], dict(x=0.5, y=0.5, src="auto"))
+                if req.get("no_cover"):
+                    e["no_cover"] = True
+                else:
+                    e.pop("no_cover", None)
+                save_store(store)
+                stamp_collections(store)
+                return self._json(dict(ok=True, no_cover=bool(e.get("no_cover"))))
             if path == "/api/auto":
                 ph = next((p for p in inventory() if p["id"] == req["id"]), None)
                 if not ph:

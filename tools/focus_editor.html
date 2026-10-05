@@ -49,6 +49,13 @@
   .tag.manual { background:var(--accent); }
   .tag.auto { background:#7f8f9c; }
   .tag.none { background:#d9534f; }
+  /* excluded from the cover pool: still in the grid, just never fronts a card */
+  .cell.nocover img { opacity:.4; }
+  .cell.nocover::after { content:"no cover"; position:absolute; left:4px; bottom:4px;
+                         font-size:10px; letter-spacing:.04em; text-transform:uppercase;
+                         background:rgba(0,0,0,.7); color:#e9b4b1; padding:1px 5px;
+                         border-radius:4px; }
+  .pill.danger.on { border-color:#d9534f; color:#e9918d; }
 </style>
 
 <header>
@@ -58,6 +65,7 @@
   <button class="pill on" data-filter="all">All</button>
   <button class="pill" data-filter="auto">Auto only</button>
   <button class="pill" data-filter="manual">Manual only</button>
+  <button class="pill" data-filter="nocover">No-cover only</button>
 </header>
 
 <div class="stage">
@@ -69,7 +77,8 @@
     <div class="hint">
       Click anywhere on the photo to pin the focal point there — it saves to
       <b>_data/focus.json</b> immediately. <kbd>←</kbd><kbd>→</kbd> photo ·
-      <kbd>c</kbd> centre · <kbd>a</kbd> re-run auto detection.
+      <kbd>c</kbd> centre · <kbd>a</kbd> re-run auto detection ·
+      <kbd>x</kbd> keep this photo out of the collection covers.
     </div>
   </div>
   <div class="side">
@@ -81,6 +90,7 @@
     <div class="btns">
       <button class="pill" id="btn-auto">Re-run auto</button>
       <button class="pill" id="btn-center">Centre</button>
+      <button class="pill danger" id="btn-cover">Exclude from covers</button>
     </div>
   </div>
 </div>
@@ -102,12 +112,18 @@
     p16.style.objectPosition = pos; p43.style.objectPosition = pos;
     document.getElementById("meta").innerHTML =
       "<b>" + p.collection + "</b> · " + p.outing + "<br>" + p.grid +
-      "<br>focus <b>" + pos + "</b> · " + p.src;
+      "<br>focus <b>" + pos + "</b> · " + p.src +
+      (p.no_cover ? '<br><b style="color:#e9918d">excluded from covers</b>' : "");
+    var btn = document.getElementById("btn-cover");
+    btn.classList.toggle("on", !!p.no_cover);
+    btn.textContent = p.no_cover ? "Allow as cover" : "Exclude from covers";
     placeDot();
     Array.prototype.forEach.call(document.querySelectorAll(".cell"), function (c, n) {
       c.classList.toggle("sel", n === i);
       if (n === i) c.scrollIntoView({block: "nearest"});
     });
+    var cell = document.querySelectorAll(".cell")[i];
+    if (cell) cell.classList.toggle("nocover", !!p.no_cover);
     var tag = document.querySelectorAll(".cell .tag")[i];
     if (tag) tag.className = "tag " + p.src;
   }
@@ -139,6 +155,13 @@
   document.getElementById("btn-center").onclick = function () {
     var p = cur(); if (!p) return; p.x = 0.5; p.y = 0.5; save(p);
   };
+  document.getElementById("btn-cover").onclick = function () {
+    var p = cur(); if (!p) return;
+    fetch("/api/cover", {method: "POST", headers: {"Content-Type": "application/json"},
+                         body: JSON.stringify({id: p.id, no_cover: !p.no_cover})})
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d.ok) { p.no_cover = d.no_cover; paint(); updateCount(); } });
+  };
   document.getElementById("btn-auto").onclick = function () {
     var p = cur(); if (!p) return;
     fetch("/api/auto", {method: "POST", headers: {"Content-Type": "application/json"},
@@ -152,6 +175,7 @@
     else if (e.key === "ArrowLeft") { i = Math.max(0, i - 1); paint(); }
     else if (e.key === "c") document.getElementById("btn-center").click();
     else if (e.key === "a") document.getElementById("btn-auto").click();
+    else if (e.key === "x") document.getElementById("btn-cover").click();
   });
 
   Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"), function (b) {
@@ -162,21 +186,31 @@
     };
   });
 
+  function updateCount() {
+    var man = photos.filter(function (p) { return p.src === "manual"; }).length;
+    var out = photos.filter(function (p) { return p.no_cover; }).length;
+    document.getElementById("count").textContent =
+      photos.length + " photos · " + man + " set by hand" +
+      (out ? " · " + out + " off the covers" : "");
+  }
+
   function render() {
-    view = photos.filter(function (p) { return filter === "all" || p.src === filter; });
+    view = photos.filter(function (p) {
+      if (filter === "all") return true;
+      if (filter === "nocover") return !!p.no_cover;
+      return p.src === filter;
+    });
     var strip = document.getElementById("strip");
     strip.innerHTML = "";
     view.forEach(function (p, n) {
       var c = document.createElement("div");
-      c.className = "cell";
+      c.className = "cell" + (p.no_cover ? " nocover" : "");
       c.innerHTML = '<img src="' + p.grid + '" loading="lazy" style="object-position:' +
                     (p.x * 100) + '% ' + (p.y * 100) + '%"><span class="tag ' + p.src + '"></span>';
       c.onclick = function () { i = n; paint(); };
       strip.appendChild(c);
     });
-    var man = photos.filter(function (p) { return p.src === "manual"; }).length;
-    document.getElementById("count").textContent =
-      photos.length + " photos · " + man + " set by hand";
+    updateCount();
     paint();
   }
 

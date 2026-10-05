@@ -450,15 +450,80 @@
   {
     "id": "mercantour",
     "name": "Parc national du Mercantour",
-    "dates": "Jun 2025 – Aug 2026",
+    "dates": "Jun 2025 – Oct 2026",
     "kind": "outdoor",
-    "cover": "/assets/trips/mercantour/vallee_des_mervielles/00-thumb.webp",
-    "cover_focus": "50% 71.6%",
+    "cover": "/assets/trips/mercantour/col_de_la_bonette/00-thumb.webp",
+    "cover_focus": "50% 50%",
     "outings": [
+      {
+        "id": "col_de_la_bonette",
+        "name": "Col de la Bonette",
+        "color": "#0072B2",
+        "activity": "bike",
+        "gpx": "/tracks/mercantour/col_de_la_bonette.gpx",
+        "distance": "50.7 km",
+        "ascent": "1580 m",
+        "descent": "1580 m",
+        "duration": "3h 23m",
+        "elevation_source": "garmin",
+        "date": "Oct 2026",
+        "photos": [
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1200,
+            "lat": 44.330591,
+            "lng": 6.820702,
+            "grid": "/assets/trips/mercantour/col_de_la_bonette/00-thumb.webp",
+            "full": "/assets/trips/mercantour/col_de_la_bonette/00.webp",
+            "focus": "50% 50%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1110,
+            "lat": 44.330731,
+            "lng": 6.817102,
+            "grid": "/assets/trips/mercantour/col_de_la_bonette/01-thumb.webp",
+            "full": "/assets/trips/mercantour/col_de_la_bonette/01.webp",
+            "focus": "40.6% 43.4%"
+          },
+          {
+            "caption": "",
+            "width": 1799,
+            "height": 1131,
+            "lat": 44.331783,
+            "lng": 6.860145,
+            "grid": "/assets/trips/mercantour/col_de_la_bonette/02-thumb.webp",
+            "full": "/assets/trips/mercantour/col_de_la_bonette/02.webp",
+            "focus": "42.8% 50%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1120,
+            "lat": 44.258021,
+            "lng": 6.92489,
+            "grid": "/assets/trips/mercantour/col_de_la_bonette/03-thumb.webp",
+            "full": "/assets/trips/mercantour/col_de_la_bonette/03.webp",
+            "focus": "50% 50%"
+          },
+          {
+            "caption": "",
+            "width": 1800,
+            "height": 1200,
+            "lat": 44.322691,
+            "lng": 6.863867,
+            "grid": "/assets/trips/mercantour/col_de_la_bonette/04-thumb.webp",
+            "full": "/assets/trips/mercantour/col_de_la_bonette/04.webp",
+            "focus": "62.5% 63.4%"
+          }
+        ]
+      },
       {
         "id": "vallee_des_mervielles",
         "name": "Vallée des Merveilles",
-        "color": "#0072B2",
+        "color": "#D55E00",
         "activity": "hike",
         "gpx": "/tracks/mercantour/vallee_des_merveilles.gpx",
         "distance": "20.6 km",
@@ -543,7 +608,7 @@
       {
         "id": "lac_allos_pelat",
         "name": "Lac d'Allos and Mont Pelat",
-        "color": "#D55E00",
+        "color": "#009E73",
         "activity": "hike",
         "gpx": "/tracks/mercantour/mont_pelat.gpx",
         "distance": "13.2 km",
@@ -614,7 +679,7 @@
       {
         "id": "mont_mounier",
         "name": "Mont Mounier",
-        "color": "#009E73",
+        "color": "#CC79A7",
         "activity": "hike",
         "gpx": "/tracks/mercantour/mounier.gpx",
         "distance": "16.6 km",
@@ -649,7 +714,7 @@
       {
         "id": "gordalesque",
         "name": "Vallée de la Gordolasque",
-        "color": "#CC79A7",
+        "color": "#E69F00",
         "activity": "hike",
         "gpx": "/tracks/mercantour/Refuge_de_Nice.gpx",
         "distance": "17.5 km",
@@ -731,7 +796,7 @@
       }
     ],
     "region": "Mercantour National Park, France",
-    "total_distance": "67.8 km"
+    "total_distance": "118.5 km"
   },
   {
     "id": "cote_dazur",
@@ -913,7 +978,8 @@
             "lng": 7.318862,
             "grid": "/assets/trips/cote_dazur/col_deze_gravel/01-thumb.webp",
             "full": "/assets/trips/cote_dazur/col_deze_gravel/01.webp",
-            "focus": "50% 38.5%"
+            "focus": "50% 38.5%",
+            "no_cover": true
           },
           {
             "caption": "",
@@ -923,7 +989,8 @@
             "lng": 7.320204,
             "grid": "/assets/trips/cote_dazur/col_deze_gravel/02-thumb.webp",
             "full": "/assets/trips/cote_dazur/col_deze_gravel/02.webp",
-            "focus": "50% 41.4%"
+            "focus": "50% 41.4%",
+            "no_cover": true
           }
         ]
       }

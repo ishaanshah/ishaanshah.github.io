@@ -464,6 +464,10 @@ def main():
                     # corrected in `tools/focus.py --edit` is never clobbered
                     p["focus"] = focal_point(p["grid"], a["id"], focus_store,
                                              reseed=args.reseed_focus)
+                    # photos marked off the cover pool in `focus.py --edit`
+                    # stay off it across re-syncs
+                    if not focus_mod.covers_ok(focus_store["assets"].get(a["id"])):
+                        p["no_cover"] = True
                 photos.append(p)
             if not args.dry_run:
                 clear_stage(out_dir)
@@ -475,12 +479,12 @@ def main():
 
         if not outings_out:
             continue
-        # cover fallback = first photo's thumbnail (JS randomises it per load)
-        first = outings_out[0]["photos"][0] if outings_out[0]["photos"] else {}
-        cover = first.get("grid", "")
+        # cover fallback = first cover-eligible photo's thumbnail
+        # (JS randomises it per load, over the same eligible pool)
+        first = focus_mod.pick_cover(dict(outings=outings_out)) or {}
         col = dict(id=c["id"], name=c["name"],
                    dates=c.get("dates") or fmt_span(col_span),
-                   kind=c["kind"], cover=cover,
+                   kind=c["kind"], cover=first.get("grid", ""),
                    cover_focus=first.get("focus", "50% 50%"), outings=outings_out)
         if c.get("region"):                       # optional geographic region for this collection
             col["region"] = c["region"]

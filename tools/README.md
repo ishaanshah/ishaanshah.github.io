@@ -36,16 +36,24 @@ _data/trips.yml (you edit)                    tools/fetch_garmin.py
   **commit it**: the sync reads it, so nobody needs Garmin credentials to build.
 - **`tools/focus.py`** — focal points for the crops. The justified photo grid
   never crops, but the collection covers (16/10) and the map hover thumbnails
-  (4/3) do, and a cover is picked at random from *every* photo in the
-  collection — so each photo carries a focal point that CSS `object-position`
-  keeps inside the crop. The sync detects one for each new photo (saliency +
+  (4/3) do, and a cover is picked at random from every photo in the collection
+  that isn't excluded (below) — so each photo carries a focal point that CSS
+  `object-position` keeps inside the crop. The sync detects one for each new photo (saliency +
   edge energy + Immich's face boxes); `--edit` opens a click-to-fix editor for
   the ones it reads wrong.
 
       python3 tools/focus.py --edit     # localhost:8777, every click saves
+                                        #   `x` drops a photo from the cover pool
       python3 tools/focus.py --seed     # detect for photos with no entry yet
       python3 tools/focus.py --stamp    # push the store into collections.json
       python3 tools/focus.py --montage qa.png   # centred vs focal, side by side
+
+  A photo can also be kept **out of the cover pool** — one that works full-size
+  but not cropped to 16/10, or that you just don't want fronting the collection:
+  press `x` (or *Exclude from covers*) in the editor. It stays in the grid; only
+  the card's random pick skips it, and the server-rendered `cover` moves to the
+  first eligible photo. The flag lives in `_data/focus.json` as
+  `"no_cover": true` on that asset, so it survives re-syncs and renumbering.
 
 - **`_data/focus.json`** — the focal point store, keyed by Immich asset id so it
   survives the renumbering a re-sync does when an album's order shifts.

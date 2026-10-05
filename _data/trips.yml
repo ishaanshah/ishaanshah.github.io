@@ -101,6 +101,13 @@ collections:
     region: "Mercantour National Park, France"
     kind: outdoor
     outings:
+      - id: col_de_la_bonette
+        name: "Col de la Bonette"
+        activity: bike
+        gpx: tracks/mercantour/col_de_la_bonette.gpx
+        immich_album: "Col de la Bonette"
+        garmin_activity: 24603351259
+
       - id: vallee_des_mervielles
         name: "Vallée des Merveilles"
         activity: hike

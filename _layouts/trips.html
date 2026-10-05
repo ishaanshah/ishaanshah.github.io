@@ -12,7 +12,8 @@ layout: default
       {% assign nout = collection.outings | size %}
       {% assign nph = 0 %}
       {% for o in collection.outings %}{% assign nph = nph | plus: o.photos.size %}{% endfor %}
-      {% capture coverlist %}{% for o in collection.outings %}{% for p in o.photos %}{{ p.grid }}::{{ p.focus | default: "50% 50%" }}|{% endfor %}{% endfor %}{% endcapture %}
+      {% comment %}cover pool = every photo except those marked no_cover in _data/focus.json{% endcomment %}
+      {% capture coverlist %}{% for o in collection.outings %}{% for p in o.photos %}{% unless p.no_cover %}{{ p.grid }}::{{ p.focus | default: "50% 50%" }}|{% endunless %}{% endfor %}{% endfor %}{% endcapture %}
       <a class="collection-card" href="{{ site.baseurl }}/pics/{{ collection.id | slugify }}/"
          data-kind="{{ collection.kind }}" data-acts="{{ acts | strip }}">
         <div class="cover">
